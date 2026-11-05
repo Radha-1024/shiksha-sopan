@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Contribution — Shiksha Sopan | शिक्षा सोपान</title>
+  <meta name="description" content="Support Shiksha Sopan — voluntary individual contributions, endowment schemes, child sponsorships, and tax-exempt giving under Section 80/G." />
+  <link rel="icon" type="image/jpeg" href="images/shiksha-sopan-logo.jpg" />
+
+  <!-- Typography: Plus Jakarta Sans, Playfair Display, and Mukta -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ==========================================================================
+       1. ROOT DESIGN SYSTEM & CSS VARIABLES
+       ========================================================================== */
+    :root {
+      --sopan-iitk-navy: #0B192C;
+      --sopan-navy-card: #0F274A;
+      --sopan-navy-light: #1E3A8A;
+      --sopan-blue: #0284C7;
+      --sopan-blue-light: #E0F2FE;
+      --sopan-blue-hover: #0369A1;
+      --sopan-blue-dark: #0369A1;
+      --sopan-sky: #0EA5E9;
+      --sopan-sky-subtle: #F0F9FF;
+      --sopan-orange: #EA580C;
+      --sopan-orange-hover: #C2410C;
+      --sopan-gold: #D97706;
+      --sopan-gold-light: #FEF3C7;
+      --sopan-gold-border: #FDE68A;
+
+      --bg-page: #FDFEFE;
+      --bg-card: #FFFFFF;
+      --bg-subtle: #F8FAFC;
+      --border-subtle: #E2E8F0;
+      --border-light: #CBD5E1;
+      --border-focus: #38BDF8;
+
+      --text-primary: #0F172A;
+      --text-secondary: #334155;
+      --text-muted: #64748B;
+      --text-light: #F8FAFC;
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 14px -1px rgba(11, 25, 44, 0.07);
+      --shadow-lg: 0 10px 25px -3px rgba(11, 25, 44, 0.09);
+      --shadow-card: 0 8px 24px -4px rgba(2, 132, 199, 0.08);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 22px;
+      --radius-full: 9999px;
+
+      --transition-fast: 0.15s ease;
+      --transition-standard: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-standard);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    /* ==========================================================================
+       2. TOP MOTTO TICKER & BRAND HEADER (IDENTICAL ACROSS ALL PAGES)
+       ========================================================================== */
+    .top-motto-bar {
+      background: linear-gradient(90deg, #F0F8FF 0%, #FFFFFF 50%, #F0F8FF 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.45rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 51;
+    }
+
+    .motto-content {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      color: var(--sopan-iitk-navy);
+      font-family: 'Mukta', sans-serif;
+      font-size: 1.1rem;
+    }
+
+    
+
+    /* Main Brand Header Banner */
+    .header-banner-wrapper {
+      background: #FFFFFF;
+      border-bottom: 1.5px solid var(--border-subtle);
+      padding: 0.95rem 0;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.04);
+    }
+
+    .header-branding-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo-combo {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-emblem-svg {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      transition: transform var(--transition-fast);
+    }
+    .brand-logo-combo:hover .brand-emblem-svg {
+      transform: rotate(5deg) scale(1.04);
+    }
+
+    .brand-title-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-main-title {
+      font-size: 1.55rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .brand-main-title span.hindi {
+      font-family: 'Mukta', sans-serif;
+      color: var(--sopan-orange);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-left: 0.35rem;
+    }
+
+    .brand-tagline-sub {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue-dark, #0369A1);
+      margin-top: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-tagline-sub::before {
+      content: none;
+      font-size: 0.75rem;
+    }
+
+    .header-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-toggle-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg-secondary, #F8FAFC);
+      border: 1px solid var(--border-subtle, #E2E8F0);
+      border-radius: var(--radius-full, 9999px);
+      padding: 3px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-secondary, #475569);
+      border-radius: var(--radius-full, 9999px);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .lang-btn.active {
+      background: #FFFFFF;
+      color: var(--sopan-blue-dark, #0369A1);
+      box-shadow: 0 1px 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION BAR (STICKY, ALL 8 LINKS PRESERVED)
+       ========================================================================== */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 2px solid var(--border-subtle, #E2E8F0);
+      box-shadow: 0 2px 10px rgba(15, 39, 74, 0.05);
+    }
+
+    .nav-inner-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+
+    .nav-links-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links-menu::-webkit-scrollbar { display: none; }
+
+    .nav-link-btn {
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-secondary, #475569);
+      text-decoration: none;
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm, 8px);
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .nav-link-btn:hover, .nav-link-btn.active {
+      color: var(--sopan-blue-dark, #0369A1);
+      background: var(--sopan-blue-light, #E0F2FE);
+    }
+
+    .btn-join-us {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--sopan-orange, #EA580C);
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 0.55rem 1.35rem;
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.28);
+      transition: all var(--transition-standard);
+      flex-shrink: 0;
+    }
+
+    .btn-join-us:hover {
+      background: var(--sopan-orange-hover, #C2410C);
+      transform: translateY(-1px);
+      color: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       4. HERO SECTION: CONTAINED LIGHT BLUEPRINT CARD (EXACT UNIFIED STYLE)
+       ========================================================================== */
+    .ec-hero-section {
+      position: relative;
+      max-width: 980px;
+      width: calc(100% - 2.5rem);
+      margin: 2rem auto 1.75rem;
+      background: linear-gradient(145deg, #F0F9FF 0%, #E0F2FE 45%, #F8FAFC 100%);
+      color: #0F172A;
+      padding: 3rem 2rem 2.5rem;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid #BAE6FD;
+      border-bottom: 3.5px solid #0EA5E9;
+      box-shadow: 0 12px 32px -10px rgba(2, 132, 199, 0.10), 0 4px 12px rgba(15, 23, 42, 0.03);
+    }
+
+    .ec-hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 12% 20%, rgba(56, 189, 248, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 88% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+        linear-gradient(to right, rgba(2, 132, 199, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 132, 199, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+      pointer-events: none;
+    }
+
+    .ec-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.25rem;
+      background: #FFFFFF;
+      border: 1px solid #BAE6FD;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #0284C7;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+    }
+
+    .ec-hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: #0B192C;
+      margin-bottom: 0.75rem;
+    }
+
+    .ec-hero-title .hindi-sub {
+      display: block;
+      font-family: 'Mukta', sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 700;
+      color: #B45309;
+      margin-top: 0.25rem;
+      letter-spacing: 0;
+    }
+
+    .ec-hero-lead {
+      font-size: clamp(0.98rem, 1.4vw, 1.1rem);
+      color: #334155;
+      max-width: 660px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.7;
+      font-weight: 450;
+    }
+
+    .ornamental-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+
+    .ornamental-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(2, 132, 199, 0.35), transparent);
+    }
+
+    .ornamental-emblem {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      filter: drop-shadow(0 2px 4px rgba(217, 119, 6, 0.25));
+    }
+
+    /* ==========================================================================
+       SITE FOOTER (UNIFIED WITH OFFICIAL MAP & BIGTECH EMBED)
+       ========================================================================== */
+    .site-footer {
+      background: var(--sopan-iitk-navy);
+      color: #94A3B8;
+      padding: 4rem 0 2rem;
+      margin-top: auto;
+      border-top: 4px solid var(--sopan-orange);
+    }
+
+    .footer-pre-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1.3fr;
+      gap: 2.5rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 900px) {
+      .footer-pre-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .footer-brand-title {
+      font-family: 'Mukta', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.02em;
+    }
+
+    .footer-brand-desc {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #94A3B8;
+      margin-bottom: 1rem;
+    }
+
+    .footer-bigtech-img {
+      max-width: 175px;
+      background: #FFFFFF;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    .footer-col-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-col-title::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 36px;
+      height: 2px;
+      background: var(--sopan-orange);
+    }
+
+    .important-links-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.65rem 1rem;
+    }
+
+    .imp-link-anchor {
+      font-size: 0.88rem;
+      color: #CBD5E1;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color var(--transition-fast);
+    }
+
+    .imp-link-anchor:hover {
+      color: #38BDF8;
+      transform: translateX(3px);
+    }
+
+    .map-frame-box {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+
+    .footer-bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-top: 1.75rem;
+      font-size: 0.85rem;
+      color: #64748B;
+    }
+  
+    /* Main Brand Header Banner (Uniform Blueprint Grid Theme Matching Home Page) */
+    .header-banner-wrapper {
+      background: #F0F8FF;
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(2, 132, 199, 0.09) 0%, transparent 60%),
+        radial-gradient(circle at 85% 50%, rgba(0, 229, 255, 0.07) 0%, transparent 50%),
+        linear-gradient(to right, rgba(2, 132, 199, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+      border-bottom: 1.5px solid var(--border-subtle, #E2E8F0);
+      padding: 0.95rem 0;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-watermark-formula {
+      position: absolute;
+      top: 18px;
+      right: 18%;
+      transform: rotate(8deg);
+      font-family: 'Outfit', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(2, 132, 199, 0.22);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .header-branding-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-logo-combo {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-emblem-svg {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      transition: transform var(--transition-fast, 0.15s ease);
+    }
+    .brand-logo-combo:hover .brand-emblem-svg {
+      transform: rotate(5deg) scale(1.04);
+    }
+
+    .brand-title-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-main-title {
+      font-size: 1.55rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy, #0B192C);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .brand-main-title span.hindi {
+      font-family: 'Mukta', sans-serif;
+      color: var(--sopan-orange, #EA580C);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-left: 0.35rem;
+    }
+
+    .brand-tagline-sub {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue-dark, #0369A1);
+      margin-top: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-tagline-sub::before {
+      content: none;
+      font-size: 0.75rem;
+    }
+
+    .header-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-toggle-box {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border-subtle, #E2E8F0);
+      border-radius: var(--radius-full, 9999px);
+      padding: 3px;
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-secondary, #475569);
+      border-radius: var(--radius-full, 9999px);
+      cursor: pointer;
+      transition: all var(--transition-fast, 0.15s ease);
+    }
+
+    .lang-btn.active {
+      background: #0284C7;
+      color: #FFFFFF;
+      box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25);
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION BAR (STICKY, UNIFORM PILL ACTIVE INDICATOR)
+       ========================================================================== */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 2px solid var(--border-subtle, #E2E8F0);
+      box-shadow: 0 2px 10px rgba(15, 39, 74, 0.05);
+    }
+
+    .nav-inner-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+
+    .nav-links-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links-menu::-webkit-scrollbar { display: none; }
+
+    .nav-link-btn {
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-secondary, #475569);
+      text-decoration: none;
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm, 8px);
+      transition: all var(--transition-fast, 0.15s ease);
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .nav-link-btn:hover {
+      color: var(--sopan-blue-dark, #0369A1);
+      background: rgba(2, 132, 199, 0.08);
+    }
+
+    .nav-link-btn.active {
+      color: #0369A1 !important;
+      background: #E0F2FE !important;
+      font-weight: 800 !important;
+    }
+
+    .btn-join-us {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--sopan-orange, #EA580C);
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.55rem 1.35rem;
+      border-radius: var(--radius-full, 9999px);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.28);
+      transition: all var(--transition-standard, 0.2s ease);
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .btn-join-us:hover {
+      background: var(--sopan-orange-hover, #C2410C);
+      transform: translateY(-1px);
+      color: #FFFFFF;
+    }
+
+  
+    .brand-emblem-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(11, 25, 44, 0.12);
+      border: 1.5px solid rgba(234, 88, 12, 0.35);
+      transition: transform var(--transition-fast, 0.15s ease);
+      flex-shrink: 0;
+    }
+    .brand-logo-combo:hover .brand-emblem-img {
+      transform: scale(1.05);
+    }
+    .ornamental-dot {
+      color: #0284C7;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+  </style>
+
+  <style>
+    /* Page Specific: Contribution */
+    .contribution-content-section {
+      padding: 2.5rem 0 5rem;
+      background: #FFFFFF;
+    }
+
+    .section-eyebrow-center {
+      text-align: center;
+      margin-bottom: 2.75rem;
+    }
+
+    .section-eyebrow-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sopan-sky);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-main-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+      font-weight: 800;
+      color: var(--sopan-iitk-navy);
+      line-height: 1.2;
+    }
+
+    /* Narrative Callout Box */
+    .narrative-card {
+      background: linear-gradient(135deg, #F8FAFC 0%, #F0F9FF 100%);
+      border: 1px solid #BAE6FD;
+      border-left: 5px solid var(--sopan-blue);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 16px rgba(2, 132, 199, 0.06);
+    }
+
+    .narrative-text {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      color: #334155;
+    }
+
+    .expenditure-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(186, 230, 253, 0.6);
+    }
+
+    .exp-stat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      padding: 0.45rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--sopan-iitk-navy);
+    }
+    .exp-stat-pill strong {
+      color: var(--sopan-orange);
+    }
+
+    /* Table Design */
+    .schemes-table-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+      margin-bottom: 2.5rem;
+    }
+
+    .table-responsive-wrapper {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    .schemes-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .schemes-table thead {
+      background: #F1F5F9;
+      border-bottom: 2px solid #CBD5E1;
+    }
+
+    .schemes-table th {
+      padding: 1.1rem 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--sopan-iitk-navy);
+    }
+
+    .schemes-table td {
+      padding: 1.2rem 1.5rem;
+      font-size: 0.96rem;
+      color: #334155;
+      border-bottom: 1px solid #F1F5F9;
+      line-height: 1.6;
+    }
+
+    .schemes-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .schemes-table tbody tr:hover {
+      background: #F8FAFC;
+    }
+
+    .scheme-name {
+      font-weight: 750;
+      color: var(--sopan-iitk-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .scheme-bullet {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sopan-sky);
+      flex-shrink: 0;
+    }
+
+    .scheme-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-full);
+      background: #E0F2FE;
+      color: #0369A1;
+      margin-left: 0.5rem;
+    }
+
+    .open-donation-banner {
+      background: #FFFBEB;
+      border: 1px solid #FDE68A;
+      border-radius: var(--radius-lg);
+      padding: 1.35rem 1.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .open-donation-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .open-donation-text {
+      font-size: 0.98rem;
+      color: #92400E;
+      line-height: 1.65;
+    }
+
+    /* How to Donate 3 Cards */
+    .donate-modes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 992px) {
+      .donate-modes-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .donate-channel-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 2.25rem 1.75rem 2rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+      transition: all var(--transition-standard);
+      position: relative;
+    }
+
+    .donate-channel-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(2, 132, 199, 0.12);
+      border-color: #BAE6FD;
+    }
+
+    .channel-icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 18px;
+      background: #F0F9FF;
+      border: 1px solid #BAE6FD;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      color: var(--sopan-blue);
+      font-size: 1.8rem;
+    }
+
+    .channel-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 750;
+      color: var(--sopan-iitk-navy);
+      margin-bottom: 1rem;
+    }
+
+    .channel-desc {
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.7;
+      flex-grow: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .channel-data-box {
+      background: #F8FAFC;
+      border: 1px dashed #CBD5E1;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      font-size: 0.88rem;
+      color: var(--sopan-iitk-navy);
+      line-height: 1.6;
+    }
+
+    .channel-data-box strong {
+      color: var(--sopan-orange);
+    }
+
+    .copy-btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.65rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--sopan-sky);
+      background: #FFFFFF;
+      border: 1px solid #BAE6FD;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .copy-btn-action:hover {
+      background: var(--sopan-blue-light);
+      color: var(--sopan-blue-dark);
+    }
+
+    /* Tax Exemption Stamp Banner */
+    .tax-exemption-card {
+      background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%);
+      border: 1.5px solid #A7F3D0;
+      border-radius: var(--radius-xl);
+      padding: 1.75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.08);
+    }
+
+    .tax-left-info {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .tax-shield-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      color: #059669;
+      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
+      flex-shrink: 0;
+    }
+
+    .tax-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #065F46;
+      margin-bottom: 0.25rem;
+    }
+
+    .tax-subtitle {
+      font-size: 0.92rem;
+      color: #047857;
+      line-height: 1.5;
+    }
+  
+    /* Main Brand Header Banner (Uniform Blueprint Grid Theme Matching Home Page) */
+    .header-banner-wrapper {
+      background: #F0F8FF;
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(2, 132, 199, 0.09) 0%, transparent 60%),
+        radial-gradient(circle at 85% 50%, rgba(0, 229, 255, 0.07) 0%, transparent 50%),
+        linear-gradient(to right, rgba(2, 132, 199, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+      border-bottom: 1.5px solid var(--border-subtle, #E2E8F0);
+      padding: 0.95rem 0;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-watermark-formula {
+      position: absolute;
+      top: 18px;
+      right: 18%;
+      transform: rotate(8deg);
+      font-family: 'Outfit', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(2, 132, 199, 0.22);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .header-branding-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-logo-combo {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-emblem-svg {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      transition: transform var(--transition-fast, 0.15s ease);
+    }
+    .brand-logo-combo:hover .brand-emblem-svg {
+      transform: rotate(5deg) scale(1.04);
+    }
+
+    .brand-title-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-main-title {
+      font-size: 1.55rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy, #0B192C);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .brand-main-title span.hindi {
+      font-family: 'Mukta', sans-serif;
+      color: var(--sopan-orange, #EA580C);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-left: 0.35rem;
+    }
+
+    .brand-tagline-sub {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue-dark, #0369A1);
+      margin-top: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-tagline-sub::before {
+      content: none;
+      font-size: 0.75rem;
+    }
+
+    .header-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-toggle-box {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border-subtle, #E2E8F0);
+      border-radius: var(--radius-full, 9999px);
+      padding: 3px;
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-secondary, #475569);
+      border-radius: var(--radius-full, 9999px);
+      cursor: pointer;
+      transition: all var(--transition-fast, 0.15s ease);
+    }
+
+    .lang-btn.active {
+      background: #0284C7;
+      color: #FFFFFF;
+      box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25);
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION BAR (STICKY, UNIFORM PILL ACTIVE INDICATOR)
+       ========================================================================== */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 2px solid var(--border-subtle, #E2E8F0);
+      box-shadow: 0 2px 10px rgba(15, 39, 74, 0.05);
+    }
+
+    .nav-inner-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+
+    .nav-links-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links-menu::-webkit-scrollbar { display: none; }
+
+    .nav-link-btn {
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-secondary, #475569);
+      text-decoration: none;
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm, 8px);
+      transition: all var(--transition-fast, 0.15s ease);
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .nav-link-btn:hover {
+      color: var(--sopan-blue-dark, #0369A1);
+      background: rgba(2, 132, 199, 0.08);
+    }
+
+    .nav-link-btn.active {
+      color: #0369A1 !important;
+      background: #E0F2FE !important;
+      font-weight: 800 !important;
+    }
+
+    .btn-join-us {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--sopan-orange, #EA580C);
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.55rem 1.35rem;
+      border-radius: var(--radius-full, 9999px);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.28);
+      transition: all var(--transition-standard, 0.2s ease);
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .btn-join-us:hover {
+      background: var(--sopan-orange-hover, #C2410C);
+      transform: translateY(-1px);
+      color: #FFFFFF;
+    }
+
+  
+    .brand-emblem-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(11, 25, 44, 0.12);
+      border: 1.5px solid rgba(234, 88, 12, 0.35);
+      transition: transform var(--transition-fast, 0.15s ease);
+      flex-shrink: 0;
+    }
+    .brand-logo-combo:hover .brand-emblem-img {
+      transform: scale(1.05);
+    }
+    .ornamental-dot {
+      color: #0284C7;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- =======================================================================
+       TOP MOTTO BAR & HEADER BRANDING
+       ======================================================================= -->
+  <aside class="top-motto-bar" aria-label="Motto Bar">
+    <div class="container motto-content" data-i18n="mottoText">
+      <span>अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें</span>
+    </div>
+  </aside>
+
+  <!-- =======================================================================
+       2. HEADER BRANDING & LANGUAGE SWITCHER (BLUEPRINT GRAPH & WATERMARK)
+       ======================================================================= -->
+  <header class="header-banner-wrapper">
+    <div class="header-watermark-formula" aria-hidden="true">∇ × E = -∂B/∂t</div>
+    <div class="container header-branding-flex">
+      <a href="index.html" class="brand-logo-combo" aria-label="Shiksha Sopan Home">
+        <img src="images/shiksha-sopan-logo.jpg" alt="Shiksha Sopan Emblem" class="brand-emblem-img" />
+
+        <div class="brand-title-box">
+          <div class="brand-main-title">
+            SHIKSHA SOPAN <span class="hindi">शिक्षा सोपान</span>
+          </div>
+          <div class="brand-tagline-sub" data-i18n="headerSub">
+            AN EDUCATIONAL & SOCIAL INITIATIVE BY IIT KANPUR COMMUNITY
+          </div>
+        </div>
+      </a>
+
+      <div class="header-actions-group">
+        <div class="lang-toggle-box" role="radiogroup" aria-label="Language Selector">
+          <button type="button" class="lang-btn active" id="btnLangEn" data-lang="en" onclick="setLanguage('en')">English</button>
+          <button type="button" class="lang-btn" id="btnLangHi" data-lang="hi" onclick="setLanguage('hi')">हिन्दी</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       3. NAVIGATION BAR (EXACT UNIFIED LAYOUT & ACTIVE INDICATOR)
+       ======================================================================= -->
+  <nav class="navbar-sticky" aria-label="Main Navigation">
+    <div class="container nav-inner-row">
+      <ul class="nav-links-menu">
+        <li><a href="index.html" class="nav-link-btn " data-i18n="navHome">Home</a></li>
+        <li><a href="executive-committee.html" class="nav-link-btn " data-i18n="navEC">Executive Committee</a></li>
+        <li><a href="activity.html" class="nav-link-btn " data-i18n="navActivity">Activity</a></li>
+        <li><a href="contribution.html" class="nav-link-btn active" data-i18n="navContribution">Contribution</a></li>
+        <li><a href="achievements.html" class="nav-link-btn " data-i18n="navAchievements">Achivements</a></li>
+        <li><a href="experiments.html" class="nav-link-btn " data-i18n="navExperiments">Experiments</a></li>
+        <li><a href="about-us.html" class="nav-link-btn " data-i18n="navAbout">About Us</a></li>
+        <li><a href="contact-us.html" class="nav-link-btn " data-i18n="navContact">Contact Us</a></li>
+      </ul>
+
+      <a href="https://www.shiksha-sopan.org/join" class="btn-join-us" target="_blank" rel="noopener noreferrer" data-i18n="joinBtn">
+        Join Us →
+      </a>
+    </div>
+  </nav>
+  <main id="mainContent">
+    <!-- =======================================================================
+         HERO SECTION: CONTAINED LIGHT BLUEPRINT CARD
+         ======================================================================= -->
+    <section class="ec-hero-section" aria-labelledby="pageHeroHeading">
+      <div class="container ec-hero-content">
+        <div class="hero-eyebrow-pill"><span data-i18n="heroPill">VOLUNTARY SUPPORT • SHIKSHA SOPAN</span>
+        </div>
+
+        <h1 class="ec-hero-title" id="pageHeroHeading">
+          <span data-i18n="heroTitle">Contribution</span>
+          <span class="hindi-sub" data-i18n="heroTitleHi">सहयोग</span>
+        </h1>
+
+        <p class="ec-hero-lead" data-i18n="heroLead">
+          The money needed to run Shiksha Sopan activities comes only through individual donations from its members and well wishers. So far, we have not accepted any grants from any funding agencies. All donations are Tax Free under Section 80/G.
+        </p>
+
+        <div class="ornamental-divider" aria-hidden="true">
+          <span class="ornamental-line"></span>
+          <span class="ornamental-dot">•</span>
+          <span class="ornamental-line"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         1. MODE OF FINANCIAL CONTRIBUTION & ENDOWMENT SCHEMES
+         ======================================================================= -->
+    <section class="contribution-content-section" aria-labelledby="modeContribHeading">
+      <div class="container">
+        
+        <div class="section-eyebrow-center">
+          <span class="section-eyebrow-tag" data-i18n="secTag1">FINANCIAL PHILOSOPHY & TRANSPARENCY</span>
+          <h2 class="section-main-heading" id="modeContribHeading" data-i18n="modeHeading">
+            Mode of Financial Contribution
+          </h2>
+        </div>
+
+        <!-- Narrative & Expenditure Journey -->
+        <div class="narrative-card">
+          <p class="narrative-text" data-i18n="narrativeP">
+            The money needed to run Shiksha Sopan activities comes only through individual donations from its members and well wishers. So far, we have not accepted any grants from any funding agencies. With ever expanding activities and expectations of the society, we need to develop certain endowment funds. Starting from a modest expenditure of Rs 22,086 in the first year, that is 2001-02, the expense in 2013-14 was about Rs 15 lacs. We look forward for donations in the following schemes.
+          </p>
+          <div class="expenditure-badge-row">
+            <span class="exp-stat-pill">2001-02 Inception: <strong>Rs 22,086</strong></span>
+            <span class="exp-stat-pill">2013-14 Outreach: <strong>~Rs 15 Lacs</strong></span>
+            <span class="exp-stat-pill">Office Maintenance Expense: <strong>Almost Zero</strong></span>
+          </div>
+        </div>
+
+        <!-- Schemes Table -->
+        <div class="schemes-table-card">
+          <div class="table-responsive-wrapper">
+            <table class="schemes-table" aria-label="Endowment Schemes and Sponsorships">
+              <thead>
+                <tr>
+                  <th scope="col" style="width: 45%;" data-i18n="thScheme">Scheme</th>
+                  <th scope="col" style="width: 55%;" data-i18n="thTarget">Endowment Target & Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="scheme-name">
+                      <span class="scheme-bullet"></span>
+                      <span data-i18n="scheme1Name">Community Library</span>
+                      <span class="scheme-tag" data-i18n="tagEndowment">Endowment</span>
+                    </div>
+                  </td>
+                  <td data-i18n="scheme1Desc">
+                    Endowment fund being created, target Rs 5 lacs ($8000), presently 1 lac
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="scheme-name">
+                      <span class="scheme-bullet"></span>
+                      <span data-i18n="scheme2Name">Higher Education Cell</span>
+                      <span class="scheme-tag" data-i18n="tagEndowment">Endowment</span>
+                    </div>
+                  </td>
+                  <td data-i18n="scheme2Desc">
+                    Endowment fund being created, target Rs10 lacs ($16,000), presently 5 lac
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="scheme-name">
+                      <span class="scheme-bullet"></span>
+                      <span data-i18n="scheme3Name">VNK Merit Scholarship</span>
+                      <span class="scheme-tag" data-i18n="tagEndowment">Endowment</span>
+                    </div>
+                  </td>
+                  <td data-i18n="scheme3Desc">
+                    Endowment fund being created, target Rs 15 lacs ($24,000), presently 9 lacs
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="scheme-name">
+                      <span class="scheme-bullet"></span>
+                      <span data-i18n="scheme4Name">Creating e-Resource</span>
+                      <span class="scheme-tag" style="background:#FEF3C7; color:#92400E;" data-i18n="tagAnnual">Annual</span>
+                    </div>
+                  </td>
+                  <td data-i18n="scheme4Desc">
+                    Rs 300,000 ($5000) per year
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="scheme-name">
+                      <span class="scheme-bullet"></span>
+                      <span data-i18n="scheme5Name">Pratibha Poshan yojana Senior</span>
+                      <span class="scheme-tag" style="background:#FEF3C7; color:#92400E;" data-i18n="tagChild">Child Sponsor</span>
+                    </div>
+                  </td>
+                  <td data-i18n="scheme5Desc">
+                    Rs 8,000 ($125) Per year/per child
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="scheme-name">
+                      <span class="scheme-bullet"></span>
+                      <span data-i18n="scheme6Name">Shiksha Sopan Anaupacharik Shikshan Kendra</span>
+                      <span class="scheme-tag" style="background:#FEF3C7; color:#92400E;" data-i18n="tagChild">Child Sponsor</span>
+                    </div>
+                  </td>
+                  <td data-i18n="scheme6Desc">
+                    Rs 4,000 ($60)Per year/per child
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="scheme-name">
+                      <span class="scheme-bullet"></span>
+                      <span data-i18n="scheme7Name">Evening Learning Centers</span>
+                      <span class="scheme-tag" style="background:#FEF3C7; color:#92400E;" data-i18n="tagChild">Child Sponsor</span>
+                    </div>
+                  </td>
+                  <td data-i18n="scheme7Desc">
+                    Rs 2,000 ($30) Per year/per child
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Open Donation Note Banner -->
+        <div class="open-donation-banner">
+          
+          <div class="open-donation-text" data-i18n="openDonationP">
+            Apart from the above schemes, any open donation of any amount is gratefully accepted. These are used for cultural functions, special training classes, audit fee etc. Our office maintenance expense is almost zero.
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             2. HOW TO DONATE (3 CHANNELS)
+             =================================================================== -->
+        <div class="section-eyebrow-center">
+          <span class="section-eyebrow-tag" data-i18n="secTag2">PAYMENT CHANNELS & DETAILS</span>
+          <h2 class="section-main-heading" data-i18n="howToDonateHeading">
+            How to donate
+          </h2>
+        </div>
+
+        <div class="donate-modes-grid">
+          
+          <!-- Channel 1: Cheques / Draft -->
+          <div class="donate-channel-card">
+            <div class="channel-icon-circle" style="font-size:1.1rem; font-weight:800; color:#0284C7;">01</div>
+            <h3 class="channel-title" data-i18n="chan1Title">Cheques / Draft</h3>
+            <p class="channel-desc" data-i18n="chan1Desc">
+              You can write Cheques/Draft for donations in the name of <strong>"Shiksha Sopan"</strong> payble at Kanpur and send to the address:
+            </p>
+            <div class="channel-data-box">
+              <strong>Prof. H.C. Verma</strong><br />
+              12/1-3 Sopan Ashram, Chakratanpur, Nankari<br />
+              IIT Kanpur, Uttar Pradesh, India - 208016
+              <button class="copy-btn-action" onclick="copyToClipboard('Prof. H.C. Verma, 12/1-3 Sopan Ashram, Chakratanpur, Nankari, IIT Kanpur, Uttar Pradesh, India - 208016', this)">
+                Copy Address
+              </button>
+            </div>
+          </div>
+
+          <!-- Channel 2: Indian Passport -->
+          <div class="donate-channel-card">
+            <div class="channel-icon-circle" style="font-size:1.1rem; font-weight:800; color:#0284C7;">02</div>
+            <h3 class="channel-title" data-i18n="chan2Title">Indian Passport</h3>
+            <p class="channel-desc" data-i18n="chan2Desc">
+              Online transfer for Indian Passport holders can be made in State Bank of India, IIT Kanpur branch.
+            </p>
+            <div class="channel-data-box">
+              Account No : <strong>10426002488</strong><br />
+              Account Name : <strong>Shiksha Sopan</strong><br />
+              IFSC code : <strong>SBIN0001161</strong>
+              <div style="display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:0.5rem;">
+                <button class="copy-btn-action" onclick="copyToClipboard('10426002488', this)">
+                  Copy A/c No
+                </button>
+                <button class="copy-btn-action" onclick="copyToClipboard('SBIN0001161', this)">
+                  Copy IFSC
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Channel 3: Non-Indian Passport -->
+          <div class="donate-channel-card">
+            <div class="channel-icon-circle" style="font-size:1.1rem; font-weight:800; color:#0284C7;">03</div>
+            <h3 class="channel-title" data-i18n="chan3Title">Non-Indian Passport</h3>
+            <p class="channel-desc" data-i18n="chan3Desc">
+              Please do not make any transaction in the FCRA account.
+            </p>
+            <div class="channel-data-box" style="background:#FEF2F2; border-color:#FECACA; color:#991B1B;">
+              <strong>Advisory Notice:</strong><br />
+              Foreign / FCRA contributions are currently on hold as per regulatory guidelines. Please contact <a href="mailto:info@shiksha-sopan.org" style="text-decoration:underline;">info@shiksha-sopan.org</a> for prior inquiry.
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 80/G Tax Exemption Card -->
+        <div class="tax-exemption-card">
+          <div class="tax-left-info">
+            <div class="tax-shield-icon" style="font-size:1rem; font-weight:800; color:#059669;">80/G</div>
+            <div>
+              <div class="tax-title" data-i18n="taxTitle">Tax Exemption under Section 80/G</div>
+              <div class="tax-subtitle" data-i18n="taxSub">
+                Please note that you may give any open donation, besides sponsoring a child. All donations are Tax Free under Section 80/G.
+              </div>
+            </div>
+          </div>
+          <div>
+            <span style="display:inline-block; font-size:0.85rem; font-weight:800; background:#059669; color:#FFFFFF; padding:0.5rem 1.25rem; border-radius:9999px;">
+              100% Tax Deductible
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  <!-- =======================================================================
+       SITE FOOTER (UNIFIED WITH OFFICIAL MAP & BIGTECH EMBED)
+       ======================================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-pre-grid">
+        <!-- Col 1: BigTech Partner & Info -->
+        <div>
+          <div class="footer-brand-title">शिक्षा सोपान | SHIKSHA SOPAN</div>
+          <p class="footer-brand-desc">
+            An Educational & Social Initiative by IIT Kanpur Community imparting value-based education since 2001.
+          </p>
+          <div style="margin-top: 1rem;">
+            <img src="https://www.shiksha-sopan.org/Images/bigTech.png" alt="BigTech Partner Support" class="footer-bigtech-img" onerror="this.style.display='none'" />
+          </div>
+        </div>
+
+        <!-- Col 2: Important Links (EXACT Links) -->
+        <div>
+          <h4 class="footer-col-title" data-i18n="impLinksHead">Important Links</h4>
+          <ul class="important-links-list">
+            <li><a href="index.html" class="imp-link-anchor">▸ Home</a></li>
+            <li><a href="executive-committee.html" class="imp-link-anchor">▸ Executive Committee</a></li>
+            <li><a href="activity.html" class="imp-link-anchor">▸ Activity</a></li>
+            <li><a href="contribution.html" class="imp-link-anchor" style='font-weight:700; color:var(--sopan-sky);'>▸ Contribution</a></li>
+            <li><a href="achievements.html" class="imp-link-anchor" >▸ Achivements</a></li>
+            <li><a href="experiments.html" class="imp-link-anchor" >▸ Experiments</a></li>
+            <li><a href="about-us.html" class="imp-link-anchor" >▸ About Us</a></li>
+            <li><a href="contact-us.html" class="imp-link-anchor" >▸ Contact Us</a></li>
+            <li><a href="https://www.shiksha-sopan.org/Internship" class="imp-link-anchor" target="_blank" rel="noopener noreferrer">▸ Internship</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Google Maps Embed (Exact from Shiksha Sopan Ashram) -->
+        <div class="map-frame-box">
+          <iframe 
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJH3A1ceM2nDkRS9JBtXLgq6A" 
+            width="100%" 
+            height="200" 
+            style="border:0; display:block;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            title="Shiksha Sopan Location Map">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          <span>Copyright© 2024 shiksha-sopan.org</span>
+        </div>
+        <div>
+          Official Portal: <a href="https://www.shiksha-sopan.org/" target="_blank" rel="noopener noreferrer" style="color:var(--sopan-sky);">shiksha-sopan.org</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       JAVASCRIPT: BILINGUAL ENGINE & CLIPBOARD HELPER
+       ======================================================================= -->
+  <script>
+    const contLangDict = {
+      en: {
+        mottoText: "अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें",
+        headerSub: "AN EDUCATIONAL & SOCIAL INITIATIVE BY IIT KANPUR COMMUNITY",
+        navHome: "Home",
+        navEC: "Executive Committee",
+        navActivity: "Activity",
+        navContribution: "Contribution",
+        navAchievements: "Achivements",
+        navExperiments: "Experiments",
+        navAbout: "About Us",
+        navContact: "Contact Us",
+        joinBtn: "Join Us →",
+        heroPill: "VOLUNTARY SUPPORT • SHIKSHA SOPAN",
+        heroTitle: "Contribution",
+        heroTitleHi: "सहयोग",
+        heroLead: "The money needed to run Shiksha Sopan activities comes only through individual donations from its members and well wishers. So far, we have not accepted any grants from any funding agencies. All donations are Tax Free under Section 80/G.",
+        secTag1: "FINANCIAL PHILOSOPHY & TRANSPARENCY",
+        modeHeading: "Mode of Financial Contribution",
+        narrativeP: "The money needed to run Shiksha Sopan activities comes only through individual donations from its members and well wishers. So far, we have not accepted any grants from any funding agencies. With ever expanding activities and expectations of the society, we need to develop certain endowment funds. Starting from a modest expenditure of Rs 22,086 in the first year, that is 2001-02, the expense in 2013-14 was about Rs 15 lacs. We look forward for donations in the following schemes.",
+        thScheme: "Scheme",
+        thTarget: "Endowment Target & Details",
+        scheme1Name: "Community Library",
+        scheme1Desc: "Endowment fund being created, target Rs 5 lacs ($8000), presently 1 lac",
+        scheme2Name: "Higher Education Cell",
+        scheme2Desc: "Endowment fund being created, target Rs10 lacs ($16,000), presently 5 lac",
+        scheme3Name: "VNK Merit Scholarship",
+        scheme3Desc: "Endowment fund being created, target Rs 15 lacs ($24,000), presently 9 lacs",
+        scheme4Name: "Creating e-Resource",
+        scheme4Desc: "Rs 300,000 ($5000) per year",
+        scheme5Name: "Pratibha Poshan yojana Senior",
+        scheme5Desc: "Rs 8,000 ($125) Per year/per child",
+        scheme6Name: "Shiksha Sopan Anaupacharik Shikshan Kendra",
+        scheme6Desc: "Rs 4,000 ($60)Per year/per child",
+        scheme7Name: "Evening Learning Centers",
+        scheme7Desc: "Rs 2,000 ($30) Per year/per child",
+        openDonationP: "Apart from the above schemes, any open donation of any amount is gratefully accepted. These are used for cultural functions, special training classes, audit fee etc. Our office maintenance expense is almost zero.",
+        secTag2: "PAYMENT CHANNELS & DETAILS",
+        howToDonateHeading: "How to donate",
+        chan1Title: "Cheques / Draft",
+        chan1Desc: "You can write Cheques/Draft for donations in the name of <strong>"Shiksha Sopan"</strong> payble at Kanpur and send to the address:",
+        chan2Title: "Indian Passport",
+        chan2Desc: "Online transfer for Indian Passport holders can be made in State Bank of India, IIT Kanpur branch.",
+        chan3Title: "Non-Indian Passport",
+        chan3Desc: "Please do not make any transaction in the FCRA account.",
+        taxTitle: "Tax Exemption under Section 80/G",
+        taxSub: "Please note that you may give any open donation, besides sponsoring a child. All donations are Tax Free under Section 80/G.",
+        impLinksHead: "Important Links"
+      },
+      hi: {
+        mottoText: "अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें",
+        headerSub: "आईआईटी कानपुर समुदाय द्वारा संचालित शैक्षिक व सामाजिक पहल",
+        navHome: "होम",
+        navEC: "कार्यकारिणी समिति",
+        navActivity: "गतिविधियां",
+        navContribution: "सहयोग",
+        navAchievements: "उपलब्धियां",
+        navExperiments: "प्रयोग",
+        navAbout: "हमारे बारे में",
+        navContact: "संपर्क करें",
+        joinBtn: "जुड़ें →",
+        heroPill: "स्वैच्छिक सहयोग • शिक्षा सोपान",
+        heroTitle: "सहयोग",
+        heroTitleHi: "Contribution",
+        heroLead: "शिक्षा सोपान की गतिविधियों के संचालन हेतु आवश्यक धनराशि केवल इसके सदस्यों एवं शुभचिंतकों के व्यक्तिगत सहयोग से प्राप्त होती है। अभी तक हमने किसी भी वित्तपोषक संस्था से अनुदान नहीं लिया है। धारा 80/G के तहत सभी दान कर-मुक्त हैं।",
+        secTag1: "वित्तीय व्यवस्था एवं पारदर्शिता",
+        modeHeading: "वित्तीय योगदान के माध्यम",
+        narrativeP: "शिक्षा सोपान की गतिविधियों के संचालन हेतु आवश्यक धनराशि केवल इसके सदस्यों एवं शुभचिंतकों के व्यक्तिगत सहयोग से प्राप्त होती है। अब तक हमने किसी भी वित्तपोषक संस्था से कोई अनुदान स्वीकार नहीं किया है। निरंतर बढ़ती गतिविधियों और समाज की अपेक्षाओं के साथ हमें कुछ स्थायी कोष विकसित करने की आवश्यकता है। पहले वर्ष २००१-०२ में मात्र ₹२२,०८६ के व्यय से प्रारंभ होकर, २०१३-१४ में यह व्यय लगभग ₹१५ लाख था। हम निम्नलिखित योजनाओं में सहयोग का स्वागत करते हैं।",
+        thScheme: "योजना",
+        thTarget: "स्थायी कोष लक्ष्य एवं विवरण",
+        scheme1Name: "सामुदायिक पुस्तकालय",
+        scheme1Desc: "स्थायी कोष निर्माण प्रगति पर, लक्ष्य ₹५ लाख ($8000), वर्तमान में १ लाख",
+        scheme2Name: "उच्च शिक्षा प्रकोष्ठ",
+        scheme2Desc: "स्थायी कोष निर्माण प्रगति पर, लक्ष्य ₹१० लाख ($16,000), वर्तमान में ५ लाख",
+        scheme3Name: "वी.एन. कुलकर्णी मेधा छात्रवृत्ति",
+        scheme3Desc: "स्थायी कोष निर्माण प्रगति पर, लक्ष्य ₹१५ लाख ($24,000), वर्तमान में ९ लाख",
+        scheme4Name: "ई-संसाधन निर्माण",
+        scheme4Desc: "₹३,००,००० ($5000) प्रति वर्ष",
+        scheme5Name: "प्रतिभा पोषण योजना (वरिष्ठ)",
+        scheme5Desc: "₹८,००० ($125) प्रति वर्ष / प्रति छात्र",
+        scheme6Name: "सोपान अनौपचारिक शिक्षण केंद्र",
+        scheme6Desc: "₹४,००० ($60) प्रति वर्ष / प्रति छात्र",
+        scheme7Name: "सांध्यकालीन शिक्षण केंद्र",
+        scheme7Desc: "₹२,००० ($30) प्रति वर्ष / प्रति छात्र",
+        openDonationP: "उपर्युक्त योजनाओं के अतिरिक्त, किसी भी धनराशि का खुला दान कृतज्ञतापूर्वक स्वीकार किया जाता है। इसका उपयोग सांस्कृतिक आयोजनों, विशेष प्रशिक्षण कक्षाओं, ऑडिट शुल्क आदि में होता है। हमारा कार्यालय रखरखाव व्यय लगभग शून्य है।",
+        secTag2: "भुगतान माध्यम एवं बैंक विवरण",
+        howToDonateHeading: "दान कैसे करें",
+        chan1Title: "चेक / डिमांड ड्राफ्ट",
+        chan1Desc: "आप चेक/ड्राफ्ट "शिक्षा सोपान" (Shiksha Sopan) के नाम पर कानपुर में देय बनाकर निम्नलिखित पते पर भेज सकते हैं:",
+        chan2Title: "भारतीय पासपोर्ट धारक",
+        chan2Desc: "भारतीय पासपोर्ट धारकों के लिए ऑनलाइन अंतरण भारतीय स्टेट बैंक (SBI), आईआईटी कानपुर शाखा में किया जा सकता है।",
+        chan3Title: "गैर-भारतीय पासपोर्ट धारक",
+        chan3Desc: "कृपया एफसीआरए (FCRA) खाते में कोई लेन-देन न करें।",
+        taxTitle: "आयकर धारा 80/G के तहत कर छूट",
+        taxSub: "कृपया ध्यान दें कि किसी बच्चे को प्रायोजित करने के अतिरिक्त आप कोई भी खुला दान दे सकते हैं। धारा 80/G के तहत सभी दान कर-मुक्त हैं।",
+        impLinksHead: "महत्वपूर्ण लिंक"
+      }
+    };
+
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.getElementById('btnLangEn').classList.toggle('active', lang === 'en');
+      document.getElementById('btnLangHi').classList.toggle('active', lang === 'hi');
+
+      const dict = contLangDict[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          el.innerHTML = dict[key];
+        }
+      });
+    }
+
+    function copyToClipboard(text, btnElement) {
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btnElement.innerHTML;
+        btnElement.innerHTML = 'Copied!';
+        btnElement.style.color = '#059669';
+        btnElement.style.borderColor = '#10B981';
+        setTimeout(() => {
+          btnElement.innerHTML = originalText;
+          btnElement.style.color = '';
+          btnElement.style.borderColor = '';
+        }, 2000);
+      }).catch(err => {
+        console.error('Copy failed', err);
+      });
+    }
+  </script>
+</body>
+</html>

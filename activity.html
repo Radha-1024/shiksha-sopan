@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Activity — Shiksha Sopan | शिक्षा सोपान</title>
+  <meta name="description" content="We run various activities in and around IITK campus. The daily activities include evening learning centers and an informal education center." />
+  <link rel="icon" type="image/jpeg" href="images/shiksha-sopan-logo.jpg" />
+
+  <!-- Typography: Plus Jakarta Sans, Playfair Display, and Mukta -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. CSS SYSTEM & DESIGN TOKENS (LIGHT STEM / INSTITUTIONAL THEME)
+       ========================================================================== */
+    :root {
+      /* Core Institutional Palette */
+      --sopan-iitk-navy: #0B192C;
+      --sopan-navy-card: #0F274A;
+      --sopan-navy-light: #1E3A8A;
+      --sopan-blue: #0284C7;
+      --sopan-blue-light: #E0F2FE;
+      --sopan-blue-hover: #0369A1;
+      --sopan-blue-dark: #0369A1;
+      --transition-fast: 0.15s ease;
+      --sopan-sky: #0EA5E9;
+      --sopan-sky-subtle: #F0F9FF;
+      --sopan-orange: #EA580C;
+      --sopan-orange-hover: #C2410C;
+      --sopan-gold: #D97706;
+      --sopan-gold-light: #FEF3C7;
+      --sopan-gold-border: #FDE68A;
+
+      /* Neutral Tones */
+      --bg-page: #FDFEFE;
+      --bg-card: #FFFFFF;
+      --bg-subtle: #F8FAFC;
+      --border-subtle: #E2E8F0;
+      --border-light: #CBD5E1;
+      --border-focus: #38BDF8;
+
+      /* Typography */
+      --text-primary: #0F172A;
+      --text-secondary: #334155;
+      --text-muted: #64748B;
+      --text-light: #F8FAFC;
+
+      /* Shadows & Radii */
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 14px -1px rgba(11, 25, 44, 0.07);
+      --shadow-lg: 0 10px 25px -3px rgba(11, 25, 44, 0.09);
+      --shadow-card: 0 8px 24px -4px rgba(2, 132, 199, 0.08);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 22px;
+      --radius-full: 9999px;
+
+      --transition-standard: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-standard);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    /* ==========================================================================
+       2. TOP TICKER & HEADER BRANDING (MATCHING HOME PAGE)
+       ========================================================================== */
+    .top-motto-bar {
+      background: linear-gradient(90deg, #F0F8FF 0%, #FFFFFF 50%, #F0F8FF 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.45rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 51;
+    }
+
+    .motto-content {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      color: var(--sopan-iitk-navy);
+      font-family: 'Mukta', sans-serif;
+      font-size: 1.1rem;
+    }
+
+    
+
+    /* Main Brand Header Banner */
+    .header-banner-wrapper {
+      background: #FFFFFF;
+      border-bottom: 1.5px solid var(--border-subtle);
+      padding: 0.95rem 0;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.04);
+    }
+
+    .header-branding-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo-combo {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-emblem-svg {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      transition: transform var(--transition-fast, 0.15s ease);
+    }
+    .brand-logo-combo:hover .brand-emblem-svg {
+      transform: rotate(5deg) scale(1.04);
+    }
+
+    .brand-title-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-main-title {
+      font-size: 1.55rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .brand-main-title span.hindi {
+      font-family: 'Mukta', sans-serif;
+      color: var(--sopan-orange);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-left: 0.35rem;
+    }
+
+    .brand-tagline-sub {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue-dark, #0369A1);
+      margin-top: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-tagline-sub::before {
+      content: none;
+      font-size: 0.75rem;
+    }
+
+    .header-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-toggle-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg-secondary, #F8FAFC);
+      border: 1px solid var(--border-subtle, #E2E8F0);
+      border-radius: var(--radius-full, 9999px);
+      padding: 3px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-secondary, #475569);
+      border-radius: var(--radius-full, 9999px);
+      cursor: pointer;
+      transition: all var(--transition-fast, 0.15s ease);
+    }
+
+    .lang-btn.active {
+      background: #FFFFFF;
+      color: var(--sopan-blue-dark, #0369A1);
+      box-shadow: 0 1px 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION BAR (ALL 8 ORIGINAL LINKS PRESERVED)
+       ========================================================================== */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 2px solid var(--border-subtle, #E2E8F0);
+      box-shadow: 0 2px 10px rgba(15, 39, 74, 0.05);
+    }
+
+    .nav-inner-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+
+    .nav-links-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links-menu::-webkit-scrollbar { display: none; }
+
+    .nav-link-btn {
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-secondary, #475569);
+      text-decoration: none;
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm, 8px);
+      transition: all var(--transition-fast, 0.15s ease);
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .nav-link-btn:hover, .nav-link-btn.active {
+      color: var(--sopan-blue-dark, #0369A1);
+      background: var(--sopan-blue-light, #E0F2FE);
+    }
+
+    .btn-join-us {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--sopan-orange, #EA580C);
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.4rem 1.15rem;
+      border-radius: var(--radius-full, 9999px);
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.3);
+      transition: all var(--transition-fast, 0.15s ease);
+    }
+
+    .btn-join-us:hover {
+      background: var(--sopan-orange-hover, #C2410C);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       4. HERO BANNER: CONTAINED LIGHT STEM / BLUEPRINT CARD
+       ========================================================================== */
+    .activity-hero-section {
+      position: relative;
+      max-width: 980px;
+      width: calc(100% - 2.5rem);
+      margin: 2rem auto 1.75rem;
+      background: linear-gradient(145deg, #F0F9FF 0%, #E0F2FE 45%, #F8FAFC 100%);
+      color: #0F172A;
+      padding: 3rem 2rem 2.5rem;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid #BAE6FD;
+      border-bottom: 3.5px solid #0EA5E9;
+      box-shadow: 0 12px 32px -10px rgba(2, 132, 199, 0.10), 0 4px 12px rgba(15, 23, 42, 0.03);
+    }
+
+    /* Light Blueprint Science Grid Background */
+    .activity-hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 12% 20%, rgba(56, 189, 248, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 88% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+        linear-gradient(to right, rgba(2, 132, 199, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 132, 199, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+      pointer-events: none;
+    }
+
+    .activity-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.25rem;
+      background: #FFFFFF;
+      border: 1px solid #BAE6FD;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #0284C7;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+    }
+
+    .activity-hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: #0B192C;
+      margin-bottom: 0.75rem;
+      text-shadow: none;
+    }
+    .activity-hero-title .hindi-sub {
+      display: block;
+      font-family: 'Mukta', sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 700;
+      color: #B45309;
+      margin-top: 0.25rem;
+      letter-spacing: 0;
+    }
+
+    /* The exact official descriptive text from shiksha-sopan.org/Activity */
+    .activity-hero-lead {
+      font-size: clamp(1rem, 1.5vw, 1.075rem);
+      color: #334155;
+      max-width: 720px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.75;
+      font-weight: 450;
+      text-align: justify;
+      text-align-last: center;
+      text-shadow: none;
+    }
+
+    /* Ornamental Divider with Traditional Lamp Emblem */
+    .ornamental-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .ornamental-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(2, 132, 199, 0.35), transparent);
+    }
+    .ornamental-emblem {
+      width: 22px;
+      height: 22px;
+      display: inline-block;
+      vertical-align: middle;
+      filter: drop-shadow(0 2px 4px rgba(217, 119, 6, 0.25));
+    }
+
+    /* ==========================================================================
+       5. ACTIVITIES GRID SECTION (EXACT CONTENT PRESERVED)
+       ========================================================================== */
+    .activity-content-section {
+      padding: 2.5rem 0 5rem;
+      background: var(--bg-subtle);
+    }
+
+    .section-eyebrow-center {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .section-eyebrow-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue);
+      display: inline-block;
+      background: var(--sopan-sky-subtle);
+      border: 1px solid #BAE6FD;
+      padding: 0.35rem 1rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.5rem;
+    }
+    .section-main-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.25rem);
+      font-weight: 700;
+      color: var(--sopan-iitk-navy);
+      line-height: 1.25;
+    }
+
+    /* 8 Activities Card Grid */
+    .activity-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .activity-item-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      transition: var(--transition-standard);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    .activity-item-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--sopan-blue);
+      transition: var(--transition-standard);
+    }
+    .activity-item-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: #BAE6FD;
+    }
+    .activity-item-card:hover::before {
+      width: 6px;
+      background: var(--sopan-sky);
+    }
+
+    .activity-item-main {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex: 1;
+    }
+    .activity-letter-badge {
+      width: 46px;
+      height: 46px;
+      background: linear-gradient(135deg, var(--sopan-sky-subtle) 0%, #E0F2FE 100%);
+      border: 1px solid #BAE6FD;
+      color: var(--sopan-navy-light);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+      transition: var(--transition-standard);
+    }
+    .activity-item-card:hover .activity-letter-badge {
+      background: var(--sopan-blue);
+      color: #FFFFFF;
+      border-color: var(--sopan-blue);
+      transform: scale(1.05);
+    }
+
+    .activity-item-text {
+      flex: 1;
+    }
+    .activity-item-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--sopan-iitk-navy);
+      line-height: 1.35;
+      transition: var(--transition-standard);
+    }
+    .activity-item-card:hover .activity-item-title {
+      color: var(--sopan-blue-hover);
+    }
+
+    .activity-item-arrow {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      transition: var(--transition-standard);
+    }
+    .activity-item-card:hover .activity-item-arrow {
+      background: var(--sopan-blue);
+      color: #FFFFFF;
+      border-color: var(--sopan-blue);
+      transform: translateX(4px);
+    }
+
+    /* Special Highlight Card for Sopan Science Cell or SASK */
+    .activity-item-card.card-featured {
+      background: linear-gradient(145deg, #FFFFFF 0%, #F0F9FF 100%);
+      border-color: #BAE6FD;
+    }
+
+    /* ==========================================================================
+       6. SITE FOOTER (MATCHING EXACT ORIGINAL CONTENT)
+       ========================================================================== */
+    .site-footer {
+      background: #0B192C;
+      color: #E2E8F0;
+      padding: 4.5rem 0 2rem;
+      margin-top: auto;
+    }
+    .footer-pre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.4fr;
+      gap: 3rem;
+      margin-bottom: 3.5rem;
+      align-items: start;
+    }
+    .footer-brand-title {
+      font-family: 'Mukta', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.5rem;
+    }
+    .footer-brand-desc {
+      font-size: 0.88rem;
+      color: #94A3B8;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .footer-bigtech-img {
+      max-height: 52px;
+      width: auto;
+      background: #FFFFFF;
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+    }
+    .footer-col-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.02em;
+    }
+    .important-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .imp-link-anchor {
+      font-size: 0.88rem;
+      color: #94A3B8;
+      transition: var(--transition-standard);
+      display: inline-flex;
+      align-items: center;
+    }
+    .imp-link-anchor:hover {
+      color: var(--sopan-sky);
+      transform: translateX(4px);
+    }
+    .map-frame-box {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .footer-bottom-bar {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.825rem;
+      color: #64748B;
+    }
+
+    /* ==========================================================================
+       7. RESPONSIVE DESIGN
+       ========================================================================== */
+    @media (max-width: 900px) {
+      .activity-cards-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-pre-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .map-frame-box {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-iitk-badge { display: none; }
+      .activity-hero-section {
+        width: calc(100% - 1.5rem);
+        margin: 1.25rem auto 1rem;
+        padding: 2.25rem 1.25rem 2rem;
+        border-radius: 16px;
+      }
+      .activity-hero-lead {
+        text-align: left;
+        text-align-last: left;
+      }
+      .activity-item-card {
+        padding: 1.5rem 1.25rem;
+      }
+      .footer-pre-grid {
+        grid-template-columns: 1fr;
+      }
+      .map-frame-box {
+        grid-column: span 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  
+    /* Main Brand Header Banner (Uniform Blueprint Grid Theme Matching Home Page) */
+    .header-banner-wrapper {
+      background: #F0F8FF;
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(2, 132, 199, 0.09) 0%, transparent 60%),
+        radial-gradient(circle at 85% 50%, rgba(0, 229, 255, 0.07) 0%, transparent 50%),
+        linear-gradient(to right, rgba(2, 132, 199, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+      border-bottom: 1.5px solid var(--border-subtle, #E2E8F0);
+      padding: 0.95rem 0;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-watermark-formula {
+      position: absolute;
+      top: 18px;
+      right: 18%;
+      transform: rotate(8deg);
+      font-family: 'Outfit', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(2, 132, 199, 0.22);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .header-branding-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-logo-combo {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-emblem-svg {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      transition: transform var(--transition-fast, 0.15s ease);
+    }
+    .brand-logo-combo:hover .brand-emblem-svg {
+      transform: rotate(5deg) scale(1.04);
+    }
+
+    .brand-title-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-main-title {
+      font-size: 1.55rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy, #0B192C);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .brand-main-title span.hindi {
+      font-family: 'Mukta', sans-serif;
+      color: var(--sopan-orange, #EA580C);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-left: 0.35rem;
+    }
+
+    .brand-tagline-sub {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue-dark, #0369A1);
+      margin-top: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-tagline-sub::before {
+      content: none;
+      font-size: 0.75rem;
+    }
+
+    .header-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-toggle-box {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border-subtle, #E2E8F0);
+      border-radius: var(--radius-full, 9999px);
+      padding: 3px;
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-secondary, #475569);
+      border-radius: var(--radius-full, 9999px);
+      cursor: pointer;
+      transition: all var(--transition-fast, 0.15s ease);
+    }
+
+    .lang-btn.active {
+      background: #0284C7;
+      color: #FFFFFF;
+      box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25);
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION BAR (STICKY, UNIFORM PILL ACTIVE INDICATOR)
+       ========================================================================== */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 2px solid var(--border-subtle, #E2E8F0);
+      box-shadow: 0 2px 10px rgba(15, 39, 74, 0.05);
+    }
+
+    .nav-inner-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+
+    .nav-links-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links-menu::-webkit-scrollbar { display: none; }
+
+    .nav-link-btn {
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-secondary, #475569);
+      text-decoration: none;
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm, 8px);
+      transition: all var(--transition-fast, 0.15s ease);
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .nav-link-btn:hover {
+      color: var(--sopan-blue-dark, #0369A1);
+      background: rgba(2, 132, 199, 0.08);
+    }
+
+    .nav-link-btn.active {
+      color: #0369A1 !important;
+      background: #E0F2FE !important;
+      font-weight: 800 !important;
+    }
+
+    .btn-join-us {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--sopan-orange, #EA580C);
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.55rem 1.35rem;
+      border-radius: var(--radius-full, 9999px);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.28);
+      transition: all var(--transition-standard, 0.2s ease);
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .btn-join-us:hover {
+      background: var(--sopan-orange-hover, #C2410C);
+      transform: translateY(-1px);
+      color: #FFFFFF;
+    }
+
+  
+    .brand-emblem-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(11, 25, 44, 0.12);
+      border: 1.5px solid rgba(234, 88, 12, 0.35);
+      transition: transform var(--transition-fast, 0.15s ease);
+      flex-shrink: 0;
+    }
+    .brand-logo-combo:hover .brand-emblem-img {
+      transform: scale(1.05);
+    }
+    .ornamental-dot {
+      color: #0284C7;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- =======================================================================
+       1. TOP TICKER WITH TRADITIONAL LAMP ICON
+       ======================================================================= -->
+  <aside class="top-motto-bar" aria-label="Motto Bar">
+    <div class="container motto-content" data-i18n="mottoText">
+      <span>अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें</span>
+    </div>
+  </aside>
+
+  <!-- =======================================================================
+       2. HEADER BRANDING & LANGUAGE SWITCHER (BLUEPRINT GRAPH & WATERMARK)
+       ======================================================================= -->
+  <header class="header-banner-wrapper">
+    <div class="header-watermark-formula" aria-hidden="true">∇ × E = -∂B/∂t</div>
+    <div class="container header-branding-flex">
+      <a href="index.html" class="brand-logo-combo" aria-label="Shiksha Sopan Home">
+        <img src="images/shiksha-sopan-logo.jpg" alt="Shiksha Sopan Emblem" class="brand-emblem-img" />
+
+        <div class="brand-title-box">
+          <div class="brand-main-title">
+            SHIKSHA SOPAN <span class="hindi">शिक्षा सोपान</span>
+          </div>
+          <div class="brand-tagline-sub" data-i18n="headerSub">
+            AN EDUCATIONAL & SOCIAL INITIATIVE BY IIT KANPUR COMMUNITY
+          </div>
+        </div>
+      </a>
+
+      <div class="header-actions-group">
+        <div class="lang-toggle-box" role="radiogroup" aria-label="Language Selector">
+          <button type="button" class="lang-btn active" id="btnLangEn" data-lang="en" onclick="setLanguage('en')">English</button>
+          <button type="button" class="lang-btn" id="btnLangHi" data-lang="hi" onclick="setLanguage('hi')">हिन्दी</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       3. NAVIGATION BAR (EXACT UNIFIED LAYOUT & ACTIVE INDICATOR)
+       ======================================================================= -->
+  <nav class="navbar-sticky" aria-label="Main Navigation">
+    <div class="container nav-inner-row">
+      <ul class="nav-links-menu">
+        <li><a href="index.html" class="nav-link-btn " data-i18n="navHome">Home</a></li>
+        <li><a href="executive-committee.html" class="nav-link-btn " data-i18n="navEC">Executive Committee</a></li>
+        <li><a href="activity.html" class="nav-link-btn active" data-i18n="navActivity">Activity</a></li>
+        <li><a href="contribution.html" class="nav-link-btn " data-i18n="navContribution">Contribution</a></li>
+        <li><a href="achievements.html" class="nav-link-btn " data-i18n="navAchievements">Achivements</a></li>
+        <li><a href="experiments.html" class="nav-link-btn " data-i18n="navExperiments">Experiments</a></li>
+        <li><a href="about-us.html" class="nav-link-btn " data-i18n="navAbout">About Us</a></li>
+        <li><a href="contact-us.html" class="nav-link-btn " data-i18n="navContact">Contact Us</a></li>
+      </ul>
+
+      <a href="https://www.shiksha-sopan.org/join" class="btn-join-us" target="_blank" rel="noopener noreferrer" data-i18n="joinBtn">
+        Join Us →
+      </a>
+    </div>
+  </nav>
+
+    <main>
+    <!-- =======================================================================
+         4. HERO SECTION: CONTAINED LIGHT STEM BANNER (EXACT UI SPEC)
+         ======================================================================= -->
+    <section class="activity-hero-section" aria-labelledby="activityHeroHeading">
+      <div class="activity-hero-content">
+        <div class="hero-eyebrow-pill">
+          <span data-i18n="heroPill">SHIKSHA SOPAN • INITIATIVES</span>
+        </div>
+
+        <h1 class="activity-hero-title" id="activityHeroHeading">
+          <span data-i18n="heroTitle">Activity</span>
+          <span class="hindi-sub" data-i18n="heroTitleHi">गतिविधियां</span>
+        </h1>
+
+        <!-- EXACT ORIGINAL TEXT FROM shiksha-sopan.org/Activity -->
+        <p class="activity-hero-lead" data-i18n="heroLead">
+          We run various activities in and around IITK campus. The daily activities include evening learning centers and an informal education center. Currently, we have two evening learning centers. One center runs at old SAC in IITK campus, and another one in a nearby village - Barasirohi. The informal education center, which we call Sopan Anaupchaarik Shikshan Kendra (SASK), also runs in Barasirohi village in the normal school hours in morning. The details of each activity are give below.
+        </p>
+
+        <div class="ornamental-divider" aria-hidden="true">
+          <span class="ornamental-line"></span>
+          <span class="ornamental-dot">•</span>
+          <span class="ornamental-line"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. ACTIVITIES DIRECTORY (EXACT ORIGINAL LIST WITH MODERN CARD UI)
+         ======================================================================= -->
+    <section class="activity-content-section" aria-labelledby="activitiesListHeading">
+      <div class="container">
+        <div class="section-eyebrow-center">
+          <span class="section-eyebrow-tag" data-i18n="sectionTag">EDUCATIONAL & SOCIAL INITIATIVES</span>
+          <h2 class="section-main-heading" id="activitiesListHeading" data-i18n="sectionHeading">
+            Our Key Activities
+          </h2>
+        </div>
+
+        <!-- 8 Official Activities Cards -->
+        <div class="activity-cards-grid">
+          
+          <!-- (A) Sopan Anaupcharik Shikshan Kendra -->
+          <a href="sopan-anaupcharik-shikshan-kendra.html" class="activity-item-card card-featured">
+            <div class="activity-item-main">
+              <div class="activity-letter-badge">A</div>
+              <div class="activity-item-text">
+                <h3 class="activity-item-title" data-i18n="actA"><b>(A)</b> Sopan Anaupcharik Shikshan Kendra</h3>
+                <p style="font-size: 0.8125rem; color: #64748B; margin-top: 0.25rem;">Informal morning primary school in Barasirohi village</p>
+              </div>
+            </div>
+            <div class="activity-item-arrow" aria-hidden="true">→</div>
+          </a>
+
+          <!-- (B) Evening Learning Centers -->
+          <a href="evening-learning-centers.html" class="activity-item-card card-featured">
+            <div class="activity-item-main">
+              <div class="activity-letter-badge">B</div>
+              <div class="activity-item-text">
+                <h3 class="activity-item-title" data-i18n="actB"><b>(B)</b> Evening Learning Centers</h3>
+                <p style="font-size: 0.8125rem; color: #64748B; margin-top: 0.25rem;">After-school mentoring at Old SAC (IITK) & Barasirohi</p>
+              </div>
+            </div>
+            <div class="activity-item-arrow" aria-hidden="true">→</div>
+          </a>
+
+          <!-- (C) Sopan Science Cell -->
+          <a href="sopan-science-cell.html" class="activity-item-card">
+            <div class="activity-item-main">
+              <div class="activity-letter-badge">C</div>
+              <div class="activity-item-text">
+                <h3 class="activity-item-title" data-i18n="actC"><b>(C)</b> Sopan Science Cell</h3>
+                <p style="font-size: 0.8125rem; color: #64748B; margin-top: 0.25rem;">Low-cost physics experiments & rural school outreach</p>
+              </div>
+            </div>
+            <div class="activity-item-arrow" aria-hidden="true">→</div>
+          </a>
+
+          <!-- (D) Dr. V. N. Kulkarni Merit Scholarship Examination -->
+          <a href="v-n-kulkarni-merit-scholarship.html" class="activity-item-card">
+            <div class="activity-item-main">
+              <div class="activity-letter-badge">D</div>
+              <div class="activity-item-text">
+                <h3 class="activity-item-title" data-i18n="actD"><b>(D)</b> Dr. V. N. Kulkarni Merit Scholarship Examination</h3>
+                <p style="font-size: 0.8125rem; color: #64748B; margin-top: 0.25rem;">Merit-cum-means scholarships for classes 5, 8 & 10</p>
+              </div>
+            </div>
+            <div class="activity-item-arrow" aria-hidden="true">→</div>
+          </a>
+
+          <!-- (E) Higher Education Cell -->
+          <a href="higher-education-cell.html" class="activity-item-card">
+            <div class="activity-item-main">
+              <div class="activity-letter-badge">E</div>
+              <div class="activity-item-text">
+                <h3 class="activity-item-title" data-i18n="actE"><b>(E)</b> Higher Education Cell</h3>
+                <p style="font-size: 0.8125rem; color: #64748B; margin-top: 0.25rem;">SGPV collegiate grants & professional degree funding</p>
+              </div>
+            </div>
+            <div class="activity-item-arrow" aria-hidden="true">→</div>
+          </a>
+
+          <!-- (F) Sushree Shashikala Joshi Memorial Sopan Library -->
+          <a href="sushree-shashikala-joshi-memorial-sopan-library.html" class="activity-item-card">
+            <div class="activity-item-main">
+              <div class="activity-letter-badge">F</div>
+              <div class="activity-item-text">
+                <h3 class="activity-item-title" data-i18n="actF"><b>(F)</b> Sushree Shashikala Joshi Memorial Sopan Library</h3>
+                <p style="font-size: 0.8125rem; color: #64748B; margin-top: 0.25rem;">Community library at Type-1 center on IITK campus</p>
+              </div>
+            </div>
+            <div class="activity-item-arrow" aria-hidden="true">→</div>
+          </a>
+
+          <!-- (G) Function -->
+          <a href="functions.html" class="activity-item-card">
+            <div class="activity-item-main">
+              <div class="activity-letter-badge">G</div>
+              <div class="activity-item-text">
+                <h3 class="activity-item-title" data-i18n="actG"><b>(G)</b> Function</h3>
+                <p style="font-size: 0.8125rem; color: #64748B; margin-top: 0.25rem;">Annual Function, 15th Aug, 2nd Oct & cultural rallies</p>
+              </div>
+            </div>
+            <div class="activity-item-arrow" aria-hidden="true">→</div>
+          </a>
+
+          <!-- (H) Finance Management -->
+          <a href="finance-management.html" class="activity-item-card">
+            <div class="activity-item-main">
+              <div class="activity-letter-badge">H</div>
+              <div class="activity-item-text">
+                <h3 class="activity-item-title" data-i18n="actH"><b>(H)</b> Finance Management</h3>
+                <p style="font-size: 0.8125rem; color: #64748B; margin-top: 0.25rem;">Zero overhead, 80G tax benefits & transparent auditing</p>
+              </div>
+            </div>
+            <div class="activity-item-arrow" aria-hidden="true">→</div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       6. SITE FOOTER (EXACT LINKS & MAP FROM ORIGINAL)
+       ======================================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-pre-grid">
+        <!-- Col 1: BigTech Partner & Info -->
+        <div>
+          <div class="footer-brand-title">शिक्षा सोपान | SHIKSHA SOPAN</div>
+          <p class="footer-brand-desc">
+            An Educational & Social Initiative by IIT Kanpur Community imparting value-based education since 2001.
+          </p>
+          <div style="margin-top: 1rem;">
+            <img src="https://www.shiksha-sopan.org/Images/bigTech.png" alt="BigTech Partner Support" class="footer-bigtech-img" onerror="this.style.display='none'" />
+          </div>
+        </div>
+
+        <!-- Col 2: Important Links (EXACT from Activity page) -->
+        <div>
+          <h4 class="footer-col-title" data-i18n="impLinksHead">Important Links</h4>
+          <ul class="important-links-list">
+            <li><a href="index.html" class="imp-link-anchor">▸ Home</a></li>
+            <li><a href="executive-committee.html" class="imp-link-anchor">▸ Executive Committee</a></li>
+            <li><a href="activity.html" class="imp-link-anchor" style="font-weight:700; color:var(--sopan-sky);">▸ Activity</a></li>
+            <li><a href="contribution.html" class="imp-link-anchor">▸ Contribution</a></li>
+            <li><a href="achievements.html" class="imp-link-anchor">▸ Achivements</a></li>
+            <li><a href="experiments.html" class="imp-link-anchor">▸ Experiments</a></li>
+            <li><a href="about-us.html" class="imp-link-anchor">▸ About Us</a></li>
+            <li><a href="contact-us.html" class="imp-link-anchor">▸ Contact Us</a></li>
+            <li><a href="https://www.shiksha-sopan.org/Internship" class="imp-link-anchor">▸ Internship</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Google Maps Embed (Exact from Activity page) -->
+        <div class="map-frame-box">
+          <iframe 
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJH3A1ceM2nDkRS9JBtXLgq6A" 
+            width="100%" 
+            height="200" 
+            style="border:0; display:block;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            title="Shiksha Sopan Location Map">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          <span>Copyright© 2024 shiksha-sopan.org</span>
+        </div>
+        <div>
+          Official Portal: <a href="https://www.shiksha-sopan.org/" target="_blank" rel="noopener noreferrer" style="color:var(--sopan-sky);">shiksha-sopan.org</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       7. JAVASCRIPT: BILINGUAL ENGINE
+       ======================================================================= -->
+  <script>
+    const activityLangDict = {
+      en: {
+        mottoText: "अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें",
+        headerSub: "An Educational & Social Initiative by IIT Kanpur Community",
+        navHome: "Home",
+        navEC: "Executive Committee",
+        navActivity: "Activity",
+        navContribution: "Contribution",
+        navAchievements: "Achivements",
+        navExperiments: "Experiments",
+        navAbout: "About Us",
+        navContact: "Contact Us",
+        joinBtn: "Join Us →",
+        joinCommunityText: "Join the Community",
+        joinUsLink: "Join Us",
+        heroPill: "SHIKSHA SOPAN • INITIATIVES",
+        heroTitle: "Activity",
+        heroTitleHi: "गतिविधियां",
+        heroLead: "We run various activities in and around IITK campus. The daily activities include evening learning centers and an informal education center. Currently, we have two evening learning centers. One center runs at old SAC in IITK campus, and another one in a nearby village - Barasirohi. The informal education center, which we call Sopan Anaupchaarik Shikshan Kendra (SASK), also runs in Barasirohi village in the normal school hours in morning. The details of each activity are give below.",
+        sectionTag: "EDUCATIONAL & SOCIAL INITIATIVES",
+        sectionHeading: "Our Key Activities",
+        actA: "<b>(A)</b> Sopan Anaupcharik Shikshan Kendra",
+        actB: "<b>(B)</b> Evening Learning Centers",
+        actC: "<b>(C)</b> Sopan Science Cell",
+        actD: "<b>(D)</b> Dr. V. N. Kulkarni Merit Scholarship Examination",
+        actE: "<b>(E)</b> Higher Education Cell",
+        actF: "<b>(F)</b> Sushree Shashikala Joshi Memorial Sopan Library",
+        actG: "<b>(G)</b> Function",
+        actH: "<b>(H)</b> Finance Management",
+        impLinksHead: "Important Links"
+      },
+      hi: {
+        mottoText: "अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें",
+        headerSub: "आईआईटी कानपुर समुदाय द्वारा संचालित शैक्षिक व सामाजिक पहल",
+        navHome: "होम",
+        navEC: "कार्यकारिणी समिति",
+        navActivity: "गतिविधियां",
+        navContribution: "सहयोग",
+        navAchievements: "उपलब्धियां",
+        navExperiments: "प्रयोग",
+        navAbout: "हमारे बारे में",
+        navContact: "संपर्क करें",
+        joinBtn: "जुड़ें →",
+        joinCommunityText: "समुदाय से जुड़ें",
+        joinUsLink: "जुड़ें",
+        heroPill: "शिक्षा सोपान • सेवा प्रकल्प",
+        heroTitle: "गतिविधियां",
+        heroTitleHi: "Activity",
+        heroLead: "हम आईआईटीके परिसर और उसके आसपास विभिन्न गतिविधियां चलाते हैं। दैनिक गतिविधियों में सांध्य शिक्षण केंद्र और एक अनौपचारिक शिक्षा केंद्र शामिल हैं। वर्तमान में, हमारे पास दो सांध्य शिक्षण केंद्र हैं — एक केंद्र आईआईटीके परिसर में पुराने एसएसी में चलता है, और दूसरा पास के गांव बरसिरोही में। अनौपचारिक शिक्षा केंद्र, जिसे हम सोपान अनौपचारिक शिक्षण केंद्र (SASK) कहते हैं, वह भी बरसिरोही गांव में सुबह सामान्य स्कूल घंटों में चलता है। प्रत्येक गतिविधि का विवरण नीचे दिया गया है।",
+        sectionTag: "शैक्षिक एवं सामाजिक सेवा प्रकल्प",
+        sectionHeading: "हमारी प्रमुख गतिविधियां",
+        actA: "<b>(क)</b> सोपान अनौपचारिक शिक्षण केंद्र (SASK)",
+        actB: "<b>(ख)</b> सांध्यकालीन शिक्षण केंद्र",
+        actC: "<b>(ग)</b> सोपान विज्ञान प्रकोष्ठ",
+        actD: "<b>(घ)</b> डॉ. व्ही. एन. कुलकर्णी मेधा छात्रवृत्ति परीक्षा",
+        actE: "<b>(ङ)</b> उच्च शिक्षा प्रकोष्ठ",
+        actF: "<b>(च)</b> सुश्री शशिकला जोशी स्मृति सोपान पुस्तकालय",
+        actG: "<b>(छ)</b> उत्सव एवं समारोह (Function)",
+        actH: "<b>(ज)</b> वित्त प्रबंधन (Finance Management)",
+        impLinksHead: "महत्वपूर्ण लिंक्स (Important Links)"
+      }
+    };
+
+    function setActivityLanguage(lang) {
+      const dict = activityLangDict[lang] || activityLangDict.en;
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+      document.documentElement.lang = lang;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.lang-btn').forEach(b => {
+        b.addEventListener('click', () => setActivityLanguage(b.dataset.lang));
+      });
+    });
+  </script>
+</body>
+</html>

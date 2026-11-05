@@ -1,0 +1,866 @@
+import os
+import sys
+
+BASE_DIR = "/Users/radha/.gemini/antigravity/scratch/shiksha-sopan-redesign"
+
+# Common Header & Nav HTML (100% unified with home/activity)
+HEADER_AND_NAV = """  <aside class="top-motto-bar" aria-label="Motto Bar">
+    <div class="container motto-content" data-i18n="mottoText">
+      <span>अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें</span>
+    </div>
+  </aside>
+
+  <!-- =======================================================================
+       HEADER BRANDING & LANGUAGE SWITCHER
+       ======================================================================= -->
+  <header class="header-banner-wrapper">
+    <div class="header-watermark-formula" aria-hidden="true">∇ × E = -∂B/∂t</div>
+    <div class="container header-branding-flex">
+      <a href="index.html" class="brand-logo-combo" aria-label="Shiksha Sopan Home">
+        <img src="images/shiksha-sopan-logo.jpg" alt="Shiksha Sopan Emblem" class="brand-emblem-img" />
+
+        <div class="brand-title-box">
+          <div class="brand-main-title">
+            SHIKSHA SOPAN <span class="hindi">शिक्षा सोपान</span>
+          </div>
+          <div class="brand-tagline-sub" data-i18n="headerSub">
+            AN EDUCATIONAL & SOCIAL INITIATIVE BY IIT KANPUR COMMUNITY
+          </div>
+        </div>
+      </a>
+
+      <div class="header-actions-group">
+        <div class="lang-toggle-box" role="radiogroup" aria-label="Language Selector">
+          <button type="button" class="lang-btn active" id="btnLangEn" data-lang="en" onclick="setLanguage('en')">English</button>
+          <button type="button" class="lang-btn" id="btnLangHi" data-lang="hi" onclick="setLanguage('hi')">हिन्दी</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       STICKY NAVIGATION BAR
+       ======================================================================= -->
+  <nav class="navbar-sticky" aria-label="Main Navigation">
+    <div class="container nav-inner-row">
+      <ul class="nav-links-menu">
+        <li><a href="index.html" class="nav-link-btn" data-i18n="navHome">Home</a></li>
+        <li><a href="executive-committee.html" class="nav-link-btn" data-i18n="navEC">Executive Committee</a></li>
+        <li><a href="activity.html" class="nav-link-btn active" data-i18n="navActivity">Activity</a></li>
+        <li><a href="contribution.html" class="nav-link-btn" data-i18n="navContribution">Contribution</a></li>
+        <li><a href="achievements.html" class="nav-link-btn" data-i18n="navAchievements">Achivements</a></li>
+        <li><a href="experiments.html" class="nav-link-btn" data-i18n="navExperiments">Experiments</a></li>
+        <li><a href="about-us.html" class="nav-link-btn" data-i18n="navAbout">About Us</a></li>
+        <li><a href="contact-us.html" class="nav-link-btn" data-i18n="navContact">Contact Us</a></li>
+      </ul>
+
+      <a href="https://www.shiksha-sopan.org/join" class="btn-join-us" target="_blank" rel="noopener noreferrer" data-i18n="joinBtn">
+        Join Us →
+      </a>
+    </div>
+  </nav>"""
+
+FOOTER_HTML = """  <!-- =======================================================================
+       SITE FOOTER
+       ======================================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-pre-grid">
+        <!-- Col 1: Brand & Info -->
+        <div>
+          <div class="footer-brand-title">शिक्षा सोपान | SHIKSHA SOPAN</div>
+          <p class="footer-brand-desc">
+            An Educational & Social Initiative by IIT Kanpur Community imparting value-based education since 2001.
+          </p>
+          <div style="margin-top: 1rem;">
+            <img src="https://www.shiksha-sopan.org/Images/bigTech.png" alt="BigTech Partner Support" class="footer-bigtech-img" onerror="this.style.display='none'" />
+          </div>
+        </div>
+
+        <!-- Col 2: Important Links -->
+        <div>
+          <h4 class="footer-col-title" data-i18n="impLinksHead">Important Links</h4>
+          <ul class="important-links-list">
+            <li><a href="index.html" class="imp-link-anchor">▸ Home</a></li>
+            <li><a href="executive-committee.html" class="imp-link-anchor">▸ Executive Committee</a></li>
+            <li><a href="activity.html" class="imp-link-anchor" style="font-weight:700; color:var(--sopan-sky);">▸ Activity</a></li>
+            <li><a href="contribution.html" class="imp-link-anchor">▸ Contribution</a></li>
+            <li><a href="achievements.html" class="imp-link-anchor">▸ Achivements</a></li>
+            <li><a href="experiments.html" class="imp-link-anchor">▸ Experiments</a></li>
+            <li><a href="about-us.html" class="imp-link-anchor">▸ About Us</a></li>
+            <li><a href="contact-us.html" class="imp-link-anchor">▸ Contact Us</a></li>
+            <li><a href="https://www.shiksha-sopan.org/Internship" class="imp-link-anchor">▸ Internship</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Google Maps Embed -->
+        <div class="map-frame-box">
+          <iframe 
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJH3A1ceM2nDkRS9JBtXLgq6A" 
+            title="Sopan Ashram Location"
+            allowfullscreen="" 
+            loading="lazy"
+            aria-label="Interactive map showing Sopan Ashram location">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="footer-bottom-line">
+        <p>Copyright© 2024 shiksha-sopan.org • All Rights Reserved</p>
+        <p style="font-size: 0.75rem; color: #94A3B8; margin-top: 0.25rem;">
+          An Initiative of the IIT Kanpur Community for Education, Values, and Self-Reliance
+        </p>
+      </div>
+    </div>
+  </footer>"""
+
+def get_shared_head(title, description):
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>{title} — Shiksha Sopan | शिक्षा सोपान</title>
+  <meta name="description" content="{description}" />
+  <link rel="icon" type="image/jpeg" href="images/shiksha-sopan-logo.jpg" />
+
+  <!-- Typography: Plus Jakarta Sans, Playfair Display, and Mukta -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. ROOT DESIGN SYSTEM & CSS VARIABLES
+       ========================================================================== */
+    :root {{
+      --sopan-iitk-navy: #0B192C;
+      --sopan-navy-card: #0F274A;
+      --sopan-navy-light: #1E3A8A;
+      --sopan-blue: #0284C7;
+      --sopan-blue-light: #E0F2FE;
+      --sopan-cyan: #06B6D4;
+      --sopan-sky: #0369A1;
+      --sopan-orange: #EA580C;
+      --sopan-orange-light: #FFEDD5;
+      --sopan-orange-hover: #C2410C;
+      --sopan-gold: #D97706;
+
+      --bg-light: #F8FAFC;
+      --bg-white: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-blueprint: #F0F8FF;
+
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #64748B;
+      --text-inverse: #FFFFFF;
+
+      --border-subtle: #E2E8F0;
+      --border-accent: rgba(2, 132, 199, 0.25);
+      --border-blueprint: rgba(2, 132, 199, 0.12);
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 10px 25px -3px rgba(15, 23, 42, 0.1);
+      --shadow-blueprint: 0 4px 20px rgba(2, 132, 199, 0.08);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+
+      --transition-fast: 0.15s ease;
+      --transition-normal: 0.25s ease;
+    }}
+
+    *, *::before, *::after {{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }}
+
+    body {{
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }}
+
+    a {{
+      color: inherit;
+      text-decoration: none;
+    }}
+
+    .container {{
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }}
+
+    /* Top Motto Bar */
+    .top-motto-bar {{
+      background: #0B192C;
+      color: #F8FAFC;
+      padding: 0.45rem 1rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-family: 'Mukta', 'Plus Jakarta Sans', sans-serif;
+    }}
+    .motto-content {{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }}
+
+    /* Header Banner Wrapper */
+    .header-banner-wrapper {{
+      position: relative;
+      background: #F0F8FF;
+      background-image: 
+        radial-gradient(circle at 1px 1px, rgba(2, 132, 199, 0.1) 1px, transparent 0),
+        linear-gradient(to right, rgba(2, 132, 199, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 132, 199, 0.05) 1px, transparent 1px);
+      background-size: 32px 32px, 16px 16px, 16px 16px;
+      border-bottom: 1px solid #BAE6FD;
+      padding: 1.25rem 0;
+      overflow: hidden;
+    }}
+    .header-watermark-formula {{
+      position: absolute;
+      right: 4%;
+      bottom: -10px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 800;
+      font-style: italic;
+      color: rgba(2, 132, 199, 0.08);
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+    }}
+    .header-branding-flex {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }}
+    .brand-logo-combo {{
+      display: flex;
+      align-items: center;
+      gap: 1.125rem;
+      text-decoration: none;
+    }}
+    .brand-emblem-img {{
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(11, 25, 44, 0.12);
+      border: 1.5px solid rgba(234, 88, 12, 0.35);
+      transition: transform var(--transition-fast);
+      flex-shrink: 0;
+    }}
+    .brand-emblem-img:hover {{
+      transform: scale(1.05);
+    }}
+    .brand-title-box {{
+      display: flex;
+      flex-direction: column;
+    }}
+    .brand-main-title {{
+      font-size: 1.375rem;
+      font-weight: 850;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }}
+    .brand-main-title .hindi {{
+      font-family: 'Mukta', sans-serif;
+      font-weight: 700;
+      color: var(--sopan-orange);
+      margin-left: 0.35rem;
+      font-size: 1.25rem;
+    }}
+    .brand-tagline-sub {{
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: #0284C7;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.15rem;
+    }}
+
+    /* Language Switcher */
+    .header-actions-group {{
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }}
+    .lang-toggle-box {{
+      display: inline-flex;
+      background: #FFFFFF;
+      padding: 0.25rem;
+      border-radius: var(--radius-full);
+      border: 1px solid #BAE6FD;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+    }}
+    .lang-btn {{
+      padding: 0.35rem 0.85rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-secondary);
+      transition: all var(--transition-fast);
+    }}
+    .lang-btn.active {{
+      background: #0284C7;
+      color: #FFFFFF;
+      box-shadow: 0 2px 4px rgba(2, 132, 199, 0.3);
+    }}
+
+    /* Sticky Navbar */
+    .navbar-sticky {{
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    }}
+    .nav-inner-row {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }}
+    .nav-links-menu {{
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }}
+    .nav-links-menu::-webkit-scrollbar {{
+      display: none;
+    }}
+    .nav-link-btn {{
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #334155;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }}
+    .nav-link-btn:hover {{
+      color: #0284C7;
+      background-color: rgba(2, 132, 199, 0.08);
+    }}
+    .nav-link-btn.active {{
+      color: #0369A1;
+      background-color: #E0F2FE;
+      font-weight: 700;
+    }}
+    .btn-join-us {{
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 1.1rem;
+      background: linear-gradient(135deg, var(--sopan-orange), var(--sopan-orange-hover));
+      color: #FFFFFF;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }}
+    .btn-join-us:hover {{
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.4);
+    }}
+
+    /* Subpage Breadcrumb Bar */
+    .subpage-breadcrumb-bar {{
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.75rem 0;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }}
+    .breadcrumb-inner {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }}
+    .breadcrumb-path {{
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }}
+    .breadcrumb-path a {{
+      color: var(--sopan-sky);
+      font-weight: 600;
+    }}
+    .breadcrumb-path a:hover {{
+      text-decoration: underline;
+    }}
+    .btn-back-activities {{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.75rem;
+      background: #F1F5F9;
+      color: #334155;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      transition: all var(--transition-fast);
+    }}
+    .btn-back-activities:hover {{
+      background: #E2E8F0;
+      color: #0F172A;
+    }}
+
+    /* Subpage Hero */
+    .subpage-hero {{
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 3rem 0 2.5rem;
+      position: relative;
+    }}
+    .hero-badge-pill {{
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.85rem;
+      background: var(--sopan-blue-light);
+      color: var(--sopan-sky);
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }}
+    .subpage-title {{
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 850;
+      color: var(--text-primary);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+    }}
+    .subpage-title .hindi-title {{
+      display: block;
+      font-family: 'Mukta', sans-serif;
+      font-weight: 700;
+      color: var(--sopan-orange);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-top: 0.25rem;
+    }}
+    .subpage-lead {{
+      font-size: 1.125rem;
+      color: var(--text-secondary);
+      max-width: 820px;
+      line-height: 1.7;
+    }}
+
+    /* Key Metrics / Highlights Bar */
+    .metrics-bar-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }}
+    .metric-chip {{
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      transition: all var(--transition-fast);
+    }}
+    .metric-chip:hover {{
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      border-color: #BAE6FD;
+    }}
+    .metric-chip-num {{
+      font-size: 1.875rem;
+      font-weight: 850;
+      color: var(--sopan-sky);
+      line-height: 1.2;
+    }}
+    .metric-chip-label {{
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }}
+
+    /* Main Content Sections */
+    .content-container {{
+      padding: 3rem 0;
+    }}
+
+    .bento-section {{
+      margin-bottom: 3rem;
+    }}
+    .section-eyebrow {{
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-sky);
+      margin-bottom: 0.5rem;
+    }}
+    .section-h2 {{
+      font-size: 1.75rem;
+      font-weight: 850;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }}
+
+    /* Card System */
+    .card-grid-2 {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }}
+    .card-grid-3 {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }}
+
+    .feature-card {{
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }}
+    .feature-card:hover {{
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #BAE6FD;
+    }}
+    .card-icon-pill {{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--sopan-blue-light);
+      color: var(--sopan-sky);
+      font-size: 1.25rem;
+      margin-bottom: 1.25rem;
+      font-weight: 800;
+    }}
+    .card-title {{
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }}
+    .card-desc {{
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 1rem;
+      flex-grow: 1;
+    }}
+    .card-feature-list {{
+      list-style: none;
+      margin-top: 0.75rem;
+    }}
+    .card-feature-list li {{
+      position: relative;
+      padding-left: 1.25rem;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+    }}
+    .card-feature-list li::before {{
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--sopan-orange);
+      font-weight: bold;
+      font-size: 1rem;
+    }}
+
+    /* Timeline / Event Cards */
+    .event-card {{
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2rem;
+      align-items: start;
+    }}
+    @media (max-width: 768px) {{
+      .event-card {{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }}
+    }}
+    .event-date-col {{
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      text-align: center;
+    }}
+    .event-date-title {{
+      font-size: 1.5rem;
+      font-weight: 850;
+      color: var(--sopan-sky);
+      line-height: 1.1;
+    }}
+    .event-date-sub {{
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--sopan-orange);
+      margin-top: 0.35rem;
+    }}
+    .event-main-col h3 {{
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }}
+    .event-main-col p {{
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 0.75rem;
+    }}
+
+    /* Bank Account Box / Finance Special Box */
+    .bank-box {{
+      background: linear-gradient(135deg, #0B192C, #0F274A);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-lg);
+      margin: 2rem 0;
+      position: relative;
+      overflow: hidden;
+    }}
+    .bank-box::after {{
+      content: "80G TAX EXEMPT";
+      position: absolute;
+      right: 2rem;
+      top: 2rem;
+      background: rgba(234, 88, 12, 0.25);
+      border: 1px solid var(--sopan-orange);
+      color: #FFEDD5;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+    }}
+    .bank-box h3 {{
+      font-size: 1.5rem;
+      font-weight: 850;
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+    }}
+    .bank-box p {{
+      color: #94A3B8;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      max-width: 600px;
+    }}
+    .bank-details-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }}
+    .bank-detail-item .label {{
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #38BDF8;
+      margin-bottom: 0.25rem;
+    }}
+    .bank-detail-item .val {{
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      font-family: monospace;
+    }}
+
+    /* Bottom Activity Directory Carousel / Grid */
+    .activity-directory-section {{
+      background: #F1F5F9;
+      border-top: 1px solid var(--border-subtle);
+      padding: 3rem 0;
+    }}
+    .activity-dir-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }}
+    .activity-dir-link {{
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1rem;
+      transition: all var(--transition-fast);
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--text-primary);
+    }}
+    .activity-dir-link:hover {{
+      transform: translateX(3px);
+      border-color: #0284C7;
+      color: #0284C7;
+      box-shadow: var(--shadow-sm);
+    }}
+    .activity-dir-link.current {{
+      background: #E0F2FE;
+      border-color: #BAE6FD;
+      color: #0369A1;
+      font-weight: 700;
+      pointer-events: none;
+    }}
+    .activity-dir-badge {{
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-sm);
+      background: #F1F5F9;
+      color: var(--sopan-sky);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }}
+    .activity-dir-link.current .activity-dir-badge {{
+      background: #0284C7;
+      color: #FFFFFF;
+    }}
+
+    /* Site Footer */
+    .site-footer {{
+      background: #0B192C;
+      color: #F8FAFC;
+      padding: 3.5rem 0 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }}
+    .footer-pre-grid {{
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1.2fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }}
+    @media (max-width: 900px) {{
+      .footer-pre-grid {{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }}
+    }}
+    .footer-brand-title {{
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+    }}
+    .footer-brand-desc {{
+      color: #94A3B8;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }}
+    .footer-bigtech-img {{
+      max-width: 140px;
+      height: auto;
+      border-radius: var(--radius-sm);
+    }}
+    .footer-col-title {{
+      font-size: 0.875rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #38BDF8;
+      margin-bottom: 1rem;
+    }}
+    .important-links-list {{
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }}
+    .imp-link-anchor {{
+      color: #94A3B8;
+      font-size: 0.8125rem;
+      transition: color var(--transition-fast);
+    }}
+    .imp-link-anchor:hover {{
+      color: #FFFFFF;
+    }}
+    .map-frame-box {{
+      width: 100%;
+      height: 180px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }}
+    .map-frame-box iframe {{
+      width: 100%;
+      height: 100%;
+      border: none;
+    }}
+    .footer-bottom-line {{
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8125rem;
+      color: #64748B;
+    }}
+  </style>
+</head>
+<body>
+"""
+
+print("Defined shared template elements.")

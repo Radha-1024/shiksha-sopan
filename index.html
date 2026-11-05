@@ -1,0 +1,3330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Shiksha Sopan (शिक्षा सोपान) | Value-Based Hands-On STEM Education | IIT Kanpur</title>
+  <meta name="description" content="Shiksha Sopan is a non-governmental organization (NGO) imparting value-based hands-on science education to economically weaker sections in and around IIT Kanpur. Founded by Prof. H.C. Verma.">
+  <meta name="keywords" content="Shiksha Sopan, IIT Kanpur, H C Verma, NAEST 2025, Sopan Ashram, Science Tour, SGPV, VNK Scholarship, Physics Experiments">
+  <link rel="icon" type="image/jpeg" href="images/shiksha-sopan-logo.jpg" />
+
+  <!-- Typography: Plus Jakarta Sans, Outfit, and Mukta (Devanagari) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. CORE DESIGN TOKENS — SCIENCE THEME WITH RICH BLUE HIGHLIGHTS
+       ========================================================================== */
+    :root {
+      --bg-primary: #F8FBFE;
+      --bg-secondary: #EDF5FD;
+      --bg-tertiary: #E2EEFB;
+      --bg-card: #FFFFFF;
+      --border-subtle: #D8E6F5;
+      --border-light: #C2DAF0;
+      --border-focus: #0284C7;
+      --grid-line-color: rgba(2, 132, 199, 0.08);
+      --grid-cross-color: rgba(2, 132, 199, 0.18);
+
+      --text-primary: #0F274A;
+      --text-secondary: #334E68;
+      --text-muted: #5B7A9C;
+      --text-faint: #829AB1;
+
+      /* Scientific Color Palette: Rich IITK Blue, Electric Cyan, Saffron Orange */
+      --sopan-blue: #0284C7;
+      --sopan-blue-dark: #0369A1;
+      --sopan-blue-light: #E0F2FE;
+      --sopan-blue-vibrant: #2563EB;
+      --sopan-cyan: #00E5FF;
+      --sopan-iitk-navy: #0B2545;
+      --sopan-orange: #EA580C;
+      --sopan-orange-hover: #C2410C;
+      --sopan-orange-light: #FFF7ED;
+      --sopan-amber: #D97706;
+      --sopan-amber-light: #FEF3C7;
+      --sopan-green: #0D9488;
+      --sopan-green-light: #CCFBF1;
+
+      --shadow-sm: 0 1px 3px rgba(15, 39, 74, 0.06), 0 1px 2px rgba(15, 39, 74, 0.03);
+      --shadow-md: 0 4px 16px -2px rgba(15, 39, 74, 0.08), 0 2px 6px -1px rgba(15, 39, 74, 0.04);
+      --shadow-lg: 0 12px 30px -4px rgba(2, 132, 199, 0.12), 0 4px 12px -2px rgba(15, 39, 74, 0.05);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --radius-full: 9999px;
+
+      --transition-fast: 0.15s ease;
+      --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text-primary);
+      background-color: var(--bg-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    :lang(hi), [data-lang="hi"] {
+      font-family: 'Mukta', 'Plus Jakarta Sans', sans-serif;
+    }
+
+    /* Unique Physics Blueprint Grid Background with Crosshairs & Ambient Glow */
+    .blueprint-grid-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background-image: 
+        radial-gradient(circle at 50% 150px, rgba(2, 132, 199, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 90% 800px, rgba(0, 229, 255, 0.07) 0%, transparent 45%),
+        linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+      opacity: 0.95;
+    }
+
+    /* Subtle physics mathematical watermark formulas */
+    .physics-watermark {
+      position: absolute;
+      font-family: 'Outfit', monospace;
+      font-size: 0.85rem;
+      color: rgba(2, 132, 199, 0.15);
+      font-weight: 700;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+    .wm-1 { top: 120px; right: 5%; transform: rotate(12deg); }
+    .wm-2 { top: 620px; left: 3%; transform: rotate(-8deg); }
+    .wm-3 { top: 1400px; right: 4%; transform: rotate(5deg); }
+    .wm-4 { top: 2200px; left: 4%; transform: rotate(-10deg); }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ==========================================================================
+       2. TOP TICKER & HEADER BRANDING
+       ========================================================================== */
+    .top-motto-bar {
+      background: linear-gradient(90deg, #F0F8FF 0%, #FFFFFF 50%, #F0F8FF 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.45rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 51;
+    }
+
+    .motto-content {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      color: var(--sopan-iitk-navy);
+      font-family: 'Mukta', sans-serif;
+      font-size: 1.1rem;
+    }
+
+    
+
+    /* Main Brand Header Banner */
+    .header-banner-wrapper {
+      background: #FFFFFF;
+      border-bottom: 1.5px solid var(--border-subtle);
+      padding: 0.95rem 0;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.04);
+    }
+
+    .header-branding-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo-combo {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-emblem-svg {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      transition: transform var(--transition-fast);
+    }
+    .brand-logo-combo:hover .brand-emblem-svg {
+      transform: rotate(5deg) scale(1.04);
+    }
+
+    .brand-title-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-main-title {
+      font-size: 1.55rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .brand-main-title span.hindi {
+      font-family: 'Mukta', sans-serif;
+      color: var(--sopan-orange);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-left: 0.35rem;
+    }
+
+    .brand-tagline-sub {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue-dark);
+      margin-top: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-tagline-sub::before {
+      content: none;
+      font-size: 0.75rem;
+    }
+
+    .header-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-toggle-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      padding: 3px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .lang-btn.active {
+      background: #FFFFFF;
+      color: var(--sopan-blue-dark);
+      box-shadow: 0 1px 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION BAR (ALL 8 ORIGINAL LINKS PRESERVED)
+       ========================================================================== */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 2px solid var(--border-subtle);
+      box-shadow: 0 2px 10px rgba(15, 39, 74, 0.05);
+    }
+
+    .nav-inner-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+
+    .nav-links-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links-menu::-webkit-scrollbar { display: none; }
+
+    .nav-link-btn {
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .nav-link-btn:hover, .nav-link-btn.active {
+      color: var(--sopan-blue-dark);
+      background: var(--sopan-blue-light);
+    }
+
+    /* Join the Community Strip */
+    .join-community-strip {
+      background: linear-gradient(90deg, #EFF6FF 0%, #FEF3C7 100%);
+      border-bottom: 1px solid #BFDBFE;
+      padding: 0.65rem 0;
+    }
+
+    .join-strip-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .join-strip-text {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1E3A8A;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-join-us {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--sopan-orange);
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.4rem 1.15rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.3);
+      transition: all var(--transition-fast);
+    }
+
+    .btn-join-us:hover {
+      background: var(--sopan-orange-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.4);
+    }
+
+    /* ==========================================================================
+       4. FULL-SCREEN HERO SECTION WITH TRANSPARENT SCIENTIFIC COLOR OVERLAY
+       ========================================================================== */
+    .hero-fullscreen {
+      position: relative;
+      min-height: calc(100vh - 80px);
+      min-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 5rem 1.5rem 3.5rem;
+      background-color: #0284C7;
+      /* Vibrant Sky Blue Transparency Overlay with physics students experiment background */
+      background-image: 
+        radial-gradient(ellipse at 50% 45%, rgba(14, 165, 233, 0.45) 0%, rgba(2, 132, 199, 0.72) 75%, rgba(3, 105, 161, 0.88) 100%),
+        linear-gradient(135deg, rgba(56, 189, 248, 0.55) 0%, rgba(14, 165, 233, 0.65) 50%, rgba(2, 132, 199, 0.80) 100%),
+        url('images/gallery/gallery_5_physics_demonstration.jpg'),
+        url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=2000&q=80'),
+        url('https://www.shiksha-sopan.org/Images/slider/slide1.webp');
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      color: #FFFFFF;
+      overflow: hidden;
+      box-shadow: inset 0 -24px 48px rgba(3, 105, 161, 0.6);
+    }
+
+    /* Subtle blueprint coordinate grid and glow over the background */
+    .hero-fullscreen::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 18% 25%, rgba(255, 255, 255, 0.25) 0%, transparent 45%),
+        radial-gradient(circle at 82% 75%, rgba(254, 240, 138, 0.20) 0%, transparent 45%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 1.25rem;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1.5px solid rgba(255, 255, 255, 0.50);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: var(--radius-full);
+      font-size: 0.825rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 18px rgba(2, 132, 199, 0.35);
+    }
+
+    .hero-headline-title {
+      font-size: clamp(2.2rem, 5.2vw, 4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.025em;
+      color: #FFFFFF;
+      margin-bottom: 1.35rem;
+      text-shadow: 0 3px 20px rgba(3, 105, 161, 0.9), 0 2px 8px rgba(11, 25, 44, 0.7);
+    }
+
+    .hero-title-highlight {
+      background: linear-gradient(135deg, #FFFFFF 0%, #E0F2FE 40%, #FEF08A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: none;
+    }
+
+    .hero-lead-text {
+      font-size: clamp(1rem, 1.8vw, 1.25rem);
+      line-height: 1.75;
+      color: #FFFFFF;
+      max-width: 860px;
+      margin: 0 auto 2.25rem;
+      padding: 0.95rem 1.75rem;
+      background: rgba(3, 105, 161, 0.45);
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      text-shadow: 0 1px 4px rgba(3, 105, 161, 0.8);
+      box-shadow: 0 8px 24px rgba(2, 132, 199, 0.25);
+    }
+    .hero-lead-text strong {
+      color: #FEF08A;
+      font-weight: 800;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.15rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #0B192C 0%, #0F274A 100%);
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 0.9rem 2.15rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(11, 25, 44, 0.45);
+      transition: all var(--transition-fast);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn-hero-primary:hover {
+      background: linear-gradient(135deg, #1E3A8A 0%, #0B192C 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 26px rgba(11, 25, 44, 0.6);
+      color: #FFFFFF;
+    }
+
+    .btn-hero-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.22);
+      border: 1.5px solid rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 0.85rem 1.85rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+    .btn-hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.35);
+      border-color: #FFFFFF;
+      transform: translateY(-2px);
+      color: #FFFFFF;
+    }
+
+    .btn-hero-accent {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+      color: #FFFFFF;
+      font-size: 1rem;
+      font-weight: 800;
+      padding: 0.85rem 1.85rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(234, 88, 12, 0.45);
+      transition: all var(--transition-fast);
+    }
+    .btn-hero-accent:hover {
+      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(234, 88, 12, 0.6);
+      color: #FFFFFF;
+    }
+
+    /* Glassmorphic Quick Highlights Bento Bar */
+    .hero-stats-bento {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .hero-stat-card {
+      background: rgba(255, 255, 255, 0.18);
+      border: 1.5px solid rgba(255, 255, 255, 0.40);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: var(--radius-md);
+      padding: 1.15rem 1rem;
+      text-align: center;
+      transition: all var(--transition-fast);
+      box-shadow: 0 4px 16px rgba(3, 105, 161, 0.25);
+    }
+    .hero-stat-card:hover {
+      background: rgba(255, 255, 255, 0.28);
+      border-color: #FFFFFF;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-stat-number {
+      display: block;
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: #FFFFFF;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      font-family: 'Outfit', sans-serif;
+      text-shadow: 0 2px 8px rgba(3, 105, 161, 0.5);
+    }
+
+    .hero-stat-desc {
+      display: block;
+      font-size: 0.78rem;
+      color: #F0F9FF;
+      margin-top: 0.35rem;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    /* Animated Scroll Down Indicator */
+    .hero-scroll-cue {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
+      color: #FFFFFF;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 2.75rem;
+      text-decoration: none;
+      opacity: 0.9;
+      text-shadow: 0 1px 4px rgba(3, 105, 161, 0.8);
+      transition: opacity 0.2s;
+    }
+    .hero-scroll-cue:hover {
+      opacity: 1;
+      color: #FEF08A;
+    }
+
+    .chevron-down-anim {
+      animation: bounceDown 2s infinite ease-in-out;
+    }
+
+    @keyframes bounceDown {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(6px); }
+      60% { transform: translateY(3px); }
+    }
+
+    @media (max-width: 900px) {
+      .hero-stats-bento {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero-fullscreen {
+        padding: 4rem 1.25rem 2.5rem;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn-hero-primary, .btn-hero-secondary, .btn-hero-accent {
+        width: 100%;
+        justify-content: center;
+      }
+      .hero-stats-bento {
+        grid-template-columns: 1fr;
+      }
+      .hero-fullscreen {
+        background-attachment: scroll; /* Mobile Safari fix */
+      }
+    }
+
+    /* ==========================================================================
+       5. INTERACTIVE PHYSICS WORKBENCH & SIDEBAR
+       ========================================================================== */
+    .homepage-main-grid {
+      display: grid;
+      grid-template-columns: 2.3fr 1fr;
+      gap: 1.5rem;
+      margin: 1.75rem 0 2.5rem;
+      align-items: stretch;
+    }
+
+    /* Interactive Physics Demonstration Workbench */
+    .physics-workbench-card {
+      background: #FFFFFF;
+      border: 1.5px solid #BAE6FD;
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: 0 8px 24px -4px rgba(2, 132, 199, 0.12);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .workbench-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 0.85rem;
+    }
+
+    .workbench-title-group h2 {
+      font-size: 1.35rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .workbench-title-group p {
+      font-size: 0.825rem;
+      color: var(--text-secondary);
+      margin-top: 0.15rem;
+    }
+
+    /* Mode Selection Tabs for Physics Students */
+    .physics-modes-pills {
+      display: flex;
+      background: #F0F8FF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      padding: 3px;
+      gap: 0.25rem;
+    }
+
+    .btn-phys-mode {
+      border: none;
+      background: transparent;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .btn-phys-mode.active {
+      background: var(--sopan-blue);
+      color: #FFFFFF;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
+    }
+
+    /* Interactive Canvas Box */
+    .canvas-sim-wrapper {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      background: #F8FBFE;
+      border: 1px solid #D0E4F7;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .canvas-sim-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-image: 
+        linear-gradient(to right, rgba(2, 132, 199, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+      background-size: 20px 20px;
+      pointer-events: none;
+    }
+
+    #physicsHeroCanvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: crosshair;
+    }
+
+    /* Interactive Sliders & Telemetry HUD */
+    .workbench-controls-strip {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      background: #F0F8FF;
+      border: 1px solid #D8EBF9;
+      border-radius: var(--radius-md);
+      padding: 0.75rem 1rem;
+    }
+
+    .hud-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .hud-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--sopan-blue-dark);
+    }
+    .hud-val {
+      font-family: 'Outfit', monospace;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0F274A;
+    }
+
+    .slider-control-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex: 1;
+    }
+    .slider-control-item label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+    .range-phys {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      background: #CBD5E1;
+      border-radius: var(--radius-full);
+      outline: none;
+    }
+    .range-phys::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--sopan-blue);
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(2, 132, 199, 0.5);
+    }
+
+    .btn-sim-reset {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      padding: 0.4rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .btn-sim-reset:hover {
+      border-color: var(--sopan-blue);
+      color: var(--sopan-blue);
+    }
+
+    /* Right Column Sidebar: Applications & Newsletters */
+    .sidebar-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .sidebar-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sidebar-card-header {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--sopan-blue-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-bottom: 0.65rem;
+      border-bottom: 2px solid var(--sopan-blue-light);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .application-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .app-link-item {
+      display: block;
+      padding: 0.6rem 0.85rem;
+      background: #F8FBFE;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 0.825rem;
+      font-weight: 700;
+      color: var(--sopan-iitk-navy);
+      text-decoration: none;
+      line-height: 1.4;
+      transition: all var(--transition-fast);
+    }
+
+    .app-link-item:hover {
+      background: var(--sopan-blue-light);
+      border-color: var(--sopan-blue);
+      color: var(--sopan-blue-dark);
+      transform: translateX(2px);
+    }
+
+    .app-link-item.highlight-report {
+      background: #FEF3C7;
+      border-color: #FDE68A;
+      color: #92400E;
+    }
+    .app-link-item.highlight-report:hover {
+      background: #FDE68A;
+      color: #78350F;
+    }
+
+    .newsletter-previews-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-top: 0.65rem;
+    }
+
+    .newsletter-thumb-card {
+      background: #F8FBFE;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.6rem;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: all var(--transition-fast);
+    }
+    .newsletter-thumb-card:hover {
+      border-color: var(--sopan-blue);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .newsletter-thumb-img {
+      width: 100%;
+      height: 85px;
+      object-fit: contain;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      margin-bottom: 0.35rem;
+    }
+
+    .newsletter-caption {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--sopan-iitk-navy);
+    }
+
+    .btn-view-more-news {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem;
+      background: #F0F8FF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--sopan-blue-dark);
+      text-decoration: none;
+      margin-top: 0.75rem;
+      transition: all var(--transition-fast);
+    }
+    .btn-view-more-news:hover {
+      background: var(--sopan-blue-light);
+    }
+
+    /* ==========================================================================
+       5. MISSION AND METHODOLOGY (ORIGINAL UNALTERED CONTENT)
+       ========================================================================== */
+    .mission-section {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .section-headline-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue-dark);
+      background: var(--sopan-blue-light);
+      padding: 0.3rem 0.85rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.75rem;
+    }
+
+    .mission-title {
+      font-size: 1.85rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .mission-text-paragraph {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #334E68;
+      text-align: justify;
+      margin-bottom: 2rem;
+    }
+
+    .pillars-triad-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .pillar-box {
+      background: #F8FBFE;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+      transition: all var(--transition-normal);
+    }
+
+    .pillar-box:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--sopan-blue);
+    }
+
+    .pillar-icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin: 0 auto 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+    }
+    .badge-shiksha { background: #E0F2FE; color: #0284C7; }
+    .badge-sanskar { background: #FEF3C7; color: #D97706; }
+    .badge-swavalamban { background: #CCFBF1; color: #0D9488; }
+
+    .pillar-hindi-head {
+      font-family: 'Mukta', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--sopan-iitk-navy);
+    }
+
+    .pillar-sub-head {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .pillar-summary {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       6. SOPAN ASHRAM PHOTO GALLERY SECTION
+       ========================================================================== */
+    .photo-gallery-section {
+      margin-bottom: 3.5rem;
+    }
+
+    .section-heading-row {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .gallery-filter-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+
+    .btn-gallery-filter {
+      border: 1.5px solid var(--border-subtle);
+      background: #FFFFFF;
+      border-radius: var(--radius-full);
+      padding: 0.45rem 1.15rem;
+      font-size: 0.825rem;
+      font-weight: 750;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .btn-gallery-filter:hover, .btn-gallery-filter.active {
+      background: var(--sopan-blue);
+      color: #FFFFFF;
+      border-color: var(--sopan-blue);
+      box-shadow: 0 2px 10px rgba(2, 132, 199, 0.35);
+    }
+
+    .gallery-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-normal);
+      position: relative;
+    }
+
+    .gallery-item-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px -6px rgba(2, 132, 199, 0.2);
+      border-color: #7DD3FC;
+    }
+
+    .gallery-img-container {
+      position: relative;
+      width: 100%;
+      height: 230px;
+      overflow: hidden;
+      background: #0F274A;
+      cursor: pointer;
+    }
+
+    .gallery-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .gallery-item-card:hover .gallery-photo-img {
+      transform: scale(1.05);
+    }
+
+    .gallery-overlay-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+    }
+
+    .gallery-tag-pill {
+      background: rgba(15, 39, 74, 0.75);
+      color: #BAE6FD;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-full);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .gallery-zoom-btn {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(2, 132, 199, 0.2);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: scale(0.85);
+      transition: all 0.25s ease;
+      z-index: 2;
+    }
+
+    .gallery-img-container:hover .gallery-zoom-btn {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .gallery-item-info {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .gallery-item-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--sopan-iitk-navy);
+      line-height: 1.35;
+      margin-bottom: 0.4rem;
+    }
+
+    .gallery-item-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .gallery-placeholder-card {
+      background: #F8FBFE;
+      border: 2px dashed #93C5FD;
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 320px;
+    }
+
+    .gallery-placeholder-card .ph-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+      color: #0284C7;
+    }
+
+    .gallery-placeholder-card h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--sopan-iitk-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .gallery-placeholder-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      max-width: 260px;
+      line-height: 1.5;
+    }
+
+    /* Lightbox Modal */
+    .gallery-lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .gallery-lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 25, 44, 0.85);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .lightbox-content-box {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+      display: flex;
+      flex-direction: column;
+      max-height: 90vh;
+      animation: modalFadeIn 0.25s ease-out;
+    }
+
+    .btn-close-lightbox {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 38px;
+      height: 38px;
+      background: rgba(15, 39, 74, 0.8);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5;
+      transition: all var(--transition-fast);
+    }
+    .btn-close-lightbox:hover {
+      background: #EA580C;
+      transform: scale(1.08);
+    }
+
+    .lightbox-image-wrap {
+      width: 100%;
+      max-height: 65vh;
+      background: #0B192C;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .lightbox-full-img {
+      max-width: 100%;
+      max-height: 65vh;
+      object-fit: contain;
+      display: block;
+    }
+
+    .lightbox-meta-bar {
+      padding: 1.25rem 1.75rem;
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .lightbox-meta-bar h4 {
+      font-size: 1.2rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .lightbox-meta-bar p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       7. SECTION A: NAEST 2025 SHOWCASE (BLUE SCIENCE STYLE)
+       ========================================================================== */
+    .naest-showcase-section {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F0F8FF 100%);
+      border: 2px solid #BAE6FD;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 8px 24px -4px rgba(2, 132, 199, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .naest-showcase-section::before {
+      content: 'NAEST 2025';
+      position: absolute;
+      bottom: -15px;
+      right: 20px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 5rem;
+      font-weight: 900;
+      color: rgba(2, 132, 199, 0.04);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .naest-inner-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .naest-text-col { max-width: 68%; }
+
+    .naest-banner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0369A1;
+      background: #E0F2FE;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.75rem;
+    }
+
+    .naest-main-heading {
+      font-size: 2rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .naest-desc-lead {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .naest-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-explore-naest {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      transition: all var(--transition-fast);
+    }
+    .btn-explore-naest:hover {
+      background: linear-gradient(135deg, #0EA5E9 0%, #0284C7 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
+    }
+
+    .btn-secondary-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: #FFFFFF;
+      color: var(--sopan-blue-dark);
+      font-size: 0.875rem;
+      font-weight: 700;
+      padding: 0.85rem 1.5rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+    .btn-secondary-link:hover {
+      border-color: var(--sopan-blue);
+      background: var(--sopan-blue-light);
+    }
+
+    /* ==========================================================================
+       8. SECTION B: NEXT RESIDENTIAL SHORT COURSE AT SOPAN ASHRAM
+       ========================================================================== */
+    .rsc-section-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FEFDF9 100%);
+      border: 2px solid #FDE68A;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 8px 24px -4px rgba(217, 119, 6, 0.12);
+    }
+
+    .rsc-flex-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+    }
+
+    .rsc-content-col { max-width: 65%; }
+
+    .rsc-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #92400E;
+      background: #FEF3C7;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.75rem;
+    }
+
+    .rsc-main-heading {
+      font-size: 2rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .rsc-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-explore-rsc {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
+      transition: all var(--transition-fast);
+    }
+    .btn-explore-rsc:hover {
+      background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(217, 119, 6, 0.45);
+    }
+
+    /* ==========================================================================
+       9. SECTION C: SCIENCE TOUR FOR SCHOOL STUDENTS AT SOPAN ASHRAM
+       ========================================================================== */
+    .science-tour-section-card {
+      background: linear-gradient(135deg, #FFFFFF 0%, #FFF9F5 100%);
+      border: 2px solid #FED7AA;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 8px 24px -4px rgba(234, 88, 12, 0.12);
+    }
+
+    .tour-flex-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+    }
+
+    .tour-content-col { max-width: 65%; }
+
+    .tour-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #9A3412;
+      background: #FFF7ED;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.75rem;
+    }
+
+    .tour-main-heading {
+      font-size: 2rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .tour-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-inquire-tour {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+      transition: all var(--transition-fast);
+      cursor: pointer;
+    }
+    .btn-inquire-tour:hover {
+      background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(234, 88, 12, 0.45);
+    }
+
+    /* ==========================================================================
+       10. REFINED COMPACT FEEDBACK SECTION (CLEAN 2-COLUMN DESIGN)
+       ========================================================================== */
+    .feedback-section-wrapper {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem 2rem;
+      margin-bottom: 3.5rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .feedback-section-header {
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+
+    .feedback-cards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .feedback-card-item {
+      background: #F8FBFE;
+      border: 1px solid #D8E6F5;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: all var(--transition-fast);
+    }
+    .feedback-card-item:hover {
+      border-color: var(--sopan-blue);
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.08);
+      background: #FFFFFF;
+    }
+
+    .feedback-card-item::before {
+      content: '“';
+      position: absolute;
+      top: 10px;
+      right: 18px;
+      font-size: 3rem;
+      color: rgba(2, 132, 199, 0.12);
+      font-family: Georgia, serif;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .compact-quote-text {
+      font-size: 0.925rem;
+      line-height: 1.65;
+      color: #334E68;
+      font-style: italic;
+      margin-bottom: 1.25rem;
+    }
+
+    .compact-author-row {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 0.85rem;
+    }
+
+    .compact-author-photo {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+
+    .compact-author-name {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--sopan-iitk-navy);
+      line-height: 1.2;
+    }
+
+    .compact-author-title {
+      font-size: 0.78rem;
+      color: var(--sopan-blue-dark);
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       11. PARTNERS, IMPORTANT LINKS, AND GOOGLE MAP
+       ========================================================================== */
+    .footer-pre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr 1.6fr;
+      gap: 2rem;
+      padding: 3rem 0;
+      border-top: 1.5px solid var(--border-subtle);
+      align-items: center;
+    }
+
+    .partner-logo-box img {
+      max-width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .important-links-col h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--sopan-iitk-navy);
+      margin-bottom: 1rem;
+    }
+
+    .important-links-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    .imp-link-anchor {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .imp-link-anchor:hover {
+      color: var(--sopan-blue-dark);
+    }
+
+    .map-embed-frame {
+      width: 100%;
+      height: 220px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .map-embed-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .final-copyright-bar {
+      border-top: 1px solid var(--border-subtle);
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Modal for Science Tour Inquiry */
+    .tour-modal-backdrop {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(15, 39, 74, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all var(--transition-normal);
+    }
+    .tour-modal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .tour-modal-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      max-width: 580px;
+      width: 100%;
+      position: relative;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: var(--bg-secondary);
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .form-group { margin-bottom: 1.15rem; }
+    .form-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--text-secondary);
+      margin-bottom: 0.35rem;
+    }
+    .form-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-family: inherit;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: var(--sopan-blue);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* Responsive Queries */
+    @media (max-width: 1024px) {
+      .homepage-main-grid { grid-template-columns: 1fr; }
+      .applications-cards-grid { grid-template-columns: repeat(2, 1fr); }
+      .feedback-cards-grid { grid-template-columns: 1fr; }
+      .naest-inner-flex, .rsc-flex-row, .tour-flex-row { flex-direction: column; text-align: center; }
+      .naest-text-col, .rsc-content-col, .tour-content-col { max-width: 100%; }
+      .naest-actions-row { justify-content: center; }
+      .footer-pre-grid { grid-template-columns: 1fr; text-align: center; }
+      .important-links-list { justify-content: center; }
+    }
+
+    @media (max-width: 768px) {
+      .header-branding-flex { flex-direction: column; gap: 1rem; text-align: center; }
+      .brand-logo-combo { flex-direction: column; }
+      .join-strip-content { flex-direction: column; gap: 0.5rem; text-align: center; }
+      .pillars-triad-grid { grid-template-columns: 1fr; }
+      .applications-cards-grid { grid-template-columns: 1fr; }
+      .workbench-header-bar { flex-direction: column; gap: 0.75rem; text-align: center; }
+      .workbench-controls-strip { flex-direction: column; align-items: stretch; }
+    }
+  
+    /* Main Brand Header Banner (Uniform Blueprint Grid Theme Matching Home Page) */
+    .header-banner-wrapper {
+      background: #F0F8FF;
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(2, 132, 199, 0.09) 0%, transparent 60%),
+        radial-gradient(circle at 85% 50%, rgba(0, 229, 255, 0.07) 0%, transparent 50%),
+        linear-gradient(to right, rgba(2, 132, 199, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+      border-bottom: 1.5px solid var(--border-subtle, #E2E8F0);
+      padding: 0.95rem 0;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-watermark-formula {
+      position: absolute;
+      top: 18px;
+      right: 18%;
+      transform: rotate(8deg);
+      font-family: 'Outfit', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(2, 132, 199, 0.22);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .header-branding-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-logo-combo {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-emblem-svg {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      transition: transform var(--transition-fast, 0.15s ease);
+    }
+    .brand-logo-combo:hover .brand-emblem-svg {
+      transform: rotate(5deg) scale(1.04);
+    }
+
+    .brand-title-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-main-title {
+      font-size: 1.55rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy, #0B192C);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .brand-main-title span.hindi {
+      font-family: 'Mukta', sans-serif;
+      color: var(--sopan-orange, #EA580C);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-left: 0.35rem;
+    }
+
+    .brand-tagline-sub {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue-dark, #0369A1);
+      margin-top: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-tagline-sub::before {
+      content: none;
+      font-size: 0.75rem;
+    }
+
+    .header-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-toggle-box {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border-subtle, #E2E8F0);
+      border-radius: var(--radius-full, 9999px);
+      padding: 3px;
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-secondary, #475569);
+      border-radius: var(--radius-full, 9999px);
+      cursor: pointer;
+      transition: all var(--transition-fast, 0.15s ease);
+    }
+
+    .lang-btn.active {
+      background: #0284C7;
+      color: #FFFFFF;
+      box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25);
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION BAR (STICKY, UNIFORM PILL ACTIVE INDICATOR)
+       ========================================================================== */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 2px solid var(--border-subtle, #E2E8F0);
+      box-shadow: 0 2px 10px rgba(15, 39, 74, 0.05);
+    }
+
+    .nav-inner-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+
+    .nav-links-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links-menu::-webkit-scrollbar { display: none; }
+
+    .nav-link-btn {
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-secondary, #475569);
+      text-decoration: none;
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm, 8px);
+      transition: all var(--transition-fast, 0.15s ease);
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .nav-link-btn:hover {
+      color: var(--sopan-blue-dark, #0369A1);
+      background: rgba(2, 132, 199, 0.08);
+    }
+
+    .nav-link-btn.active {
+      color: #0369A1 !important;
+      background: #E0F2FE !important;
+      font-weight: 800 !important;
+    }
+
+    .btn-join-us {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--sopan-orange, #EA580C);
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.55rem 1.35rem;
+      border-radius: var(--radius-full, 9999px);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.28);
+      transition: all var(--transition-standard, 0.2s ease);
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .btn-join-us:hover {
+      background: var(--sopan-orange-hover, #C2410C);
+      transform: translateY(-1px);
+      color: #FFFFFF;
+    }
+
+  
+    .brand-emblem-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(11, 25, 44, 0.12);
+      border: 1.5px solid rgba(234, 88, 12, 0.35);
+      transition: transform var(--transition-fast, 0.15s ease);
+      flex-shrink: 0;
+    }
+    .brand-logo-combo:hover .brand-emblem-img {
+      transform: scale(1.05);
+    }
+    .ornamental-dot {
+      color: #0284C7;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Background Blueprint Lines & Mathematical Watermarks -->
+  <div class="blueprint-grid-canvas" aria-hidden="true"></div>
+  <div class="physics-watermark wm-1" aria-hidden="true">∇ × E = -∂B/∂t</div>
+  <div class="physics-watermark wm-2" aria-hidden="true">ψ(x,t) = A e^{i(kx - ωt)}</div>
+  <div class="physics-watermark wm-3" aria-hidden="true">λ = h / p</div>
+  <div class="physics-watermark wm-4" aria-hidden="true">ℰ = -N (dΦ / dt)</div>
+
+  <!-- =======================================================================
+       1. TOP TICKER WITH TRADITIONAL LAMP ICON
+       ======================================================================= -->
+  <aside class="top-motto-bar" aria-label="Motto Bar">
+    <div class="container motto-content" data-i18n="mottoText">
+      <span>अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें</span>
+    </div>
+  </aside>
+
+  <!-- =======================================================================
+       2. HEADER BRANDING & LANGUAGE SWITCHER (BLUEPRINT GRAPH & WATERMARK)
+       ======================================================================= -->
+  <header class="header-banner-wrapper">
+    <div class="header-watermark-formula" aria-hidden="true">∇ × E = -∂B/∂t</div>
+    <div class="container header-branding-flex">
+      <a href="index.html" class="brand-logo-combo" aria-label="Shiksha Sopan Home">
+        <img src="images/shiksha-sopan-logo.jpg" alt="Shiksha Sopan Emblem" class="brand-emblem-img" />
+
+        <div class="brand-title-box">
+          <div class="brand-main-title">
+            SHIKSHA SOPAN <span class="hindi">शिक्षा सोपान</span>
+          </div>
+          <div class="brand-tagline-sub" data-i18n="headerSub">
+            AN EDUCATIONAL & SOCIAL INITIATIVE BY IIT KANPUR COMMUNITY
+          </div>
+        </div>
+      </a>
+
+      <div class="header-actions-group">
+        <div class="lang-toggle-box" role="radiogroup" aria-label="Language Selector">
+          <button type="button" class="lang-btn active" id="btnLangEn" data-lang="en" onclick="setLanguage('en')">English</button>
+          <button type="button" class="lang-btn" id="btnLangHi" data-lang="hi" onclick="setLanguage('hi')">हिन्दी</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       3. NAVIGATION BAR (EXACT UNIFIED LAYOUT & ACTIVE INDICATOR)
+       ======================================================================= -->
+  <nav class="navbar-sticky" aria-label="Main Navigation">
+    <div class="container nav-inner-row">
+      <ul class="nav-links-menu">
+        <li><a href="index.html" class="nav-link-btn active" data-i18n="navHome">Home</a></li>
+        <li><a href="executive-committee.html" class="nav-link-btn " data-i18n="navEC">Executive Committee</a></li>
+        <li><a href="activity.html" class="nav-link-btn " data-i18n="navActivity">Activity</a></li>
+        <li><a href="contribution.html" class="nav-link-btn " data-i18n="navContribution">Contribution</a></li>
+        <li><a href="achievements.html" class="nav-link-btn " data-i18n="navAchievements">Achivements</a></li>
+        <li><a href="experiments.html" class="nav-link-btn " data-i18n="navExperiments">Experiments</a></li>
+        <li><a href="about-us.html" class="nav-link-btn " data-i18n="navAbout">About Us</a></li>
+        <li><a href="contact-us.html" class="nav-link-btn " data-i18n="navContact">Contact Us</a></li>
+      </ul>
+
+      <a href="https://www.shiksha-sopan.org/join" class="btn-join-us" target="_blank" rel="noopener noreferrer" data-i18n="joinBtn">
+        Join Us →
+      </a>
+    </div>
+  </nav>
+
+  <!-- =======================================================================
+       4. FULL-SCREEN HERO SECTION (STUDENTS PERFORMING EXPERIMENTS + BLUE OVERLAY)
+       ======================================================================= -->
+  <section class="hero-fullscreen" aria-label="Welcome to Shiksha Sopan">
+    <div class="hero-content-inner">
+      <div class="hero-tag-pill">
+        
+        <span data-i18n="heroBadge">INITIATIVE BY IIT KANPUR FACULTY & STUDENTS • ESTD. 2001</span>
+      </div>
+
+      <h1 class="hero-headline-title" data-i18n="heroTitle">
+        SPARKING CURIOSITY <span class="hero-title-highlight">THROUGH HANDS-ON PHYSICS</span> & STEM EDUCATION
+      </h1>
+
+      <p class="hero-lead-text" data-i18n="heroSubtitle">
+        Empowering rural and underprivileged children through experiential physics demonstrations, ethical values (<em>Sanskar</em>), and self-reliance (<em>Swavalamban</em>). Conceived and mentored by <strong>Prof. H.C. Verma</strong> and the IIT Kanpur community.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#physics-workbench" class="btn-hero-primary" data-i18n="heroBtnWorkbench">
+           Explore Physics Lab ↓
+        </a>
+        <a href="#naest-section" class="btn-hero-secondary" data-i18n="heroBtnNaest">
+           NAEST 2025 →
+        </a>
+        <a href="https://www.shiksha-sopan.org/join" target="_blank" rel="noopener noreferrer" class="btn-hero-accent" data-i18n="heroBtnJoin">
+           Join Us →
+        </a>
+      </div>
+
+      <!-- Glassmorphic Highlights Bento Grid -->
+      <div class="hero-stats-bento">
+        <div class="hero-stat-card">
+          <span class="hero-stat-number" data-i18n="heroStat1">20+ Years</span>
+          <span class="hero-stat-desc" data-i18n="heroStat1Sub">Dedicated Rural STEM Service</span>
+        </div>
+        <div class="hero-stat-card">
+          <span class="hero-stat-number" data-i18n="heroStat2">100+ Experiments</span>
+          <span class="hero-stat-desc" data-i18n="heroStat2Sub">Low-Cost Hands-On Physics Kits</span>
+        </div>
+        <div class="hero-stat-card">
+          <span class="hero-stat-number" data-i18n="heroStat3">80+ Anveshikas</span>
+          <span class="hero-stat-desc" data-i18n="heroStat3Sub">Pan-India Experimental Network</span>
+        </div>
+        <div class="hero-stat-card">
+          <span class="hero-stat-number" data-i18n="heroStat4">Thousands Reached</span>
+          <span class="hero-stat-desc" data-i18n="heroStat4Sub">Rural Students & Teachers Empowered</span>
+        </div>
+      </div>
+
+      <!-- Animated Scroll Down Cue -->
+      <a href="#physics-workbench" class="hero-scroll-cue" aria-label="Scroll to interactive lab workbench">
+        <span data-i18n="heroScrollCue">Scroll to explore interactive lab & initiatives</span>
+        <svg class="chevron-down-anim" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- =======================================================================
+       5. JOIN THE COMMUNITY BANNER (ORIGINAL LINK PRESERVED)
+       ======================================================================= -->
+  <div class="join-community-strip">
+    <div class="container join-strip-content">
+      <div class="join-strip-text">
+        
+        <span data-i18n="joinText">Join the Community of Volunteers, Teachers, and Rural STEM Innovators</span>
+      </div>
+      <div>
+        <a href="https://www.shiksha-sopan.org/join" class="btn-join-us" target="_blank" rel="noopener noreferrer" data-i18n="joinUsLink">
+          Join Us
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       6. INTERACTIVE PHYSICS WORKBENCH + SIDEBAR
+       ======================================================================= -->
+  <main class="container">
+    <div class="homepage-main-grid" id="physics-workbench">
+      <!-- Left: Creative Interactive Physics Workbench for Students -->
+      <section class="physics-workbench-card" aria-label="Interactive Physics Workbench">
+        <div class="workbench-header-bar">
+          <div class="workbench-title-group">
+            <h2>
+               <span data-i18n="workbenchHead">Interactive Physics Discovery Workbench</span>
+            </h2>
+            <p data-i18n="workbenchSub">Hands-on interactive demonstration designed for physics students & young curious minds</p>
+          </div>
+
+          <!-- Mode Switcher -->
+          <div class="physics-modes-pills" role="tablist">
+            <button type="button" class="btn-phys-mode active" id="btnModeWaves" data-mode="waves">
+               Standing Waves
+            </button>
+            <button type="button" class="btn-phys-mode" id="btnModeInduction" data-mode="induction">
+              <span></span> Faraday-Lenz
+            </button>
+            <button type="button" class="btn-phys-mode" id="btnModeOptics" data-mode="optics">
+               Light Refraction
+            </button>
+          </div>
+        </div>
+
+        <!-- Simulation Canvas Frame -->
+        <div class="canvas-sim-wrapper">
+          <canvas id="physicsHeroCanvas"></canvas>
+        </div>
+
+        <!-- Interactive Telemetry HUD & Sliders -->
+        <div class="workbench-controls-strip">
+          <div class="hud-stat-item">
+            <span class="hud-label" id="hudStat1Label">Mode / Harmonic</span>
+            <span class="hud-val" id="hudStat1Val">n = 3 Harmonic</span>
+          </div>
+          <div class="hud-stat-item">
+            <span class="hud-label" id="hudStat2Label">Frequency (ν)</span>
+            <span class="hud-val" id="hudStat2Val">42.0 Hz</span>
+          </div>
+
+          <div class="slider-control-item">
+            <label for="physParamSlider" id="sliderParamLabel">Harmonic / Parameter:</label>
+            <input type="range" id="physParamSlider" min="1" max="5" value="3" class="range-phys">
+          </div>
+
+          <button type="button" class="btn-sim-reset" id="btnResetPhysSim">
+            Reset
+          </button>
+        </div>
+        <div style="display: flex; justify-content: flex-end; margin-top: 1rem;">
+          <a href="experiments.html" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #E0F2FE; color: #0369A1; font-weight: 800; font-size: 0.85rem; padding: 0.5rem 1.15rem; border-radius: 9999px; text-decoration: none; border: 1px solid #BAE6FD;">
+            Explore All 42 Hands-on Physics Experiments →
+          </a>
+        </div>
+      </section>
+
+      <!-- Right Column Sidebar: Applications & Newsletters (Preserved) -->
+      <aside class="sidebar-block">
+        <!-- Application Form Card -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-header">
+            
+            <span data-i18n="appFormsTitle">Application Form</span>
+          </div>
+          <div class="application-links-list">
+            <a href="https://www.shiksha-sopan.org/SGPVUSP" target="_blank" class="app-link-item">
+              <strong>SGPV</strong> (Shree Ganesh Prasad Verma Uchch Shiksha Prakalp)
+            </a>
+            <a href="https://www.shiksha-sopan.org/VNK%20FORM%202026-27.pdf" target="_blank" class="app-link-item">
+              डॉ0 व्ही0 एन0 कुलकर्णी मेधा छात्रवृत्ति 2026-27 फॉर्म (PDF)
+            </a>
+            <a href="https://www.shiksha-sopan.org/VNK-patrak%202026-27.pdf" target="_blank" class="app-link-item">
+              डॉ0 व्ही0 एन0 कुलकर्णी मेधा छात्रवृत्ति 2026-27 पत्रक (PDF)
+            </a>
+            <a href="https://www.shiksha-sopan.org/NAEST-2025%20Report.pdf" target="_blank" class="app-link-item highlight-report">
+              NAEST-2025 Official Report (PDF)
+            </a>
+          </div>
+        </div>
+
+        <!-- Newsletters Card -->
+        <div class="sidebar-card">
+          <div class="sidebar-card-header">
+            
+            <span data-i18n="newslettersTitle">Newsletters</span>
+          </div>
+          <div class="newsletter-previews-grid">
+            <a href="https://www.shiksha-sopan.org/Newsletters/August_2026_1786428076.pdf" target="_blank" class="newsletter-thumb-card">
+              <img src="https://www.shiksha-sopan.org/Images/nwsl.webp" alt="August 2026 Newsletter" class="newsletter-thumb-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 120\' fill=\'%23F1F5F9\'><rect width=\'100\' height=\'120\'/><text x=\'50\' y=\'65\' text-anchor=\'middle\' fill=\'%230284C7\' font-weight=\'bold\' font-size=\'14\'>AUG 2026</text></svg>'">
+              <span class="newsletter-caption">August - 2026</span>
+            </a>
+            <a href="https://www.shiksha-sopan.org/Newsletters/July_2026_1784268806.pdf" target="_blank" class="newsletter-thumb-card">
+              <img src="https://www.shiksha-sopan.org/Images/nwsl.webp" alt="July 2026 Newsletter" class="newsletter-thumb-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 120\' fill=\'%23F1F5F9\'><rect width=\'100\' height=\'120\'/><text x=\'50\' y=\'65\' text-anchor=\'middle\' fill=\'%230284C7\' font-weight=\'bold\' font-size=\'14\'>JULY 2026</text></svg>'">
+              <span class="newsletter-caption">July - 2026</span>
+            </a>
+          </div>
+          <a href="https://www.shiksha-sopan.org/Newsletter" class="btn-view-more-news" data-i18n="viewMoreNews">
+            View More Newsletters...
+          </a>
+        </div>
+        <!-- Support Our Cause Card -->
+        <div class="sidebar-card" style="background: linear-gradient(135deg, #FEF3C7 0%, #FFFBEB 100%); border: 1.5px solid #FDE68A;">
+          <div class="sidebar-card-header" style="color: #92400E;">
+            
+            <span>Support Shiksha Sopan</span>
+          </div>
+          <p style="font-size: 0.88rem; color: #78350F; line-height: 1.55; margin-bottom: 0.85rem;">
+            Shiksha Sopan runs purely on voluntary individual contributions. Tax-deductible under Section 80/G.
+          </p>
+          <a href="contribution.html" style="display:inline-flex; align-items:center; gap:0.4rem; background: #EA580C; color: #FFFFFF; font-size: 0.82rem; font-weight: 800; padding: 0.45rem 1rem; border-radius: 9999px; text-decoration: none;">
+            Ways to Contribute →
+          </a>
+        </div>
+
+        <!-- Student Achievements Card -->
+        <div class="sidebar-card" style="background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%); border: 1.5px solid #BAE6FD;">
+          <div class="sidebar-card-header" style="color: #0369A1;">
+            
+            <span>Student Achievements</span>
+          </div>
+          <p style="font-size: 0.88rem; color: #1E3A8A; line-height: 1.55; margin-bottom: 0.85rem;">
+            Inspiring journeys of students nurtured at Sopan centers into defense, higher education & tech.
+          </p>
+          <a href="achievements.html" style="display:inline-flex; align-items:center; gap:0.4rem; background: #0284C7; color: #FFFFFF; font-size: 0.82rem; font-weight: 800; padding: 0.45rem 1rem; border-radius: 9999px; text-decoration: none;">
+            Read Stories →
+          </a>
+        </div>
+      </aside>
+    </div>
+
+    <!-- =======================================================================
+         6. MISSION AND METHODOLOGY SECTION (UNALTERED ORIGINAL CONTENT)
+         ======================================================================= -->
+    <section class="mission-section" aria-labelledby="missionHeading">
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <span class="section-headline-tag" data-i18n="missionTag">FOUNDATIONAL IDENTITY & ETHOS</span>
+        <h2 class="mission-title" id="missionHeading" data-i18n="missionHeading">Mission and Methodology</h2>
+      </div>
+
+      <!-- Exact Text from shiksha-sopan.org Preserved 100% -->
+      <p class="mission-text-paragraph" data-i18n="missionParagraph">
+        Shiksha Sopan is a non-governmental organization (NGO) whose purpose is to impart value- based education to economically weaker section of the society. Its various activities are spreaded in and around the lush-green campus of IIT Kanpur. Shiksha Sopan's philosophy stands on three pillars of Shiksha, Sanskar, and Swavalamban. We believe that education is not merely loading children with information. Therefore, we try our best to establish a connection of class-room teaching with daily-life activities and behaviors. With this point in mind, we keep organizing various activities that are aimed to further nurture these values.
+      </p>
+
+      <!-- The Three Pillars Infographic Grid -->
+      <div class="pillars-triad-grid">
+        <div class="pillar-box">
+          <div class="pillar-icon-badge badge-shiksha" style="font-weight:800;">I</div>
+          <div class="pillar-hindi-head">शिक्षा</div>
+          <div class="pillar-sub-head" data-i18n="pillar1Sub">Shiksha • Education</div>
+          <p class="pillar-summary" data-i18n="pillar1Desc">
+            Connecting textbook physics and classroom concepts to daily-life activities and practical observations.
+          </p>
+        </div>
+
+        <div class="pillar-box">
+          <div class="pillar-icon-badge badge-sanskar" style="font-weight:800;">II</div>
+          <div class="pillar-hindi-head">संस्कार</div>
+          <div class="pillar-sub-head" data-i18n="pillar2Sub">Sanskar • Values & Ethics</div>
+          <p class="pillar-summary" data-i18n="pillar2Desc">
+            Instilling empathy, ethical consciousness, mutual respect, and social gratitude in every child.
+          </p>
+        </div>
+
+        <div class="pillar-box">
+          <div class="pillar-icon-badge badge-swavalamban" style="font-weight:800;">III</div>
+          <div class="pillar-hindi-head">स्वावलंबन</div>
+          <div class="pillar-sub-head" data-i18n="pillar3Sub">Swavalamban • Self-Reliance</div>
+          <p class="pillar-summary" data-i18n="pillar3Desc">
+            Nurturing practical problem-solving skills so students become self-reliant and productive citizens.
+          </p>
+        </div>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.75rem;">
+        <a href="about-us.html" style="display: inline-flex; align-items: center; gap: 0.45rem; background: #E0F2FE; color: #0369A1; font-weight: 800; font-size: 0.9rem; padding: 0.6rem 1.4rem; border-radius: 9999px; text-decoration: none; border: 1px solid #BAE6FD;">
+          Discover Our Genesis & The 3 Pillars →
+        </a>
+        <a href="executive-committee.html" style="display: inline-flex; align-items: center; gap: 0.45rem; background: #F8FAFC; color: #0F172A; font-weight: 800; font-size: 0.9rem; padding: 0.6rem 1.4rem; border-radius: 9999px; text-decoration: none; border: 1px solid #CBD5E1;">
+          Meet the Executive Committee →
+        </a>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. SOPAN ASHRAM PHOTO GALLERY (USER-CURATED EXPERIENTIAL SESSIONS)
+         ======================================================================= -->
+    <section class="photo-gallery-section" id="photo-gallery" aria-labelledby="galleryHeading">
+      <div class="section-heading-row">
+        <span class="section-headline-tag" data-i18n="galleryTag">GLIMPSES OF SOPAN ASHRAM & SESSIONS</span>
+        <h2 style="font-size: 2rem; font-weight: 850; color: var(--sopan-iitk-navy);" id="galleryHeading" data-i18n="galleryTitle">
+          Moments of Joyful Learning & Physics Experiments
+        </h2>
+        <p style="font-size: 0.95rem; color: var(--text-secondary); max-width: 680px; margin: 0.5rem auto 1.25rem;" data-i18n="gallerySubtitle">
+          Real snapshots from our residential short courses, school science tours, hands-on demonstration workshops, and annual NAEST award ceremonies.
+        </p>
+
+        <!-- Gallery Filter Tabs -->
+        <div class="gallery-filter-tabs" role="tablist">
+          <button type="button" class="btn-gallery-filter active" data-filter="all">All Photos (5)</button>
+          <button type="button" class="btn-gallery-filter" data-filter="experiments">Experiments</button>
+          <button type="button" class="btn-gallery-filter" data-filter="workshops">Teacher Workshops</button>
+          <button type="button" class="btn-gallery-filter" data-filter="students">School Students</button>
+          <button type="button" class="btn-gallery-filter" data-filter="awards">Awards & NAEST</button>
+        </div>
+      </div>
+
+      <div class="gallery-cards-grid">
+        <!-- 1. Award Ceremony -->
+        <article class="gallery-item-card" data-category="awards">
+          <div class="gallery-img-container" data-img="images/gallery/gallery_1_awards.png" data-title="NAEST & Scholarship Award Ceremony" data-caption="Celebrating outstanding student experimenters and scholarship recipients on stage with Prof. H.C. Verma and distinguished faculty.">
+            <img src="images/gallery/gallery_1_awards.png" alt="NAEST & Scholarship Award Ceremony with Prof. H.C. Verma" class="gallery-photo-img" loading="lazy">
+            <div class="gallery-overlay-badge">
+              <span class="gallery-tag-pill">NAEST & Awards</span>
+            </div>
+            <button type="button" class="gallery-zoom-btn" title="View Full Image" aria-label="View Full Image">
+              +
+            </button>
+          </div>
+          <div class="gallery-item-info">
+            <h3 class="gallery-item-title">NAEST & Scholarship Award Ceremony</h3>
+            <p class="gallery-item-desc">Celebrating outstanding student experimenters and scholarship recipients on stage with Prof. H.C. Verma and distinguished faculty.</p>
+          </div>
+        </article>
+
+        <!-- 2. School Students Science Session -->
+        <article class="gallery-item-card" data-category="students">
+          <div class="gallery-img-container" data-img="images/gallery/gallery_2_students_session.png" data-title="School Students Science Tour at Sopan Ashram" data-caption="Hundreds of enthusiastic school students attending a captivating open-air science demonstration lecture conducted by Prof. H.C. Verma.">
+            <img src="images/gallery/gallery_2_students_session.png" alt="School Students Science Tour Demonstration" class="gallery-photo-img" loading="lazy">
+            <div class="gallery-overlay-badge">
+              <span class="gallery-tag-pill">Science Tour</span>
+            </div>
+            <button type="button" class="gallery-zoom-btn" title="View Full Image" aria-label="View Full Image">
+              +
+            </button>
+          </div>
+          <div class="gallery-item-info">
+            <h3 class="gallery-item-title">School Students Science Tour at Sopan Ashram</h3>
+            <p class="gallery-item-desc">Hundreds of enthusiastic school students attending a captivating open-air science demonstration lecture conducted by Prof. H.C. Verma.</p>
+          </div>
+        </article>
+
+        <!-- 3. Teacher Workshop -->
+        <article class="gallery-item-card" data-category="workshops">
+          <div class="gallery-img-container" data-img="images/gallery/gallery_3_teacher_workshop.png" data-title="Residential Short Course for Physics Educators" data-caption="Interactive teacher workshop session where school and college physics educators explore innovative hands-on pedagogy directly with Prof. H.C. Verma.">
+            <img src="images/gallery/gallery_3_teacher_workshop.png" alt="Residential Short Course for Physics Teachers" class="gallery-photo-img" loading="lazy">
+            <div class="gallery-overlay-badge">
+              <span class="gallery-tag-pill">Teacher Workshop</span>
+            </div>
+            <button type="button" class="gallery-zoom-btn" title="View Full Image" aria-label="View Full Image">
+              +
+            </button>
+          </div>
+          <div class="gallery-item-info">
+            <h3 class="gallery-item-title">Residential Short Course for Physics Educators</h3>
+            <p class="gallery-item-desc">Interactive teacher workshop session where school and college physics educators explore innovative hands-on pedagogy directly with Prof. H.C. Verma.</p>
+          </div>
+        </article>
+
+        <!-- 4. Low-Cost Physics Apparatus Demo -->
+        <article class="gallery-item-card" data-category="experiments">
+          <div class="gallery-img-container" data-img="images/gallery/gallery_4_apparatus_demo.png" data-title="Low-Cost Physics Apparatus Demonstration" data-caption="Hands-on demonstration of equilibrium, center of mass, and hydrostatic concepts using simple, low-cost everyday materials developed at Sopan Ashram.">
+            <img src="images/gallery/gallery_4_apparatus_demo.png" alt="Hands-On Physics Demonstration with Low-Cost Kits" class="gallery-photo-img" loading="lazy">
+            <div class="gallery-overlay-badge">
+              <span class="gallery-tag-pill">Hands-On Physics</span>
+            </div>
+            <button type="button" class="gallery-zoom-btn" title="View Full Image" aria-label="View Full Image">
+              +
+            </button>
+          </div>
+          <div class="gallery-item-info">
+            <h3 class="gallery-item-title">Low-Cost Physics Apparatus Demonstration</h3>
+            <p class="gallery-item-desc">Hands-on demonstration of equilibrium, center of mass, and hydrostatic concepts using simple, low-cost everyday materials developed at Sopan Ashram.</p>
+          </div>
+        </article>
+
+        <!-- 5. Live Physics Demonstration Session -->
+        <article class="gallery-item-card" data-category="experiments workshops">
+          <div class="gallery-img-container" data-img="images/gallery/gallery_5_physics_demonstration.jpg" data-title="Live Buoyancy & Mechanics Lab Session" data-caption="Prof. H.C. Verma and demonstrator guiding students through live spring-balance force measurements, apparent weight loss, and Archimedes principle.">
+            <img src="images/gallery/gallery_5_physics_demonstration.jpg" alt="Prof. H.C. Verma Live Buoyancy and Spring Balance Demo" class="gallery-photo-img" loading="lazy">
+            <div class="gallery-overlay-badge">
+              <span class="gallery-tag-pill">Sopan Ashram Lab</span>
+            </div>
+            <button type="button" class="gallery-zoom-btn" title="View Full Image" aria-label="View Full Image">
+              +
+            </button>
+          </div>
+          <div class="gallery-item-info">
+            <h3 class="gallery-item-title">Live Buoyancy & Mechanics Lab Session</h3>
+            <p class="gallery-item-desc">Prof. H.C. Verma and demonstrator guiding students through live spring-balance force measurements, apparent weight loss, and Archimedes principle.</p>
+          </div>
+        </article>
+
+        <!-- 6. Placeholder for upcoming photos -->
+        <div class="gallery-placeholder-card">
+          <div class="ph-icon" style="font-size:0.85rem; font-weight:700;">VIEW</div>
+          <h4>More Photos Coming Soon</h4>
+          <p>Glimpses from upcoming school science tours and teacher residential short courses will be added here.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. [NEW SECTION A] NAEST 2025 SHOWCASE (BLUE SCIENCE STYLE)
+         ======================================================================= -->
+    <section class="naest-showcase-section" id="naest-section" aria-labelledby="naestSectionHeading">
+      <div class="naest-inner-flex">
+        <div class="naest-text-col">
+          <span class="naest-banner-badge" data-i18n="naestTag">NATIONAL ANVESHIKA COMPETITION</span>
+          <h2 class="naest-main-heading" id="naestSectionHeading" data-i18n="naestHeading">
+            Competition on Experimental Skills — NAEST 2025
+          </h2>
+          <p class="naest-desc-lead" data-i18n="naestLead">
+            The National Anveshika Experimental Skill Test (NAEST) is India's most prestigious annual hands-on physics assessment. Conceived by Prof. H.C. Verma and organized by the Indian Association of Physics Teachers (IAPT), NAEST evaluates school and college students on genuine observational intuition, analytical reasoning, and causal deduction rather than textbook memorization.
+          </p>
+          <div class="naest-actions-row">
+            <a href="https://naest.shiksha-sopan.org/" target="_blank" rel="noopener noreferrer" class="btn-explore-naest" data-i18n="btnNaest">
+              Explore NAEST 2025 →
+            </a>
+            <a href="https://www.shiksha-sopan.org/NAEST-2025%20Report.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary-link">
+              Download 2025 Report (PDF)
+            </a>
+          </div>
+        </div>
+
+        <div style="text-align: center; flex-shrink: 0;">
+          <div style="background: #FFFFFF; border: 2px dashed #0284C7; border-radius: var(--radius-lg); padding: 1.75rem; text-align: center; min-width: 240px; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2.75rem; font-weight: 850; color: #0284C7; font-family: 'Outfit', sans-serif;">80+</div>
+            <div style="font-size: 0.85rem; font-weight: 800; text-transform: uppercase; color: #0369A1; letter-spacing: 0.05em;">Regional Anveshikas</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 0.35rem;">Pan-India Participation</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         9. [NEW SECTION B] NEXT RESIDENTIAL SHORT COURSE AT SOPAN ASHRAM
+         ======================================================================= -->
+    <section class="rsc-section-card" aria-labelledby="rscHeading">
+      <div class="rsc-flex-row">
+        <div class="rsc-content-col">
+          <span class="rsc-tag-pill" data-i18n="rscTag">INTENSIVE FACULTY & TEACHER WORKSHOP</span>
+          <h2 class="rsc-main-heading" id="rscHeading" data-i18n="rscHeading">
+            Next Residential Short Course at Sopan Ashram
+          </h2>
+          <p class="rsc-desc" data-i18n="rscDesc">
+            Immerse yourself in experiential physics pedagogy directly at Sopan Ashram, situated near the IIT Kanpur campus. Conducted under the direct mentorship of Prof. H.C. Verma, these residential courses empower physics educators, school teachers, and college faculty to design low-cost experimental apparatus, unmask common conceptual misconceptions, and bring classroom physics to vibrant life.
+          </p>
+          <a href="https://www.hcverma.in/Residential%20Short%20Course" target="_blank" rel="noopener noreferrer" class="btn-explore-rsc" data-i18n="btnRsc">
+            Explore Residential Short Course →
+          </a>
+        </div>
+
+        <div style="flex-shrink: 0; text-align: center;">
+          <div style="background: #FFFFFF; border: 2px dashed #D97706; border-radius: var(--radius-lg); padding: 1.75rem; min-width: 240px; box-shadow: var(--shadow-sm);">
+            <div style="font-size: 2.5rem;"></div>
+            <div style="font-size: 1.15rem; font-weight: 800; color: #92400E; margin-top: 0.5rem;">Sopan Ashram</div>
+            <div style="font-size: 0.8rem; color: #B45309; margin-top: 0.2rem;">Residential Campus near IITK</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         10. [NEW SECTION C] SCIENCE TOUR FOR SCHOOL STUDENTS AT SOPAN ASHRAM
+         ======================================================================= -->
+    <section class="science-tour-section-card" id="science-tour" aria-labelledby="tourHeading">
+      <div class="tour-flex-row">
+        <div class="tour-content-col">
+          <span class="tour-tag-pill" data-i18n="tourTag">HANDS-ON DISCOVERY FOR SCHOOLS</span>
+          <h2 class="tour-main-heading" id="tourHeading" data-i18n="tourHeading">
+            "Science Tour" for School Students at Sopan Ashram
+          </h2>
+          <p class="tour-desc" data-i18n="tourDesc">
+            Bring your school students to Sopan Ashram for a transformative science expedition! Students witness, touch, and perform over 100+ live demonstrations spanning mechanics, optics, wave motion, rotational dynamics, electromagnetism, and everyday chemistry. The tour is specifically crafted to dissolve fear of science and spark lifelong scientific curiosity through joyous observation.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <button type="button" class="btn-inquire-tour btn-open-tour-modal" data-i18n="btnTour">
+              Inquire About Science Tour →
+            </button>
+            <a href="contact-us.html" class="btn-secondary-link" data-i18n="btnTourDetails">
+              Contact Sopan Ashram
+            </a>
+          </div>
+        </div>
+
+        <div style="flex-shrink: 0; text-align: center;">
+          <div style="background: #FFFFFF; border: 2px dashed #EA580C; border-radius: var(--radius-lg); padding: 1.75rem; min-width: 240px; box-shadow: var(--shadow-sm);">
+            
+            <div style="font-size: 1.15rem; font-weight: 800; color: #9A3412; margin-top: 0.5rem;">Hands-on Demos</div>
+            <div style="font-size: 0.8rem; color: #C2410C; margin-top: 0.2rem;">For Classes 6th to 12th</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         11. REFINED COMPACT FEEDBACK SECTION (CLEAN 2-COLUMN DESIGN)
+         ======================================================================= -->
+    <section class="feedback-section-wrapper" aria-labelledby="feedbackHeading">
+      <div class="feedback-section-header">
+        <span class="section-headline-tag">COMMUNITY TESTIMONIALS</span>
+        <h2 style="font-size: 1.75rem; font-weight: 850; color: var(--sopan-iitk-navy);" id="feedbackHeading" data-i18n="feedbackTitle">
+          Feedbacks & Words of Appreciation
+        </h2>
+      </div>
+
+      <div class="feedback-cards-grid">
+        <!-- Card 1: Dr. Sanjay G. Dhande (Ex-Director - IIT Kanpur) -->
+        <article class="feedback-card-item">
+          <p class="compact-quote-text">
+            “Regarding social work, people always say that ‘It is easier said than done’. Strongly negating this saying, is ‘Shiksha Sopan’ - social organization run by our IITK community. It is a pleasure to see the board spectrum of Sopan activities for the betterment of communities residing in the villages nearby to our campus. In the last few years I have been a witness to their contribution towards ‘Shiksha’, ‘Sanskar’ and ‘Swavalamban’ for the village community, children and youth.”
+          </p>
+          <div class="compact-author-row">
+            <img src="https://www.shiksha-sopan.org/Images/Feedback/profdhande.jpg" alt="Dr. Sanjay G. Dhande" class="compact-author-photo" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%23E2E8F0\'/><text x=\'50\' y=\'55\' text-anchor=\'middle\' fill=\'%230284C7\' font-weight=\'bold\' font-size=\'20\'>SD</text></svg>'">
+            <div>
+              <h3 class="compact-author-name">Dr. Sanjay G. Dhande</h3>
+              <span class="compact-author-title">Ex-Director – IIT Kanpur</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Chandra Mohan Thakur (IIT Kanpur Alumnus & IRS Officer) -->
+        <article class="feedback-card-item">
+          <p class="compact-quote-text" style="font-family: 'Mukta', sans-serif; font-size: 1rem; line-height: 1.6;">
+            “मैं अन्तर्मन से धन्यवाद देना चाहता हूँ आपको | मेरी बचपन से ये अभिलाषा थी कि मैं समाज के लिए कुछ हितकर कर पाऊं | इसी क्रम में शिक्षा सोपान से जुड़ा था २००२ में | और आज मुझे बताते हुए ये हर्ष हो रहा हैं कि मैंने २०१० कि सिविल सेवा की परीक्षा पास कर ली हैं | साक्षात्कार के दौरान मुझसे शिक्षा सोपान के बारे में कई प्रश्न भी किये गए| जब मैंने वहाँ शिक्षा सोपान के पिछले दस वर्षों की उपलब्धियाँ बताई तो साक्षात्कार लेने वाले सभी लोग काफी प्रसन्न हुए | मेरे इस परीक्षा में सफल होने का एक बहुत बड़ा कारण हैं शिक्षा सोपान |”
+          </p>
+          <div class="compact-author-row">
+            <img src="https://www.shiksha-sopan.org/Images/Feedback/chandramohan.png" alt="Chandra Mohan Thakur" class="compact-author-photo" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%23E2E8F0\'/><text x=\'50\' y=\'55\' text-anchor=\'middle\' fill=\'%230284C7\' font-weight=\'bold\' font-size=\'20\'>CM</text></svg>'">
+            <div>
+              <h3 class="compact-author-name">चंद्र मोहन ठाकुर</h3>
+              <span class="compact-author-title">B.Tech (2002–2006) मैकेनिकल इंजीनियरिंग, IIT कानपुर • IRS</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         12. PARTNERS, IMPORTANT LINKS, AND GOOGLE MAP
+         ======================================================================= -->
+    <div class="footer-pre-grid">
+      <!-- BigTech Logo -->
+      <div class="partner-logo-box">
+        <img src="https://www.shiksha-sopan.org/Images/bigTech.png" alt="BigTech Partners Shiksha Sopan" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 160 60\' fill=\'%23FFFFFF\'><rect width=\'160\' height=\'60\' rx=\'8\' fill=\'%23F1F5F9\' stroke=\'%23CBD5E1\'/><text x=\'80\' y=\'35\' text-anchor=\'middle\' fill=\'%230284C7\' font-weight=\'bold\' font-size=\'14\'>BigTech Support</text></svg>'">
+      </div>
+
+      <!-- Important Links -->
+      <div class="important-links-col">
+        <h4 data-i18n="impLinksHead">Important Links</h4>
+        <ul class="important-links-list">
+          <li><a href="index.html" class="imp-link-anchor">▸ Home</a></li>
+          <li><a href="executive-committee.html" class="imp-link-anchor">▸ Executive Committee</a></li>
+          <li><a href="activity.html" class="imp-link-anchor">▸ Activity</a></li>
+          <li><a href="contribution.html" class="imp-link-anchor">▸ Contribution</a></li>
+          <li><a href="achievements.html" class="imp-link-anchor">▸ Achivements</a></li>
+            <li><a href="experiments.html" class="imp-link-anchor">▸ Experiments</a></li>
+          <li><a href="about-us.html" class="imp-link-anchor">▸ About Us</a></li>
+          <li><a href="contact-us.html" class="imp-link-anchor">▸ Contact Us</a></li>
+          <li><a href="https://www.shiksha-sopan.org/Internship" class="imp-link-anchor">▸ Internship</a></li>
+        </ul>
+      </div>
+
+      <!-- Live Google Map Embed of Sopan Ashram -->
+      <div class="map-embed-frame">
+        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&q=place_id:ChIJH3A1ceM2nDkRS9JBtXLgq6A" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- Final Copyright Line -->
+    <footer class="final-copyright-bar">
+      <span>Copyright© 2024 shiksha-sopan.org • All Rights Reserved</span>
+    </footer>
+  </main>
+
+  <!-- =======================================================================
+       13. SCIENCE TOUR INQUIRY MODAL (CONFIGURABLE ACTION)
+       ======================================================================= -->
+  <div class="tour-modal-backdrop" id="tourInquiryModal" role="dialog" aria-modal="true" aria-labelledby="inquiryTitle">
+    <div class="tour-modal-card">
+      <button type="button" class="btn-modal-close" id="tourModalClose" aria-label="Close dialog">✕</button>
+      <span class="section-headline-tag">SCHOOL EXPEDITION BOOKING</span>
+      <h3 style="font-size: 1.5rem; font-weight: 850; color: #0F172A; margin: 0.5rem 0 1rem;" id="inquiryTitle">
+        Inquire for "Science Tour" at Sopan Ashram
+      </h3>
+      <p style="font-size: 0.875rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+        Complete this short form to arrange a hands-on physics workshop and lab tour for your students.
+      </p>
+
+      <form id="tourInquiryForm">
+        <div class="form-group">
+          <label class="form-label" for="schoolName">School / Institution Name</label>
+          <input type="text" id="schoolName" class="form-input" placeholder="e.g. Kendriya Vidyalaya IIT Kanpur" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="coordinatorName">Coordinator / Teacher Name</label>
+          <input type="text" id="coordinatorName" class="form-input" placeholder="Teacher In-Charge" required>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label" for="contactPhone">Contact Phone</label>
+            <input type="tel" id="contactPhone" class="form-input" placeholder="+91 98765 43210" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="studentCount">Approx. Student Count</label>
+            <input type="number" id="studentCount" class="form-input" placeholder="30 - 150" required>
+          </div>
+        </div>
+        <button type="submit" class="btn-explore-naest" style="width: 100%; justify-content: center; margin-top: 0.5rem;">
+          Submit Inquiry to Sopan Ashram
+        </button>
+      </form>
+      <div id="tourInquiryFeedback" style="display:none; margin-top:1rem; padding:0.75rem; border-radius:var(--radius-sm); font-size:0.875rem; background:#DCFCE7; color:#15803D;">
+        Thank you! Your science tour inquiry has been forwarded to the Sopan Ashram team.
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       14. PHOTO GALLERY LIGHTBOX MODAL
+       ======================================================================= -->
+  <div class="gallery-lightbox-modal" id="galleryLightboxModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightboxTitle">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-content-box">
+      <button type="button" class="btn-close-lightbox" id="btnCloseLightbox" aria-label="Close Preview">✕</button>
+      <div class="lightbox-image-wrap">
+        <img src="" alt="" id="lightboxImg" class="lightbox-full-img">
+      </div>
+      <div class="lightbox-meta-bar">
+        <h4 id="lightboxTitle">Image Title</h4>
+        <p id="lightboxCaption">Image Caption</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       15. INTERACTIVE PHYSICS SIMULATOR ENGINE (FOR PHYSICS STUDENTS)
+       ======================================================================= -->
+  <script>
+    // A. Bilingual Language Dictionary
+    const langDict = {
+      en: {
+        mottoText: "अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें",
+        headerSub: "An Educational & Social Initiative by IIT Kanpur Community",
+        navHome: "Home",
+        navEC: "Executive Committee",
+        navActivity: "Activity",
+        navContribution: "Contribution",
+        navAchievements: "Achivements",
+        navExperiments: "Experiments",
+        navAbout: "About Us",
+        navContact: "Contact Us",
+        joinBtn: "Join Us →",
+        joinText: "Join the Community of Volunteers, Teachers, and Rural STEM Innovators",
+        joinUsLink: "Join Us",
+        heroBadge: "INITIATIVE BY IIT KANPUR FACULTY & STUDENTS • ESTD. 2001",
+        heroTitle: "SPARKING CURIOSITY <span class=\"hero-title-highlight\">THROUGH HANDS-ON PHYSICS</span> & STEM EDUCATION",
+        heroSubtitle: "Empowering rural and underprivileged children through experiential physics demonstrations, ethical values (<em>Sanskar</em>), and self-reliance (<em>Swavalamban</em>). Conceived and mentored by <strong>Prof. H.C. Verma</strong> and the IIT Kanpur community.",
+        heroBtnWorkbench: " Explore Physics Lab ↓",
+        heroBtnNaest: " NAEST 2025 →",
+        heroBtnJoin: " Join Us →",
+        heroStat1: "20+ Years",
+        heroStat1Sub: "Dedicated Rural STEM Service",
+        heroStat2: "100+ Experiments",
+        heroStat2Sub: "Low-Cost Hands-On Physics Kits",
+        heroStat3: "80+ Anveshikas",
+        heroStat3Sub: "Pan-India Experimental Network",
+        heroStat4: "Thousands Reached",
+        heroStat4Sub: "Rural Students & Teachers Empowered",
+        heroScrollCue: "Scroll to explore interactive lab & initiatives",
+        workbenchHead: "Interactive Physics Discovery Workbench",
+        workbenchSub: "Hands-on interactive demonstration designed for physics students & young curious minds",
+        appFormsTitle: "Application Form",
+        newslettersTitle: "Newsletters",
+        viewMoreNews: "View More Newsletters...",
+        missionTag: "FOUNDATIONAL IDENTITY & ETHOS",
+        missionHeading: "Mission and Methodology",
+        missionParagraph: "Shiksha Sopan is a non-governmental organization (NGO) whose purpose is to impart value- based education to economically weaker section of the society. Its various activities are spreaded in and around the lush-green campus of IIT Kanpur. Shiksha Sopan's philosophy stands on three pillars of Shiksha, Sanskar, and Swavalamban. We believe that education is not merely loading children with information. Therefore, we try our best to establish a connection of class-room teaching with daily-life activities and behaviors. With this point in mind, we keep organizing various activities that are aimed to further nurture these values.",
+        pillar1Sub: "Shiksha • Education",
+        pillar1Desc: "Connecting textbook physics and classroom concepts to daily-life activities and practical observations.",
+        pillar2Sub: "Sanskar • Values & Ethics",
+        pillar2Desc: "Instilling empathy, ethical consciousness, mutual respect, and social gratitude in every child.",
+        pillar3Sub: "Swavalamban • Self-Reliance",
+        pillar3Desc: "Nurturing practical problem-solving skills so students become self-reliant and productive citizens.",
+        galleryTag: "GLIMPSES OF SOPAN ASHRAM & SESSIONS",
+        galleryTitle: "Moments of Joyful Learning & Physics Experiments",
+        gallerySubtitle: "Real snapshots from our residential short courses, school science tours, hands-on demonstration workshops, and annual NAEST award ceremonies.",
+        naestTag: "NATIONAL ANVESHIKA COMPETITION",
+        naestHeading: "Competition on Experimental Skills — NAEST 2025",
+        naestLead: "The National Anveshika Experimental Skill Test (NAEST) is India's most prestigious annual hands-on physics assessment. Conceived by Prof. H.C. Verma and organized by the Indian Association of Physics Teachers (IAPT), NAEST evaluates school and college students on genuine observational intuition, analytical reasoning, and causal deduction rather than textbook memorization.",
+        btnNaest: "Explore NAEST 2025 →",
+        rscTag: "INTENSIVE FACULTY & TEACHER WORKSHOP",
+        rscHeading: "Next Residential Short Course at Sopan Ashram",
+        rscDesc: "Immerse yourself in experiential physics pedagogy directly at Sopan Ashram, situated near the IIT Kanpur campus. Conducted under the direct mentorship of Prof. H.C. Verma, these residential courses empower physics educators, school teachers, and college faculty to design low-cost experimental apparatus, unmask common conceptual misconceptions, and bring classroom physics to vibrant life.",
+        btnRsc: "Explore Residential Short Course →",
+        tourTag: "HANDS-ON DISCOVERY FOR SCHOOLS",
+        tourHeading: "\"Science Tour\" for School Students at Sopan Ashram",
+        tourDesc: "Bring your school students to Sopan Ashram for a transformative science expedition! Students witness, touch, and perform over 100+ live demonstrations spanning mechanics, optics, wave motion, rotational dynamics, electromagnetism, and everyday chemistry. The tour is specifically crafted to dissolve fear of science and spark lifelong scientific curiosity through joyous observation.",
+        btnTour: "Inquire About Science Tour →",
+        btnTourDetails: "Contact Sopan Ashram",
+        feedbackTitle: "Feedbacks & Words of Appreciation",
+        impLinksHead: "Important Links"
+      },
+      hi: {
+        mottoText: "अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें",
+        headerSub: "आईआईटी कानपुर समुदाय द्वारा संचालित शैक्षिक व सामाजिक पहल",
+        navHome: "होम",
+        navEC: "कार्यकारिणी समिति",
+        navActivity: "गतिविधियां",
+        navContribution: "सहयोग",
+        navAchievements: "उपलब्धियां",
+        navExperiments: "प्रयोग",
+        navAbout: "हमारे बारे में",
+        navContact: "संपर्क करें",
+        joinBtn: "जुड़ें →",
+        joinText: "स्वयंसेवकों, शिक्षकों व प्रायोगिक विज्ञान प्रेमियों के समुदाय से जुड़ें",
+        joinUsLink: "जुड़ें",
+        heroBadge: "आईआईटी कानपुर समुदाय द्वारा संचालित शैक्षिक व सामाजिक पहल • स्थापना 2001",
+        heroTitle: "हाथों से सीखें विज्ञान • <span class=\"hero-title-highlight\">प्रायोगिक भौतिकी और अनुसंधान</span>",
+        heroSubtitle: "शिक्षा, संस्कार और स्वावलंबन के माध्यम से ग्रामीण व आर्थिक रूप से कमजोर बच्चों में विज्ञान के प्रति रुचि और आत्मविश्वास जगाना। <strong>प्रो. एच. सी. वर्मा</strong> व आईआईटी कानपुर समुदाय के मार्गदर्शन में।",
+        heroBtnWorkbench: " प्रायोगिक सिमुलेटर देखें ↓",
+        heroBtnNaest: " NAEST 2025 प्रतियोगिता →",
+        heroBtnJoin: " सोपान से जुड़ें →",
+        heroStat1: "20+ वर्ष",
+        heroStat1Sub: "समर्पित ग्रामीण शिक्षा सेवा",
+        heroStat2: "100+ सजीव प्रयोग",
+        heroStat2Sub: "कम लागत के प्रायोगिक मॉडल",
+        heroStat3: "80+ अन्वेषिका केंद्र",
+        heroStat3Sub: "अखिल भारतीय प्रायोगिक नेटवर्क",
+        heroStat4: "हजारों विद्यार्थी",
+        heroStat4Sub: "छात्रवृत्ति, शिविर व विज्ञान भ्रमण",
+        heroScrollCue: "नीचे स्क्रॉल कर प्रयोग व प्रकल्प देखें",
+        workbenchHead: "प्रायोगिक भौतिकी सजीव कार्यशाला (Physics Workbench)",
+        workbenchSub: "भौतिकी के विद्यार्थियों और जिज्ञासुओं के लिए सजीव सिमुलेटर",
+        appFormsTitle: "आवेदन पत्र (Application Form)",
+        newslettersTitle: "मासिक पत्रिका (Newsletters)",
+        viewMoreNews: "अन्य पत्रिकाएं देखें...",
+        missionTag: "मूल उद्देश्य व दर्शन",
+        missionHeading: "हमारा उद्देश्य और कार्यप्रणाली (Mission and Methodology)",
+        missionParagraph: "शिक्षा सोपान एक गैर-सरकारी संस्था है जिसका मुख्य उद्देश्य समाज के आर्थिक रूप से कमजोर वर्ग को संस्कारयुक्त शिक्षा प्रदान करना है। इसकी विभिन्न गतिविधियाँ आईआईटी कानपुर के परिसर और आसपास के गाँवों में फैली हैं। शिक्षा सोपान का दर्शन तीन स्तंभों पर आधारित है — शिक्षा, संस्कार और स्वावलंबन। हमारा मानना है कि शिक्षा केवल सूचनाएँ भरना नहीं है, बल्कि कक्षा के शिक्षण को दैनिक जीवन और व्यवहार से जोड़ना है।",
+        pillar1Sub: "शिक्षा • Shiksha",
+        pillar1Desc: "कक्षा की पढ़ाई को दैनिक जीवन के अनुभवों और व्यावहारिक प्रयोगों से जोड़ना।",
+        pillar2Sub: "संस्कार • Sanskar",
+        pillar2Desc: "सहानुभूति, नैतिक निष्ठा, समाज के प्रति कृतज्ञता और मानवीय मूल्यों का संवर्धन।",
+        pillar3Sub: "स्वावलंबन • Swavalamban",
+        pillar3Desc: "व्यावहारिक कौशल और आत्म-निर्भरता ताकि युवा स्वयं अपने पैरों पर खड़े हो सकें।",
+        galleryTag: "सोपान आश्रम व प्रायोगिक कार्यशालाओं की झलकियाँ",
+        galleryTitle: "सजीव भौतिकी प्रयोग व आनंदमयी शिक्षण के क्षण",
+        gallerySubtitle: "सोपान आश्रम की आवासीय कार्यशालाओं, स्कूली विज्ञान भ्रमणों, प्रायोगिक प्रदर्शनों और राष्ट्रीय अन्वेषिका पुरस्कार समारोह की वास्तविक तस्वीरें।",
+        naestTag: "राष्ट्रीय अन्वेषिका प्रायोगिक परीक्षा",
+        naestHeading: "प्रायोगिक कौशल प्रतियोगिता — NAEST 2025",
+        naestLead: "राष्ट्रीय अन्वेषिका प्रायोगिक कौशल परीक्षा (NAEST) भारत की प्रतिष्ठित प्रतियोगिता है। प्रो. एच. सी. वर्मा के मार्गदर्शन में आईएपीटी द्वारा आयोजित यह परीक्षा छात्रों के वास्तविक अवलोकन और प्रायोगिक विश्लेषण क्षमता को परखती है।",
+        btnNaest: "NAEST 2025 देखें →",
+        rscTag: "आवासीय शिक्षक कार्यशाला",
+        rscHeading: "सोपान आश्रम में अगला आवासीय लघु पाठ्यक्रम (Residential Short Course)",
+        rscDesc: "आईआईटी कानपुर के पास स्थित सोपान आश्रम में विज्ञान शिक्षकों और प्राध्यापकों के लिए गहन प्रायोगिक कार्यशाला। प्रो. एच. सी. वर्मा के सानिध्य में कम लागत के प्रयोगों का निर्माण और शिक्षण विधियों का रूपांतरण।",
+        btnRsc: "आवासीय पाठ्यक्रम देखें →",
+        tourTag: "स्कूली विद्यार्थियों हेतु विज्ञान भ्रमण",
+        tourHeading: "सोपान आश्रम में स्कूली विद्यार्थियों हेतु \"साइंस टूर\" (Science Tour)",
+        tourDesc: "अपने विद्यालय के छात्रों को सोपान आश्रम के रोमांचक विज्ञान भ्रमण पर लाएं! यहाँ १०० से अधिक सजीव प्रयोगों, प्रकाशिकी, यांत्रिकी व तरंग गति के व्यावहारिक प्रदर्शन से बच्चों में विज्ञान का भय दूर होता है।",
+        btnTour: "साइंस टूर हेतु संपर्क करें →",
+        btnTourDetails: "सोपान आश्रम से संपर्क करें",
+        feedbackTitle: "मार्गदर्शक व अनुभव (Feedbacks)",
+        impLinksHead: "महत्वपूर्ण लिंक्स (Important Links)"
+      }
+    };
+
+    function setLanguage(lang) {
+      const dict = langDict[lang] || langDict.en;
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+      document.documentElement.lang = lang;
+    }
+
+    // B. Interactive Physics Workbench Simulation Engine
+    class PhysicsWorkbenchEngine {
+      constructor(canvasId) {
+        this.canvas = document.getElementById(canvasId);
+        if (!this.canvas) return;
+        this.ctx = this.canvas.getContext('2d');
+        this.mode = 'waves'; // 'waves', 'induction', 'optics'
+        this.harmonic = 3;
+        this.time = 0;
+        this.slider = document.getElementById('physParamSlider');
+        this.stat1Label = document.getElementById('hudStat1Label');
+        this.stat1Val = document.getElementById('hudStat1Val');
+        this.stat2Label = document.getElementById('hudStat2Label');
+        this.stat2Val = document.getElementById('hudStat2Val');
+        this.sliderLabel = document.getElementById('sliderParamLabel');
+
+        this.initEvents();
+        this.resize();
+        window.addEventListener('resize', () => this.resize());
+        this.animate();
+      }
+
+      resize() {
+        if (!this.canvas.parentElement) return;
+        const rect = this.canvas.parentElement.getBoundingClientRect();
+        this.width = rect.width;
+        this.height = rect.height;
+        this.canvas.width = this.width * window.devicePixelRatio;
+        this.canvas.height = this.height * window.devicePixelRatio;
+        this.ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
+      }
+
+      setMode(newMode) {
+        this.mode = newMode;
+        document.querySelectorAll('.btn-phys-mode').forEach(b => {
+          b.classList.toggle('active', b.dataset.mode === newMode);
+        });
+
+        if (newMode === 'waves') {
+          this.slider.min = 1; this.slider.max = 5; this.slider.value = 3;
+          this.harmonic = 3;
+          this.stat1Label.innerText = "Mode / Harmonic";
+          this.stat1Val.innerText = "n = 3 Standing Wave";
+          this.stat2Label.innerText = "Frequency (ν)";
+          this.stat2Val.innerText = "42.0 Hz";
+          this.sliderLabel.innerText = "Harmonic Mode (n):";
+        } else if (newMode === 'induction') {
+          this.slider.min = 10; this.slider.max = 90; this.slider.value = 45;
+          this.stat1Label.innerText = "Coil Turns (N)";
+          this.stat1Val.innerText = "N = 450 Turns";
+          this.stat2Label.innerText = "Induced EMF (ℰ)";
+          this.stat2Val.innerText = "1.85 V";
+          this.sliderLabel.innerText = "Dipole Velocity (v):";
+        } else if (newMode === 'optics') {
+          this.slider.min = 10; this.slider.max = 80; this.slider.value = 45;
+          this.stat1Label.innerText = "Incident Angle (θ₁)";
+          this.stat1Val.innerText = "45.0°";
+          this.stat2Label.innerText = "Refracted (θ₂)";
+          this.stat2Val.innerText = "28.1° (Water)";
+          this.sliderLabel.innerText = "Incidence Angle (θ):";
+        }
+      }
+
+      initEvents() {
+        document.querySelectorAll('.btn-phys-mode').forEach(b => {
+          b.addEventListener('click', () => this.setMode(b.dataset.mode));
+        });
+
+        if (this.slider) {
+          this.slider.addEventListener('input', (e) => {
+            const val = parseFloat(e.target.value);
+            if (this.mode === 'waves') {
+              this.harmonic = val;
+              this.stat1Val.innerText = `n = ${val} Standing Wave`;
+              this.stat2Val.innerText = `${(val * 14).toFixed(1)} Hz`;
+            } else if (this.mode === 'induction') {
+              this.stat1Val.innerText = `N = ${val * 10} Turns`;
+              this.stat2Val.innerText = `${(val * 0.04).toFixed(2)} V`;
+            } else if (this.mode === 'optics') {
+              this.stat1Val.innerText = `${val.toFixed(1)}°`;
+              const rad = val * Math.PI / 180;
+              const refrRad = Math.asin(Math.min(0.99, Math.sin(rad) / 1.33));
+              const deg = (refrRad * 180 / Math.PI).toFixed(1);
+              this.stat2Val.innerText = val > 48.7 ? `TIR (Critical θc)` : `${deg}° (Water)`;
+            }
+          });
+        }
+
+        const resetBtn = document.getElementById('btnResetPhysSim');
+        if (resetBtn) {
+          resetBtn.addEventListener('click', () => {
+            this.setMode(this.mode);
+          });
+        }
+      }
+
+      drawWaves() {
+        const ctx = this.ctx;
+        const w = this.width;
+        const h = this.height;
+        const midY = h / 2;
+
+        // Baseline node axis
+        ctx.strokeStyle = '#CBD5E1';
+        ctx.setLineDash([4, 4]);
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(30, midY);
+        ctx.lineTo(w - 30, midY);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Standing wave: y = 2A * sin(kx) * cos(omega * t)
+        const n = this.harmonic;
+        const L = w - 60;
+        const A = 48;
+        const omega = 3.5;
+        const timeFactor = Math.cos(this.time * omega);
+
+        // Envelope in pale blue
+        ctx.strokeStyle = 'rgba(2, 132, 199, 0.25)';
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        for (let x = 0; x <= L; x += 4) {
+          const kx = (n * Math.PI * x) / L;
+          const y = midY - A * Math.sin(kx);
+          if (x === 0) ctx.moveTo(30 + x, y);
+          else ctx.lineTo(30 + x, y);
+        }
+        ctx.stroke();
+
+        ctx.beginPath();
+        for (let x = 0; x <= L; x += 4) {
+          const kx = (n * Math.PI * x) / L;
+          const y = midY + A * Math.sin(kx);
+          if (x === 0) ctx.moveTo(30 + x, y);
+          else ctx.lineTo(30 + x, y);
+        }
+        ctx.stroke();
+
+        // Active vibrating wave string in rich electric blue
+        ctx.strokeStyle = '#0284C7';
+        ctx.lineWidth = 3;
+        ctx.shadowColor = 'rgba(2, 132, 199, 0.4)';
+        ctx.shadowBlur = 8;
+        ctx.beginPath();
+        for (let x = 0; x <= L; x += 3) {
+          const kx = (n * Math.PI * x) / L;
+          const y = midY - (A * Math.sin(kx) * timeFactor);
+          if (x === 0) ctx.moveTo(30 + x, y);
+          else ctx.lineTo(30 + x, y);
+        }
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        // Nodes & Antinodes markers
+        for (let i = 0; i <= n; i++) {
+          const nodeX = 30 + (i * L) / n;
+          // Node dot
+          ctx.fillStyle = '#0F274A';
+          ctx.beginPath();
+          ctx.arc(nodeX, midY, 4, 0, Math.PI * 2);
+          ctx.fill();
+
+          ctx.font = '700 9px "Outfit", sans-serif';
+          ctx.fillStyle = '#0284C7';
+          ctx.textAlign = 'center';
+          ctx.fillText(`N${i}`, nodeX, midY + 16);
+        }
+      }
+
+      drawInduction() {
+        const ctx = this.ctx;
+        const w = this.width;
+        const h = this.height;
+        const midY = h / 2;
+
+        const val = parseFloat(this.slider.value);
+        const speed = (val / 45) * 2;
+        const magnetX = 80 + Math.sin(this.time * speed) * (w * 0.28);
+
+        // Solenoid Coil at Center
+        const coilX = w / 2 - 40;
+        const coilW = 80;
+        const coilH = 70;
+
+        ctx.fillStyle = '#F0F8FF';
+        ctx.strokeStyle = '#0284C7';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(coilX, midY - coilH / 2, coilW, coilH);
+
+        // Copper solenoid loops
+        ctx.strokeStyle = '#EA580C';
+        ctx.lineWidth = 2.5;
+        for (let x = coilX + 8; x < coilX + coilW - 6; x += 12) {
+          ctx.beginPath();
+          ctx.ellipse(x, midY, 4, coilH / 2 - 4, 0, 0, Math.PI * 2);
+          ctx.stroke();
+        }
+
+        // Moving Dipole Magnet (N & S)
+        const magW = 75;
+        const magH = 26;
+        ctx.fillStyle = '#EF4444'; // North (Red)
+        ctx.fillRect(magnetX - magW / 2, midY - magH / 2, magW / 2, magH);
+        ctx.fillStyle = '#2563EB'; // South (Blue)
+        ctx.fillRect(magnetX, midY - magH / 2, magW / 2, magH);
+
+        ctx.font = '700 11px sans-serif';
+        ctx.fillStyle = '#FFFFFF';
+        ctx.textAlign = 'center';
+        ctx.fillText('N', magnetX - magW / 4, midY + 4);
+        ctx.fillText('S', magnetX + magW / 4, midY + 4);
+
+        // Induced Voltage Oscilloscope Wave at bottom
+        ctx.strokeStyle = '#0D9488';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        for (let x = 40; x < w - 40; x += 4) {
+          const distToCoil = magnetX - w / 2;
+          const emf = -Math.sin(distToCoil * 0.04) * 25 * Math.cos((x - w / 2) * 0.05 + this.time * 4);
+          const y = h - 25 + Math.max(-20, Math.min(20, emf));
+          if (x === 40) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+
+        ctx.font = '700 9px "Outfit", monospace';
+        ctx.fillStyle = '#0D9488';
+        ctx.textAlign = 'left';
+        ctx.fillText('OSCILLOSCOPE INDUCED EMF ℰ = -dΦ/dt', 40, h - 8);
+      }
+
+      drawOptics() {
+        const ctx = this.ctx;
+        const w = this.width;
+        const h = this.height;
+        const midY = h * 0.52;
+        const cx = w / 2;
+
+        // Water/Glass medium bottom half
+        ctx.fillStyle = 'rgba(2, 132, 199, 0.08)';
+        ctx.fillRect(40, midY, w - 80, h - midY - 20);
+        ctx.strokeStyle = '#0284C7';
+        ctx.lineWidth = 1.5;
+        ctx.strokeRect(40, midY, w - 80, h - midY - 20);
+
+        // Normal dashed line
+        ctx.strokeStyle = '#94A3B8';
+        ctx.setLineDash([3, 3]);
+        ctx.beginPath();
+        ctx.moveTo(cx, 20);
+        ctx.lineTo(cx, h - 30);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        const deg = parseFloat(this.slider.value);
+        const rad = deg * Math.PI / 180;
+        const rayLen = 90;
+
+        // Incident ray (Air -> Glass/Water)
+        const inX = cx - Math.sin(rad) * rayLen;
+        const inY = midY - Math.cos(rad) * rayLen;
+
+        ctx.strokeStyle = '#0284C7';
+        ctx.lineWidth = 2.5;
+        ctx.shadowColor = '#00E5FF';
+        ctx.shadowBlur = 8;
+        ctx.beginPath();
+        ctx.moveTo(inX, inY);
+        ctx.lineTo(cx, midY);
+        ctx.stroke();
+
+        // Refracted or Reflected ray
+        const refrRad = Math.asin(Math.min(0.999, Math.sin(rad) / 1.33));
+        const outX = cx + Math.sin(refrRad) * rayLen;
+        const outY = midY + Math.cos(refrRad) * rayLen;
+
+        ctx.strokeStyle = '#EA580C';
+        ctx.beginPath();
+        ctx.moveTo(cx, midY);
+        ctx.lineTo(outX, outY);
+        ctx.stroke();
+        ctx.shadowBlur = 0;
+
+        ctx.font = '700 10px "Outfit", sans-serif';
+        ctx.fillStyle = '#0F274A';
+        ctx.textAlign = 'right';
+        ctx.fillText(`Air (n=1.00)`, cx - 12, midY - 12);
+        ctx.textAlign = 'left';
+        ctx.fillText(`Water (n=1.33)`, cx + 12, midY + 18);
+      }
+
+      animate() {
+        this.time += 0.03;
+        const ctx = this.ctx;
+        ctx.clearRect(0, 0, this.width, this.height);
+
+        if (this.mode === 'waves') this.drawWaves();
+        else if (this.mode === 'induction') this.drawInduction();
+        else if (this.mode === 'optics') this.drawOptics();
+
+        requestAnimationFrame(() => this.animate());
+      }
+    }
+
+    // C. Initialization on DOM Load
+    document.addEventListener('DOMContentLoaded', () => {
+      // Language buttons
+      document.querySelectorAll('.lang-btn').forEach(b => {
+        b.addEventListener('click', () => setLanguage(b.dataset.lang));
+      });
+
+      // Initialize Physics Workbench Simulation
+      new PhysicsWorkbenchEngine('physicsHeroCanvas');
+
+      // Tour Inquiry Modal
+      const modal = document.getElementById('tourInquiryModal');
+      document.querySelectorAll('.btn-open-tour-modal').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          modal.classList.add('active');
+        });
+      });
+      document.getElementById('tourModalClose').addEventListener('click', () => {
+        modal.classList.remove('active');
+      });
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) modal.classList.remove('active');
+      });
+
+      // Form submission
+      const tourForm = document.getElementById('tourInquiryForm');
+      if (tourForm) {
+        tourForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const fb = document.getElementById('tourInquiryFeedback');
+          fb.style.display = 'block';
+          tourForm.reset();
+          setTimeout(() => { modal.classList.remove('active'); fb.style.display = 'none'; }, 2200);
+        });
+      }
+
+      // Photo Gallery Filter Tabs
+      const filterBtns = document.querySelectorAll('.btn-gallery-filter');
+      const galleryCards = document.querySelectorAll('.gallery-item-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+
+          galleryCards.forEach(card => {
+            if (card.classList.contains('gallery-placeholder-card')) {
+              card.style.display = 'flex';
+              return;
+            }
+            const cat = card.dataset.category || '';
+            if (filter === 'all' || cat.includes(filter)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+
+      // Photo Gallery Lightbox Modal
+      const lightboxModal = document.getElementById('galleryLightboxModal');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxTitle = document.getElementById('lightboxTitle');
+      const lightboxCaption = document.getElementById('lightboxCaption');
+      const btnCloseLightbox = document.getElementById('btnCloseLightbox');
+      const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+
+      document.querySelectorAll('.gallery-img-container').forEach(container => {
+        container.addEventListener('click', () => {
+          const imgUrl = container.dataset.img;
+          const title = container.dataset.title || '';
+          const caption = container.dataset.caption || '';
+          if (lightboxImg && lightboxModal) {
+            lightboxImg.src = imgUrl;
+            lightboxImg.alt = title;
+            lightboxTitle.innerText = title;
+            lightboxCaption.innerText = caption;
+            lightboxModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+          }
+        });
+      });
+
+      function closeLightbox() {
+        if (lightboxModal) {
+          lightboxModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      }
+
+      if (btnCloseLightbox) btnCloseLightbox.addEventListener('click', closeLightbox);
+      if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightboxModal && lightboxModal.classList.contains('active')) {
+          closeLightbox();
+        }
+      });
+    });
+  </script>
+</body>
+</html>

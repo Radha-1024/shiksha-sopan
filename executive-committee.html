@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Executive Committee | Shiksha Sopan (शिक्षा सोपान)</title>
+  <meta name="description" content="Meet the Executive Committee of Shiksha Sopan — dedicated leadership from IIT Kanpur faculty, staff, alumni, and volunteers guiding education, ethics, and self-reliance.">
+  <meta name="keywords" content="Shiksha Sopan, Executive Committee, Prof. H.C. Verma, Dr. Anurag Tripathi, IIT Kanpur, Education NGO, Leadership">
+  <link rel="icon" type="image/jpeg" href="images/shiksha-sopan-logo.jpg" />
+
+  <!-- Google Fonts: Playfair Display (Editorial Display), Plus Jakarta Sans (Modern UI), Mukta (Devanagari) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. ROOT DESIGN SYSTEM & CSS VARIABLES
+       ========================================================================== */
+    :root {
+      /* Colors */
+      --sopan-iitk-navy: #0B192C;
+      --sopan-navy-card: #0F274A;
+      --sopan-navy-light: #1E3A8A;
+      --sopan-blue: #0284C7;
+      --sopan-blue-light: #E0F2FE;
+      --sopan-blue-hover: #0369A1;
+      --sopan-blue-dark: #0369A1;
+      --transition-fast: 0.15s ease;
+      --sopan-sky: #0EA5E9;
+      --sopan-sky-subtle: #F0F9FF;
+      --sopan-orange: #EA580C;
+      --sopan-orange-hover: #C2410C;
+      --sopan-gold: #D97706;
+      --sopan-gold-light: #FEF3C7;
+      --sopan-gold-border: #FDE68A;
+      
+      /* Neutral Tones */
+      --bg-page: #FDFEFE;
+      --bg-card: #FFFFFF;
+      --bg-subtle: #F8FAFC;
+      --bg-cream: #FFFDF9;
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #64748B;
+      --border-subtle: #E2E8F0;
+      --border-strong: #CBD5E1;
+      
+      /* Shadows */
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+      --shadow-lg: 0 10px 25px -3px rgba(11, 25, 44, 0.08), 0 4px 10px -4px rgba(11, 25, 44, 0.04);
+      --shadow-xl: 0 20px 35px -5px rgba(11, 25, 44, 0.12), 0 8px 16px -6px rgba(11, 25, 44, 0.06);
+      --shadow-gold: 0 10px 25px -5px rgba(217, 119, 6, 0.18);
+      
+      /* Radii */
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+      
+      /* Transitions */
+      --transition-fast: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 100% 0%, rgba(2, 132, 199, 0.025) 0%, transparent 40%),
+        radial-gradient(circle at 0% 50%, rgba(217, 119, 6, 0.02) 0%, transparent 35%),
+        linear-gradient(to right, rgba(226, 232, 240, 0.25) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(226, 232, 240, 0.25) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 64px 64px, 64px 64px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    /* ==========================================================================
+       2. TOP TICKER & HEADER BRANDING (MATCHING HOME PAGE)
+       ========================================================================== */
+    .top-motto-bar {
+      background: linear-gradient(90deg, #F0F8FF 0%, #FFFFFF 50%, #F0F8FF 100%);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.45rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 51;
+    }
+
+    .motto-content {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 700;
+      color: var(--sopan-iitk-navy);
+      font-family: 'Mukta', sans-serif;
+      font-size: 1.1rem;
+    }
+
+    
+
+    /* Main Brand Header Banner */
+    .header-banner-wrapper {
+      background: #FFFFFF;
+      border-bottom: 1.5px solid var(--border-subtle);
+      padding: 0.95rem 0;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.04);
+    }
+
+    .header-branding-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo-combo {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-emblem-svg {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      transition: transform var(--transition-fast, 0.15s ease);
+    }
+    .brand-logo-combo:hover .brand-emblem-svg {
+      transform: rotate(5deg) scale(1.04);
+    }
+
+    .brand-title-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-main-title {
+      font-size: 1.55rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .brand-main-title span.hindi {
+      font-family: 'Mukta', sans-serif;
+      color: var(--sopan-orange);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-left: 0.35rem;
+    }
+
+    .brand-tagline-sub {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue-dark, #0369A1);
+      margin-top: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-tagline-sub::before {
+      content: none;
+      font-size: 0.75rem;
+    }
+
+    .header-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-toggle-box {
+      display: flex;
+      align-items: center;
+      background: var(--bg-secondary, #F8FAFC);
+      border: 1px solid var(--border-subtle, #E2E8F0);
+      border-radius: var(--radius-full, 9999px);
+      padding: 3px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-secondary, #475569);
+      border-radius: var(--radius-full, 9999px);
+      cursor: pointer;
+      transition: all var(--transition-fast, 0.15s ease);
+    }
+
+    .lang-btn.active {
+      background: #FFFFFF;
+      color: var(--sopan-blue-dark, #0369A1);
+      box-shadow: 0 1px 3px rgba(2, 132, 199, 0.15);
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION BAR (ALL 8 ORIGINAL LINKS PRESERVED)
+       ========================================================================== */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 2px solid var(--border-subtle, #E2E8F0);
+      box-shadow: 0 2px 10px rgba(15, 39, 74, 0.05);
+    }
+
+    .nav-inner-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+
+    .nav-links-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links-menu::-webkit-scrollbar { display: none; }
+
+    .nav-link-btn {
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-secondary, #475569);
+      text-decoration: none;
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm, 8px);
+      transition: all var(--transition-fast, 0.15s ease);
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .nav-link-btn:hover, .nav-link-btn.active {
+      color: var(--sopan-blue-dark, #0369A1);
+      background: var(--sopan-blue-light, #E0F2FE);
+    }
+
+    .btn-join-us {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--sopan-orange, #EA580C);
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.4rem 1.15rem;
+      border-radius: var(--radius-full, 9999px);
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(234, 88, 12, 0.3);
+      transition: all var(--transition-fast, 0.15s ease);
+    }
+
+    .btn-join-us:hover {
+      background: var(--sopan-orange-hover, #C2410C);
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       4. HERO SECTION: EDITORIAL INSTITUTIONAL LEADERSHIP (LIGHT THEME)
+       ========================================================================== */
+    .ec-hero-section {
+      position: relative;
+      max-width: 980px;
+      width: calc(100% - 2.5rem);
+      margin: 2rem auto 1.75rem;
+      background: linear-gradient(145deg, #F0F9FF 0%, #E0F2FE 45%, #F8FAFC 100%);
+      color: #0F172A;
+      padding: 3rem 2rem 2.5rem;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid #BAE6FD;
+      border-bottom: 3.5px solid #0EA5E9;
+      box-shadow: 0 12px 32px -10px rgba(2, 132, 199, 0.10), 0 4px 12px rgba(15, 23, 42, 0.03);
+    }
+
+    /* Subtle Architectural & Geometric Indian Motifs (Light Blueprint Grid) */
+    .ec-hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        radial-gradient(circle at 12% 20%, rgba(56, 189, 248, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 88% 85%, rgba(245, 158, 11, 0.08) 0%, transparent 40%),
+        linear-gradient(to right, rgba(2, 132, 199, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 132, 199, 0.05) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 36px 36px, 36px 36px;
+      pointer-events: none;
+    }
+
+    .ec-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-eyebrow-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1.25rem;
+      background: #FFFFFF;
+      border: 1px solid #BAE6FD;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #0284C7;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.08);
+    }
+
+    .ec-hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: #0B192C;
+      margin-bottom: 0.75rem;
+      text-shadow: none;
+    }
+    .ec-hero-title .hindi-sub {
+      display: block;
+      font-family: 'Mukta', sans-serif;
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      font-weight: 700;
+      color: #B45309;
+      margin-top: 0.25rem;
+      letter-spacing: 0;
+    }
+
+    .ec-hero-lead {
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      color: #334155;
+      max-width: 620px;
+      margin: 0 auto 1.75rem;
+      line-height: 1.7;
+      font-weight: 450;
+      text-shadow: none;
+    }
+
+    /* Ornamental Divider with Traditional Lamp Emblem */
+    .ornamental-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+    .ornamental-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(2, 132, 199, 0.35), transparent);
+    }
+    .ornamental-emblem {
+      color: #D97706;
+      font-size: 1.25rem;
+      filter: drop-shadow(0 2px 4px rgba(217, 119, 6, 0.25));
+    }
+
+    /* ==========================================================================
+       5. EDITORIAL INTRODUCTION (SPLIT LAYOUT)
+       ========================================================================== */
+    .ec-intro-section {
+      padding: 4rem 0 3rem;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .ec-intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.4fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .intro-statement-col {
+      border-left: 4px solid var(--sopan-blue);
+      padding-left: 1.75rem;
+    }
+
+    .intro-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue);
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .intro-main-quote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--sopan-iitk-navy);
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .intro-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+    .intro-pill-badge {
+      font-size: 0.75rem;
+      font-weight: 750;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-full);
+      background: var(--sopan-blue-light);
+      color: var(--sopan-blue-hover);
+    }
+    .pill-gold {
+      background: #FEF3C7;
+      color: #92400E;
+    }
+
+    .intro-text-col p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .intro-text-col p strong {
+      color: var(--sopan-iitk-navy);
+    }
+
+    /* ==========================================================================
+       6. FILTER / CATEGORY SEGMENTATION TABS
+       ========================================================================== */
+    .committee-directory-section {
+      padding: 3.5rem 0 5rem;
+    }
+
+    .filter-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+
+    .filter-tabs-pills {
+      display: inline-flex;
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      padding: 4px;
+      gap: 0.35rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .filter-pill-btn {
+      border: none;
+      background: transparent;
+      padding: 0.55rem 1.4rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }
+    .filter-pill-btn:hover {
+      color: var(--sopan-iitk-navy);
+    }
+    .filter-pill-btn.active {
+      background: var(--sopan-iitk-navy);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(11, 25, 44, 0.25);
+    }
+
+    /* Section Sub-headings */
+    .section-title-divider {
+      text-align: center;
+      margin-bottom: 2.25rem;
+    }
+    .section-title-divider h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--sopan-iitk-navy);
+      position: relative;
+      display: inline-block;
+      padding-bottom: 0.65rem;
+    }
+    .section-title-divider h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--sopan-blue);
+      border-radius: var(--radius-full);
+    }
+    .section-title-divider p {
+      font-size: 0.925rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    /* ==========================================================================
+       7. FEATURED LEADERSHIP SHOWCASE (OFFICE BEARERS)
+       ========================================================================== */
+    .featured-leadership-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.75rem;
+      margin-bottom: 4rem;
+    }
+
+    .featured-leader-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-normal);
+      position: relative;
+    }
+    .featured-leader-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-xl);
+      border-color: #7DD3FC;
+    }
+    .featured-leader-card.card-founder {
+      border: 2px solid #FDE68A;
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFFDF9 100%);
+    }
+    .featured-leader-card.card-founder:hover {
+      border-color: #F59E0B;
+      box-shadow: var(--shadow-gold);
+    }
+
+    .leader-photo-frame {
+      position: relative;
+      width: 100%;
+      height: 290px;
+      background: #0B192C;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .leader-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+    .featured-leader-card:hover .leader-photo-img {
+      transform: scale(1.04);
+    }
+
+    .leader-role-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 3;
+      padding: 0.4rem 1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .badge-president {
+      background: rgba(2, 132, 199, 0.9);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
+    }
+    .badge-treasurer {
+      background: rgba(217, 119, 6, 0.95);
+      color: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.4);
+    }
+    .badge-secretary {
+      background: rgba(15, 39, 74, 0.9);
+      color: #BAE6FD;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 4px 12px rgba(15, 39, 74, 0.4);
+    }
+
+    .card-zoom-indicator {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      opacity: 0;
+      transform: scale(0.85);
+      transition: all 0.25s ease;
+      z-index: 3;
+    }
+    .leader-photo-frame:hover .card-zoom-indicator {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .leader-info-block {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .leader-name-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--sopan-iitk-navy);
+      line-height: 1.3;
+      margin-bottom: 0.4rem;
+    }
+
+    .leader-affiliation-text {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .leader-affiliation-text svg {
+      color: var(--sopan-blue);
+      flex-shrink: 0;
+    }
+
+    .leader-meta-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 1rem;
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .email-contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--sopan-blue);
+      text-decoration: none;
+      background: var(--sopan-blue-light);
+      padding: 0.4rem 0.85rem;
+      border-radius: var(--radius-full);
+      transition: all var(--transition-fast);
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .email-contact-link:hover {
+      background: var(--sopan-blue);
+      color: #FFFFFF;
+    }
+
+    .btn-card-expand {
+      background: transparent;
+      border: none;
+      font-size: 0.8rem;
+      font-weight: 750;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.4rem 0.65rem;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition-fast);
+    }
+    .btn-card-expand:hover {
+      color: var(--sopan-iitk-navy);
+      background: var(--bg-subtle);
+    }
+
+    /* ==========================================================================
+       8. RESPONSIVE COMMITTEE MEMBER CARDS GRID
+       ========================================================================== */
+    .regular-members-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .member-profile-card {
+      background: #FFFFFF;
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-normal);
+      position: relative;
+    }
+    .member-profile-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: #BAE6FD;
+    }
+
+    .member-photo-frame {
+      position: relative;
+      width: 100%;
+      height: 240px;
+      background: #0F274A;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .member-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+    .member-profile-card:hover .member-photo-img {
+      transform: scale(1.05);
+    }
+
+    .member-role-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 3;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: rgba(15, 39, 74, 0.8);
+      color: #BAE6FD;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .member-info-block {
+      padding: 1.25rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .member-name-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--sopan-iitk-navy);
+      line-height: 1.35;
+      margin-bottom: 0.35rem;
+    }
+
+    .member-affiliation-text {
+      font-size: 0.825rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .member-affiliation-text svg {
+      color: var(--sopan-blue);
+      flex-shrink: 0;
+    }
+
+    .member-meta-footer {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 0.85rem;
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    /* ==========================================================================
+       9. DETAIL PROFILE MODAL (EXPANDABLE INTERACTION)
+       ========================================================================== */
+    .member-detail-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .member-detail-modal.active { display: flex; }
+
+    .modal-backdrop-veil {
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 25, 44, 0.8);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .modal-profile-card {
+      position: relative;
+      z-index: 2;
+      max-width: 640px;
+      width: 100%;
+      background: #FFFFFF;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.5);
+      animation: modalSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      border: 1.5px solid var(--border-subtle);
+    }
+
+    @keyframes modalSlideUp {
+      from { opacity: 0; transform: translateY(20px) scale(0.97); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .btn-modal-close-icon {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--sopan-iitk-navy);
+      border: 1px solid var(--border-subtle);
+      border-radius: 50%;
+      font-size: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-fast);
+    }
+    .btn-modal-close-icon:hover {
+      background: var(--sopan-orange);
+      color: #FFFFFF;
+      transform: scale(1.08);
+    }
+
+    .modal-header-hero {
+      position: relative;
+      height: 260px;
+      background: linear-gradient(135deg, #091E3A 0%, #0F274A 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 1.75rem;
+      overflow: hidden;
+    }
+    .modal-header-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 30%, rgba(56, 189, 248, 0.2) 0%, transparent 60%);
+    }
+
+    .modal-portrait-circle {
+      position: relative;
+      z-index: 2;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #FFFFFF;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      background: #0B192C;
+      margin-bottom: -50px;
+    }
+    .modal-portrait-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .modal-body-content {
+      padding: 4rem 2rem 2rem;
+    }
+
+    .modal-role-pill {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue);
+      background: var(--sopan-blue-light);
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 0.65rem;
+    }
+
+    .modal-name-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: var(--sopan-iitk-navy);
+      line-height: 1.25;
+      margin-bottom: 0.4rem;
+    }
+
+    .modal-affiliation-desc {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-meta-box {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .modal-meta-row:last-child { margin-bottom: 0; }
+    .modal-meta-row svg { color: var(--sopan-blue); flex-shrink: 0; }
+    .modal-meta-row strong { color: var(--sopan-iitk-navy); width: 110px; }
+    .modal-meta-row span, .modal-meta-row a { color: var(--text-secondary); }
+
+    .btn-modal-action-row {
+      display: flex;
+      gap: 0.75rem;
+    }
+    .btn-modal-email {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: var(--sopan-blue);
+      color: #FFFFFF;
+      font-size: 0.9rem;
+      font-weight: 750;
+      padding: 0.75rem 1.25rem;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+    .btn-modal-email:hover {
+      background: var(--sopan-blue-hover);
+    }
+
+    /* ==========================================================================
+       10. INSTITUTIONAL INTEGRITY & VALUES CALLOUT
+       ========================================================================== */
+    .institutional-values-strip {
+      background: linear-gradient(135deg, #FFFDF9 0%, #FEF3C7 100%);
+      border: 2px solid #FDE68A;
+      border-radius: var(--radius-xl);
+      padding: 2.75rem;
+      margin: 2rem 0 4rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .values-inner-flex {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .values-icon-badge {
+      width: 72px;
+      height: 72px;
+      border-radius: var(--radius-lg);
+      background: #FFFFFF;
+      border: 2px solid #F59E0B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25);
+      flex-shrink: 0;
+    }
+    .values-text-col h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #92400E;
+      margin-bottom: 0.4rem;
+    }
+    .values-text-col p {
+      font-size: 0.95rem;
+      color: #78350F;
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       11. PARTNERS, IMPORTANT LINKS, AND GOOGLE MAP (CONSISTENT FOOTER)
+       ========================================================================== */
+    .footer-pre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 2fr;
+      gap: 2rem;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border-subtle);
+      align-items: center;
+    }
+
+    .partner-logo-box {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .partner-logo-box img {
+      max-width: 100%;
+      height: auto;
+      max-height: 70px;
+    }
+
+    .important-links-col h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--sopan-iitk-navy);
+      margin-bottom: 0.75rem;
+      border-bottom: 2px solid var(--sopan-blue);
+      padding-bottom: 0.35rem;
+      display: inline-block;
+    }
+
+    .important-links-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.35rem 1rem;
+    }
+
+    .imp-link-anchor {
+      font-size: 0.825rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color var(--transition-fast);
+      display: inline-block;
+      padding: 0.2rem 0;
+    }
+    .imp-link-anchor:hover {
+      color: var(--sopan-blue);
+      transform: translateX(3px);
+    }
+
+    .map-frame-box {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      height: 180px;
+    }
+    .map-frame-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .site-final-footer {
+      background: #0B192C;
+      color: #94A3B8;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.825rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* ==========================================================================
+       12. RESPONSIVENESS & ACCESSIBILITY
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .featured-leadership-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .regular-members-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .ec-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .footer-pre-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .map-frame-box {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-iitk-badge { display: none; }
+      .ec-hero-section {
+        width: calc(100% - 1.5rem);
+        margin: 1.25rem auto 1rem;
+        padding: 2.25rem 1.25rem 2rem;
+        border-radius: 16px;
+      }
+      .featured-leadership-grid {
+        grid-template-columns: 1fr;
+      }
+      .regular-members-grid {
+        grid-template-columns: 1fr;
+      }
+      .filter-tabs-pills {
+        flex-wrap: wrap;
+        border-radius: var(--radius-md);
+        width: 100%;
+      }
+      .filter-pill-btn {
+        flex: 1;
+        text-align: center;
+      }
+      .values-inner-flex {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-pre-grid {
+        grid-template-columns: 1fr;
+      }
+      .map-frame-box {
+        grid-column: span 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  
+    /* Main Brand Header Banner (Uniform Blueprint Grid Theme Matching Home Page) */
+    .header-banner-wrapper {
+      background: #F0F8FF;
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(2, 132, 199, 0.09) 0%, transparent 60%),
+        radial-gradient(circle at 85% 50%, rgba(0, 229, 255, 0.07) 0%, transparent 50%),
+        linear-gradient(to right, rgba(2, 132, 199, 0.08) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 132, 199, 0.08) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+      border-bottom: 1.5px solid var(--border-subtle, #E2E8F0);
+      padding: 0.95rem 0;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.04);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-watermark-formula {
+      position: absolute;
+      top: 18px;
+      right: 18%;
+      transform: rotate(8deg);
+      font-family: 'Outfit', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: rgba(2, 132, 199, 0.22);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .header-branding-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-logo-combo {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .brand-emblem-svg {
+      width: 56px;
+      height: 56px;
+      flex-shrink: 0;
+      transition: transform var(--transition-fast, 0.15s ease);
+    }
+    .brand-logo-combo:hover .brand-emblem-svg {
+      transform: rotate(5deg) scale(1.04);
+    }
+
+    .brand-title-box {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-main-title {
+      font-size: 1.55rem;
+      font-weight: 850;
+      color: var(--sopan-iitk-navy, #0B192C);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .brand-main-title span.hindi {
+      font-family: 'Mukta', sans-serif;
+      color: var(--sopan-orange, #EA580C);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-left: 0.35rem;
+    }
+
+    .brand-tagline-sub {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--sopan-blue-dark, #0369A1);
+      margin-top: 0.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .brand-tagline-sub::before {
+      content: none;
+      font-size: 0.75rem;
+    }
+
+    .header-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .lang-toggle-box {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--border-subtle, #E2E8F0);
+      border-radius: var(--radius-full, 9999px);
+      padding: 3px;
+      box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-secondary, #475569);
+      border-radius: var(--radius-full, 9999px);
+      cursor: pointer;
+      transition: all var(--transition-fast, 0.15s ease);
+    }
+
+    .lang-btn.active {
+      background: #0284C7;
+      color: #FFFFFF;
+      box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25);
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION BAR (STICKY, UNIFORM PILL ACTIVE INDICATOR)
+       ========================================================================== */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 2px solid var(--border-subtle, #E2E8F0);
+      box-shadow: 0 2px 10px rgba(15, 39, 74, 0.05);
+    }
+
+    .nav-inner-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 54px;
+    }
+
+    .nav-links-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links-menu::-webkit-scrollbar { display: none; }
+
+    .nav-link-btn {
+      font-size: 0.825rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-secondary, #475569);
+      text-decoration: none;
+      padding: 0.5rem 0.85rem;
+      border-radius: var(--radius-sm, 8px);
+      transition: all var(--transition-fast, 0.15s ease);
+      white-space: nowrap;
+      display: inline-block;
+    }
+
+    .nav-link-btn:hover {
+      color: var(--sopan-blue-dark, #0369A1);
+      background: rgba(2, 132, 199, 0.08);
+    }
+
+    .nav-link-btn.active {
+      color: #0369A1 !important;
+      background: #E0F2FE !important;
+      font-weight: 800 !important;
+    }
+
+    .btn-join-us {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--sopan-orange, #EA580C);
+      color: #FFFFFF;
+      font-size: 0.825rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.55rem 1.35rem;
+      border-radius: var(--radius-full, 9999px);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.28);
+      transition: all var(--transition-standard, 0.2s ease);
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+
+    .btn-join-us:hover {
+      background: var(--sopan-orange-hover, #C2410C);
+      transform: translateY(-1px);
+      color: #FFFFFF;
+    }
+
+  
+    .brand-emblem-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(11, 25, 44, 0.12);
+      border: 1.5px solid rgba(234, 88, 12, 0.35);
+      transition: transform var(--transition-fast, 0.15s ease);
+      flex-shrink: 0;
+    }
+    .brand-logo-combo:hover .brand-emblem-img {
+      transform: scale(1.05);
+    }
+    .ornamental-dot {
+      color: #0284C7;
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- =======================================================================
+       1. TOP TICKER WITH TRADITIONAL LAMP ICON
+       ======================================================================= -->
+  <aside class="top-motto-bar" aria-label="Motto Bar">
+    <div class="container motto-content" data-i18n="mottoText">
+      <span>अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें</span>
+    </div>
+  </aside>
+
+  <!-- =======================================================================
+       2. HEADER BRANDING & LANGUAGE SWITCHER (BLUEPRINT GRAPH & WATERMARK)
+       ======================================================================= -->
+  <header class="header-banner-wrapper">
+    <div class="header-watermark-formula" aria-hidden="true">∇ × E = -∂B/∂t</div>
+    <div class="container header-branding-flex">
+      <a href="index.html" class="brand-logo-combo" aria-label="Shiksha Sopan Home">
+        <img src="images/shiksha-sopan-logo.jpg" alt="Shiksha Sopan Emblem" class="brand-emblem-img" />
+
+        <div class="brand-title-box">
+          <div class="brand-main-title">
+            SHIKSHA SOPAN <span class="hindi">शिक्षा सोपान</span>
+          </div>
+          <div class="brand-tagline-sub" data-i18n="headerSub">
+            AN EDUCATIONAL & SOCIAL INITIATIVE BY IIT KANPUR COMMUNITY
+          </div>
+        </div>
+      </a>
+
+      <div class="header-actions-group">
+        <div class="lang-toggle-box" role="radiogroup" aria-label="Language Selector">
+          <button type="button" class="lang-btn active" id="btnLangEn" data-lang="en" onclick="setLanguage('en')">English</button>
+          <button type="button" class="lang-btn" id="btnLangHi" data-lang="hi" onclick="setLanguage('hi')">हिन्दी</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       3. NAVIGATION BAR (EXACT UNIFIED LAYOUT & ACTIVE INDICATOR)
+       ======================================================================= -->
+  <nav class="navbar-sticky" aria-label="Main Navigation">
+    <div class="container nav-inner-row">
+      <ul class="nav-links-menu">
+        <li><a href="index.html" class="nav-link-btn " data-i18n="navHome">Home</a></li>
+        <li><a href="executive-committee.html" class="nav-link-btn active" data-i18n="navEC">Executive Committee</a></li>
+        <li><a href="activity.html" class="nav-link-btn " data-i18n="navActivity">Activity</a></li>
+        <li><a href="contribution.html" class="nav-link-btn " data-i18n="navContribution">Contribution</a></li>
+        <li><a href="achievements.html" class="nav-link-btn " data-i18n="navAchievements">Achivements</a></li>
+        <li><a href="experiments.html" class="nav-link-btn " data-i18n="navExperiments">Experiments</a></li>
+        <li><a href="about-us.html" class="nav-link-btn " data-i18n="navAbout">About Us</a></li>
+        <li><a href="contact-us.html" class="nav-link-btn " data-i18n="navContact">Contact Us</a></li>
+      </ul>
+
+      <a href="https://www.shiksha-sopan.org/join" class="btn-join-us" target="_blank" rel="noopener noreferrer" data-i18n="joinBtn">
+        Join Us →
+      </a>
+    </div>
+  </nav>
+
+    <main>
+    <!-- =======================================================================
+         4. HERO SECTION: EDITORIAL LEADERSHIP
+         ======================================================================= -->
+    <section class="ec-hero-section" aria-labelledby="ecHeroHeading">
+      <div class="container ec-hero-content">
+        <div class="hero-eyebrow-pill"><span data-i18n="heroPill">LEADERSHIP & GOVERNANCE • SHIKSHA SOPAN</span>
+        </div>
+
+        <h1 class="ec-hero-title" id="ecHeroHeading">
+          <span data-i18n="heroTitle">Executive Committee</span>
+          <span class="hindi-sub" data-i18n="heroTitleHi">कार्यकारिणी समिति</span>
+        </h1>
+
+        <p class="ec-hero-lead" data-i18n="heroLead">
+          Leadership and guidance shaping the vision of Shiksha Sopan — dedicated faculty, staff, alumni, and volunteers from IIT Kanpur and the community united in service of education, values, and self-reliance.
+        </p>
+
+        <div class="ornamental-divider" aria-hidden="true">
+          <span class="ornamental-line"></span>
+          <span class="ornamental-dot">•</span>
+          <span class="ornamental-line"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. EDITORIAL INTRODUCTION (SPLIT LAYOUT)
+         ======================================================================= -->
+    <section class="ec-intro-section" aria-labelledby="introHeading">
+      <div class="container ec-intro-grid">
+        <div class="intro-statement-col">
+          <span class="intro-tag" data-i18n="introTag">INSTITUTIONAL STEWARDSHIP</span>
+          <h2 class="intro-main-quote" id="introHeading" data-i18n="introHeading">
+            Steering with Purpose, Educating with Heart.
+          </h2>
+          <div class="intro-pills-row">
+            <span class="intro-pill-badge" data-i18n="pill1">IIT Kanpur Faculty & Staff</span>
+            <span class="intro-pill-badge pill-gold" data-i18n="pill2">Registered NGO Governance</span>
+            <span class="intro-pill-badge" data-i18n="pill3">Shiksha • Sanskar • Swavalamban</span>
+          </div>
+        </div>
+
+        <div class="intro-text-col">
+          <p data-i18n="introP1">
+            <strong>Shiksha Sopan</strong> is governed by an Executive Committee composed of esteemed professors, technical officers, scholars, and dedicated grassroots volunteers from the IIT Kanpur fraternity and local community.
+          </p>
+          <p data-i18n="introP2">
+            The committee provides strategic leadership and ethical guidance, overseeing key initiatives including the National Anveshika Experimental Skill Test (NAEST), Dr. V.N. Kulkarni Scholarships, Sopan Ashram Residential Short Courses, and daily rural learning centers.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. DIRECTORY SECTION & FILTER EXPERIENCE
+         ======================================================================= -->
+    <section class="committee-directory-section" aria-labelledby="dirHeading">
+      <div class="container">
+        <!-- Filter Tabs -->
+        <div class="filter-wrapper">
+          <div class="filter-tabs-pills" role="tablist" aria-label="Filter Executive Members">
+            <button type="button" class="filter-pill-btn active" data-filter="all" data-i18n="tabAll">All Members (9)</button>
+            <button type="button" class="filter-pill-btn" data-filter="officer" data-i18n="tabOfficers">Office Bearers (3)</button>
+            <button type="button" class="filter-pill-btn" data-filter="iitk" data-i18n="tabIITK">IIT Kanpur Faculty & Staff (4)</button>
+            <button type="button" class="filter-pill-btn" data-filter="volunteer" data-i18n="tabVolunteers">Volunteers & Scholars (5)</button>
+          </div>
+        </div>
+
+        <!-- A. FEATURED LEADERSHIP: OFFICE BEARERS -->
+        <div class="section-title-divider" id="officersHeading">
+          <h2 data-i18n="officersTitle">Office Bearers</h2>
+          <p data-i18n="officersSub">President, Treasurer, and Secretary guiding strategic execution and transparency</p>
+        </div>
+
+        <div class="featured-leadership-grid">
+          <!-- 1. Dr. Anurag Tripathi (President) -->
+          <article class="featured-leader-card" data-category="officer iitk" data-name="Dr. Anurag Tripathi" data-role="President" data-affil="Assistant Professor, IIT Kanpur" data-email="anuragt@iitk.ac.in" data-img="https://www.shiksha-sopan.org/Images/EC/Anurag%20Tripathi.png">
+            <div class="leader-photo-frame" tabindex="0" role="button" aria-label="View Dr. Anurag Tripathi Profile">
+              <span class="leader-role-badge badge-president" data-i18n="rolePresident">President</span>
+              <img src="https://www.shiksha-sopan.org/Images/EC/Anurag%20Tripathi.png" alt="Dr. Anurag Tripathi" class="leader-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230B192C\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>AT</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+              <div class="card-zoom-indicator">+</div>
+            </div>
+            <div class="leader-info-block">
+              <div>
+                <h3 class="leader-name-title">Dr. Anurag Tripathi</h3>
+                <p class="leader-affiliation-text">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                  <span data-i18n="affilAT">Assistant Professor, IIT Kanpur</span>
+                </p>
+              </div>
+              <div class="leader-meta-footer">
+                <a href="mailto:anuragt@iitk.ac.in" class="email-contact-link" title="Send email to Dr. Anurag Tripathi">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span>anuragt@iitk.ac.in</span>
+                </a>
+                <button type="button" class="btn-card-expand">Details ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Dr. H C Verma (Treasurer / Founder) -->
+          <article class="featured-leader-card card-founder" data-category="officer iitk" data-name="Dr. H C Verma" data-role="Treasurer" data-affil="Ex Professor, IIT Kanpur" data-email="hcverma@iitk.ac.in" data-img="https://www.shiksha-sopan.org/Images/EC/H%20C%20Verma.jpg">
+            <div class="leader-photo-frame" tabindex="0" role="button" aria-label="View Dr. H C Verma Profile">
+              <span class="leader-role-badge badge-treasurer" data-i18n="roleTreasurer">Treasurer</span>
+              <img src="https://www.shiksha-sopan.org/Images/EC/H%20C%20Verma.jpg" alt="Dr. H C Verma" class="leader-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230B192C\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%23D97706\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>HV</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%23B45309\'/></svg>'">
+              <div class="card-zoom-indicator">+</div>
+            </div>
+            <div class="leader-info-block">
+              <div>
+                <h3 class="leader-name-title">Dr. H C Verma</h3>
+                <p class="leader-affiliation-text">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                  <span data-i18n="affilHV">Ex Professor, IIT Kanpur</span>
+                </p>
+              </div>
+              <div class="leader-meta-footer">
+                <a href="mailto:hcverma@iitk.ac.in" class="email-contact-link" title="Send email to Dr. H C Verma">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span>hcverma@iitk.ac.in</span>
+                </a>
+                <button type="button" class="btn-card-expand">Details ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Mr. Atul Kumar (Secretary) -->
+          <article class="featured-leader-card" data-category="officer volunteer" data-name="Mr. Atul Kumar" data-role="Secretary" data-affil="Volunteer" data-email="atul@shiksha-sopan.org" data-img="https://www.shiksha-sopan.org/Images/EC/atul.png">
+            <div class="leader-photo-frame" tabindex="0" role="button" aria-label="View Mr. Atul Kumar Profile">
+              <span class="leader-role-badge badge-secretary" data-i18n="roleSecretary">Secretary</span>
+              <img src="https://www.shiksha-sopan.org/Images/EC/atul.png" alt="Mr. Atul Kumar" class="leader-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230B192C\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>AK</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+              <div class="card-zoom-indicator">+</div>
+            </div>
+            <div class="leader-info-block">
+              <div>
+                <h3 class="leader-name-title">Mr. Atul Kumar</h3>
+                <p class="leader-affiliation-text">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                  <span data-i18n="affilAK">Volunteer</span>
+                </p>
+              </div>
+              <div class="leader-meta-footer">
+                <a href="mailto:atul@shiksha-sopan.org" class="email-contact-link" title="Send email to Mr. Atul Kumar">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span>atul@shiksha-sopan.org</span>
+                </a>
+                <button type="button" class="btn-card-expand">Details ↗</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- B. EXECUTIVE COMMITTEE MEMBERS -->
+        <div class="section-title-divider" id="membersHeading">
+          <h2 data-i18n="membersTitle">Committee Members</h2>
+          <p data-i18n="membersSub">Dedicated members supporting administrative, technical, and grassroots activities</p>
+        </div>
+
+        <div class="regular-members-grid">
+          <!-- 4. Dr. M Dinachandra Singh -->
+          <article class="member-profile-card" data-category="volunteer" data-name="Dr. M Dinachandra Singh" data-role="Member" data-affil="Volunteer" data-email="msingh@iitk.ac.in" data-img="https://www.shiksha-sopan.org/Images/EC/Deena.png">
+            <div class="member-photo-frame" tabindex="0" role="button" aria-label="View Dr. M Dinachandra Singh Profile">
+              <span class="member-role-badge" data-i18n="roleMember">Member</span>
+              <img src="https://www.shiksha-sopan.org/Images/EC/Deena.png" alt="Dr. M Dinachandra Singh" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230F274A\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>DS</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+            </div>
+            <div class="member-info-block">
+              <div>
+                <h3 class="member-name-title">Dr. M Dinachandra Singh</h3>
+                <p class="member-affiliation-text">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <span data-i18n="affilDS">Volunteer</span>
+                </p>
+              </div>
+              <div class="member-meta-footer">
+                <a href="mailto:msingh@iitk.ac.in" class="email-contact-link" title="Send email">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span>msingh@iitk.ac.in</span>
+                </a>
+                <button type="button" class="btn-card-expand">Details ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Mr. Bharat Somaiya -->
+          <article class="member-profile-card" data-category="iitk" data-name="Mr. Bharat Somaiya" data-role="Member" data-affil="Senior Technician, IIT Kanpur" data-email="bsomaiya@iitk.ac.in" data-img="https://www.shiksha-sopan.org/Images/EC/bharat.png">
+            <div class="member-photo-frame" tabindex="0" role="button" aria-label="View Mr. Bharat Somaiya Profile">
+              <span class="member-role-badge" data-i18n="roleMember">Member</span>
+              <img src="https://www.shiksha-sopan.org/Images/EC/bharat.png" alt="Mr. Bharat Somaiya" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230F274A\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>BS</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+            </div>
+            <div class="member-info-block">
+              <div>
+                <h3 class="member-name-title">Mr. Bharat Somaiya</h3>
+                <p class="member-affiliation-text">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                  <span data-i18n="affilBS">Senior Technician, IIT Kanpur</span>
+                </p>
+              </div>
+              <div class="member-meta-footer">
+                <a href="mailto:bsomaiya@iitk.ac.in" class="email-contact-link" title="Send email">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span>bsomaiya@iitk.ac.in</span>
+                </a>
+                <button type="button" class="btn-card-expand">Details ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Dr. Niraj Mohan Chawake -->
+          <article class="member-profile-card" data-category="iitk" data-name="Dr. Niraj Mohan Chawake" data-role="Member" data-affil="Assistant Professor, IIT Kanpur" data-email="nchawake@iitk.ac.in" data-img="https://www.shiksha-sopan.org/Images/EC/neeraj.png">
+            <div class="member-photo-frame" tabindex="0" role="button" aria-label="View Dr. Niraj Mohan Chawake Profile">
+              <span class="member-role-badge" data-i18n="roleMember">Member</span>
+              <img src="https://www.shiksha-sopan.org/Images/EC/neeraj.png" alt="Dr. Niraj Mohan Chawake" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230F274A\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>NC</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+            </div>
+            <div class="member-info-block">
+              <div>
+                <h3 class="member-name-title">Dr. Niraj Mohan Chawake</h3>
+                <p class="member-affiliation-text">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                  <span data-i18n="affilNC">Assistant Professor, IIT Kanpur</span>
+                </p>
+              </div>
+              <div class="member-meta-footer">
+                <a href="mailto:nchawake@iitk.ac.in" class="email-contact-link" title="Send email">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span>nchawake@iitk.ac.in</span>
+                </a>
+                <button type="button" class="btn-card-expand">Details ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Ms. Seema Verma -->
+          <article class="member-profile-card" data-category="volunteer" data-name="Ms. Seema Verma" data-role="Member" data-affil="Volunteer" data-email="seema@shiksha-sopan.org" data-img="https://www.shiksha-sopan.org/Images/EC/seema.png">
+            <div class="member-photo-frame" tabindex="0" role="button" aria-label="View Ms. Seema Verma Profile">
+              <span class="member-role-badge" data-i18n="roleMember">Member</span>
+              <img src="https://www.shiksha-sopan.org/Images/EC/seema.png" alt="Ms. Seema Verma" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230F274A\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>SV</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+            </div>
+            <div class="member-info-block">
+              <div>
+                <h3 class="member-name-title">Ms. Seema Verma</h3>
+                <p class="member-affiliation-text">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                  <span data-i18n="affilSV">Volunteer</span>
+                </p>
+              </div>
+              <div class="member-meta-footer">
+                <a href="mailto:seema@shiksha-sopan.org" class="email-contact-link" title="Send email">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <span>seema@shiksha-sopan.org</span>
+                </a>
+                <button type="button" class="btn-card-expand">Details ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Mr. Om Prakash -->
+          <article class="member-profile-card" data-category="volunteer" data-name="Mr. Om Prakash" data-role="Member" data-affil="Student, IIT Kanpur" data-email="" data-img="https://www.shiksha-sopan.org/Images/EC/Om%20prakash.png">
+            <div class="member-photo-frame" tabindex="0" role="button" aria-label="View Mr. Om Prakash Profile">
+              <span class="member-role-badge" data-i18n="roleMember">Member</span>
+              <img src="https://www.shiksha-sopan.org/Images/EC/Om%20prakash.png" alt="Mr. Om Prakash" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230F274A\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>OP</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+            </div>
+            <div class="member-info-block">
+              <div>
+                <h3 class="member-name-title">Mr. Om Prakash</h3>
+                <p class="member-affiliation-text">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                  <span data-i18n="affilOP">Student, IIT Kanpur</span>
+                </p>
+              </div>
+              <div class="member-meta-footer">
+                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">IIT Kanpur Scholar</span>
+                <button type="button" class="btn-card-expand">Details ↗</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 9. Mr. Bapi Ghorui -->
+          <article class="member-profile-card" data-category="volunteer" data-name="Mr. Bapi Ghorui" data-role="Member" data-affil="Student, IIT Kanpur" data-email="" data-img="https://www.shiksha-sopan.org/Images/EC/Bapi.png">
+            <div class="member-photo-frame" tabindex="0" role="button" aria-label="View Mr. Bapi Ghorui Profile">
+              <span class="member-role-badge" data-i18n="roleMember">Member</span>
+              <img src="https://www.shiksha-sopan.org/Images/EC/Bapi.png" alt="Mr. Bapi Ghorui" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230F274A\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>BG</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+            </div>
+            <div class="member-info-block">
+              <div>
+                <h3 class="member-name-title">Mr. Bapi Ghorui</h3>
+                <p class="member-affiliation-text">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                  <span data-i18n="affilBG">Student, IIT Kanpur</span>
+                </p>
+              </div>
+              <div class="member-meta-footer">
+                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">IIT Kanpur Scholar</span>
+                <button type="button" class="btn-card-expand">Details ↗</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         10. INSTITUTIONAL VALUES CALLOUT
+         ======================================================================= -->
+    <div class="container">
+      <section class="institutional-values-strip" aria-labelledby="valuesHeading">
+        <div class="values-inner-flex">
+          <div class="values-icon-badge"></div>
+          <div class="values-text-col">
+            <h3 id="valuesHeading" data-i18n="valuesTitle">Guiding Philosophy: Shiksha, Sanskar & Swavalamban</h3>
+            <p data-i18n="valuesDesc">
+              Under the visionary leadership of our Executive Committee, Shiksha Sopan bridges classroom science with living reality. Every decision, project, and scholarship reflects our belief that education is not merely loading children with information, but nurturing ethical character, self-reliance, and scientific curiosity.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- =======================================================================
+         11. PARTNERS, IMPORTANT LINKS, AND GOOGLE MAP
+         ======================================================================= -->
+    <div class="container">
+      <div class="footer-pre-grid">
+        <!-- BigTech Logo -->
+        <div class="partner-logo-box">
+          <img src="https://www.shiksha-sopan.org/Images/bigTech.png" alt="BigTech Partners Shiksha Sopan" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 160 60\' fill=\'%23FFFFFF\'><rect width=\'160\' height=\'60\' rx=\'8\' fill=\'%23F1F5F9\' stroke=\'%23CBD5E1\'/><text x=\'80\' y=\'35\' text-anchor=\'middle\' fill=\'%230284C7\' font-weight=\'bold\' font-size=\'14\'>BigTech Support</text></svg>'">
+        </div>
+
+        <!-- Important Links -->
+        <div class="important-links-col">
+          <h4 data-i18n="impLinksHead">Important Links</h4>
+          <ul class="important-links-list">
+            <li><a href="index.html" class="imp-link-anchor">▸ Home</a></li>
+            <li><a href="executive-committee.html" class="imp-link-anchor" style="font-weight:700; color:var(--sopan-blue);">▸ Executive Committee</a></li>
+            <li><a href="activity.html" class="imp-link-anchor">▸ Activity</a></li>
+            <li><a href="contribution.html" class="imp-link-anchor">▸ Contribution</a></li>
+            <li><a href="achievements.html" class="imp-link-anchor">▸ Achivements</a></li>
+            <li><a href="experiments.html" class="imp-link-anchor">▸ Experiments</a></li>
+            <li><a href="about-us.html" class="imp-link-anchor">▸ About Us</a></li>
+            <li><a href="contact-us.html" class="imp-link-anchor">▸ Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Google Map Embed -->
+        <div class="map-frame-box">
+          <iframe title="Sopan Ashram Location Map" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJH3A1ceM2nDkRS9JBtXLgq6A" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- =======================================================================
+       12. MEMBER DETAIL MODAL (EXPANDABLE PROFILE SHEET)
+       ======================================================================= -->
+  <div class="member-detail-modal" id="memberDetailModal" role="dialog" aria-modal="true" aria-labelledby="modalMemberName" aria-hidden="true">
+    <div class="modal-backdrop-veil" id="modalBackdrop"></div>
+    <div class="modal-profile-card">
+      <button type="button" class="btn-modal-close-icon" id="btnModalClose" aria-label="Close modal">✕</button>
+      <div class="modal-header-hero">
+        <div class="modal-portrait-circle">
+          <img src="" alt="" id="modalImg">
+        </div>
+      </div>
+      <div class="modal-body-content">
+        <span class="modal-role-pill" id="modalRole">Designation</span>
+        <h3 class="modal-name-heading" id="modalMemberName">Member Name</h3>
+        <p class="modal-affiliation-desc" id="modalAffil">Affiliation</p>
+
+        <div class="modal-meta-box">
+          <div class="modal-meta-row" id="modalEmailRow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <strong>Official Email:</strong>
+            <a href="#" id="modalEmailLink" target="_blank" rel="noopener noreferrer">email@example.com</a>
+          </div>
+          <div class="modal-meta-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            <strong>Organization:</strong>
+            <span>Shiksha Sopan (Regd. Society, IIT Kanpur)</span>
+          </div>
+          <div class="modal-meta-row">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <strong>Governance:</strong>
+            <span>Executive Committee Member</span>
+          </div>
+        </div>
+
+        <div class="btn-modal-action-row">
+          <a href="#" class="btn-modal-email" id="modalSendMailBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>Send Email</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       13. COPYRIGHT FOOTER
+       ======================================================================= -->
+  <footer class="site-final-footer">
+    <div class="container">
+      <p>Copyright© 2024 shiksha-sopan.org • All Rights Reserved</p>
+      <p style="font-size: 0.75rem; color: #64748B; margin-top: 0.25rem;">
+        An Initiative of the IIT Kanpur Community for Education, Values, and Self-Reliance
+      </p>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       14. JAVASCRIPT: BILINGUAL ENGINE, FILTERING & MODAL INTERACTION
+       ======================================================================= -->
+  <script>
+    // A. Bilingual Language Dictionary
+    const ecLangDict = {
+      en: {
+        mottoText: "अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें",
+        headerSub: "An Educational & Social Initiative by IIT Kanpur Community",
+        navHome: "Home",
+        navEC: "Executive Committee",
+        navActivity: "Activity",
+        navContribution: "Contribution",
+        navAchievements: "Achivements",
+        navExperiments: "Experiments",
+        navAbout: "About Us",
+        navContact: "Contact Us",
+        joinBtn: "Join Us →",
+        joinText: "Join the Community of Volunteers, Teachers, and Rural STEM Innovators",
+        joinUsLink: "Join Us",
+        heroPill: "LEADERSHIP & GOVERNANCE • SHIKSHA SOPAN",
+        heroTitle: "Executive Committee",
+        heroTitleHi: "कार्यकारिणी समिति",
+        heroLead: "Leadership and guidance shaping the vision of Shiksha Sopan — dedicated faculty, staff, alumni, and volunteers from IIT Kanpur and the community united in service of education, values, and self-reliance.",
+        introTag: "INSTITUTIONAL STEWARDSHIP",
+        introHeading: "Steering with Purpose, Educating with Heart.",
+        pill1: "IIT Kanpur Faculty & Staff",
+        pill2: "Registered NGO Governance",
+        pill3: "Shiksha • Sanskar • Swavalamban",
+        introP1: "<strong>Shiksha Sopan</strong> is governed by an Executive Committee composed of esteemed professors, technical officers, scholars, and dedicated grassroots volunteers from the IIT Kanpur fraternity and local community.",
+        introP2: "The committee provides strategic leadership and ethical guidance, overseeing key initiatives including the National Anveshika Experimental Skill Test (NAEST), Dr. V.N. Kulkarni Scholarships, Sopan Ashram Residential Short Courses, and daily rural learning centers.",
+        tabAll: "All Members (9)",
+        tabOfficers: "Office Bearers (3)",
+        tabIITK: "IIT Kanpur Faculty & Staff (4)",
+        tabVolunteers: "Volunteers & Scholars (5)",
+        officersTitle: "Office Bearers",
+        officersSub: "President, Treasurer, and Secretary guiding strategic execution and transparency",
+        membersTitle: "Committee Members",
+        membersSub: "Dedicated members supporting administrative, technical, and grassroots activities",
+        rolePresident: "President",
+        roleTreasurer: "Treasurer",
+        roleSecretary: "Secretary",
+        roleMember: "Member",
+        affilAT: "Assistant Professor, IIT Kanpur",
+        affilHV: "Ex Professor, IIT Kanpur",
+        affilAK: "Volunteer",
+        affilDS: "Volunteer",
+        affilBS: "Senior Technician, IIT Kanpur",
+        affilNC: "Assistant Professor, IIT Kanpur",
+        affilSV: "Volunteer",
+        affilOP: "Student, IIT Kanpur",
+        affilBG: "Student, IIT Kanpur",
+        valuesTitle: "Guiding Philosophy: Shiksha, Sanskar & Swavalamban",
+        valuesDesc: "Under the visionary leadership of our Executive Committee, Shiksha Sopan bridges classroom science with living reality. Every decision, project, and scholarship reflects our belief that education is not merely loading children with information, but nurturing ethical character, self-reliance, and scientific curiosity.",
+        impLinksHead: "Important Links"
+      },
+      hi: {
+        mottoText: "अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें",
+        headerSub: "आईआईटी कानपुर समुदाय द्वारा संचालित शैक्षिक व सामाजिक पहल",
+        navHome: "होम",
+        navEC: "कार्यकारिणी समिति",
+        navActivity: "गतिविधियां",
+        navContribution: "सहयोग",
+        navAchievements: "उपलब्धियां",
+        navExperiments: "प्रयोग",
+        navAbout: "हमारे बारे में",
+        navContact: "संपर्क करें",
+        joinBtn: "जुड़ें →",
+        joinText: "स्वयंसेवकों, शिक्षकों व प्रायोगिक विज्ञान प्रेमियों के समुदाय से जुड़ें",
+        joinUsLink: "जुड़ें",
+        heroPill: "नेतृत्व एवं प्रशासनिक मार्गदर्शन • शिक्षा सोपान",
+        heroTitle: "कार्यकारिणी समिति",
+        heroTitleHi: "Executive Committee",
+        heroLead: "शिक्षा सोपान के दृष्टिकोण और सेवा संकल्प को दिशा प्रदान करने वाला समर्पित नेतृत्व — आईआईटी कानपुर के प्राध्यापक, तकनीकी अधिकारी, पूर्व छात्र एवं कर्मठ स्वयंसेवक।",
+        introTag: "संस्थागत मार्गदर्शन एवं नेतृत्व",
+        introHeading: "संस्कारयुक्त सेवा, निष्ठावान मार्गदर्शन",
+        pill1: "आईआईटी कानपुर प्राध्यापक व कर्मी",
+        pill2: "पंजीकृत समिति प्रशासन",
+        pill3: "शिक्षा • संस्कार • स्वावलंबन",
+        introP1: "<strong>शिक्षा सोपान</strong> का संचालन एक समर्पित कार्यकारिणी समिति द्वारा किया जाता है, जिसमें आईआईटी कानपुर के वरिष्ठ प्राध्यापक, तकनीकी विशेषज्ञ, शोधार्थी तथा समाज-सेवी कार्यकर्ता सम्मिलित हैं।",
+        introP2: "यह समिति राष्ट्रीय अन्वेषिका प्रायोगिक परीक्षा (NAEST), डॉ. व्ही. एन. कुलकर्णी छात्रवृत्ति, सोपान आश्रम आवासीय कार्यशालाओं तथा ग्रामीण शिक्षा केंद्रों के सुचारु संचालन हेतु रणनीतिक व नैतिक मार्गदर्शन प्रदान करती है।",
+        tabAll: "सभी सदस्य (९)",
+        tabOfficers: "पदाधिकारी (३)",
+        tabIITK: "आईआईटी कानपुर संकाय व कर्मी (४)",
+        tabVolunteers: "स्वयंसेवक व शोधार्थी (५)",
+        officersTitle: "मुख्य पदाधिकारी (Office Bearers)",
+        officersSub: "अध्यक्ष, कोषाध्यक्ष व सचिव — नीति निर्माण व पारदर्शी संचालन के संवाहक",
+        membersTitle: "समिति सदस्य (Committee Members)",
+        membersSub: "प्रशासनिक, तकनीकी व प्रायोगिक प्रकल्पों को धरातल पर क्रियान्वित करने वाले सदस्य",
+        rolePresident: "अध्यक्ष (President)",
+        roleTreasurer: "कोषाध्यक्ष (Treasurer)",
+        roleSecretary: "सचिव (Secretary)",
+        roleMember: "सदस्य (Member)",
+        affilAT: "सहायक प्राध्यापक, आईआईटी कानपुर",
+        affilHV: "पूर्व प्राध्यापक, आईआईटी कानपुर",
+        affilAK: "स्वयंसेवक",
+        affilDS: "स्वयंसेवक",
+        affilBS: "वरिष्ठ तकनीशियन, आईआईटी कानपुर",
+        affilNC: "सहायक प्राध्यापक, आईआईटी कानपुर",
+        affilSV: "स्वयंसेवक",
+        affilOP: "विद्यार्थी, आईआईटी कानपुर",
+        affilBG: "विद्यार्थी, आईआईटी कानपुर",
+        valuesTitle: "मूल सिद्धांत: शिक्षा, संस्कार और स्वावलंबन",
+        valuesDesc: "कार्यकारिणी समिति के मार्गदर्शन में शिक्षा सोपान किताबी विज्ञान को जीवन के दैनिक अनुभवों से जोड़ता है। हमारा प्रत्येक निर्णय यह सुनिश्चित करता है कि शिक्षा केवल सूचनाएँ भरना नहीं, बल्कि बच्चों में नैतिक मूल्यों, सामाजिक कृतज्ञता और आत्म-निर्भरता का बीजारोपण करना है।",
+        impLinksHead: "महत्वपूर्ण लिंक्स (Important Links)"
+      }
+    };
+
+    function setECLanguage(lang) {
+      const dict = ecLangDict[lang] || ecLangDict.en;
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.dataset.i18n;
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+      document.documentElement.lang = lang;
+    }
+
+    // B. Initialization & Interactive Filtering
+    document.addEventListener('DOMContentLoaded', () => {
+      // Language Switching
+      document.querySelectorAll('.lang-btn').forEach(b => {
+        b.addEventListener('click', () => setECLanguage(b.dataset.lang));
+      });
+
+      // Filter Tabs
+      const filterBtns = document.querySelectorAll('.filter-pill-btn');
+      const allCards = document.querySelectorAll('.featured-leader-card, .member-profile-card');
+      const officersHeading = document.getElementById('officersHeading');
+      const membersHeading = document.getElementById('membersHeading');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.dataset.filter;
+
+          allCards.forEach(card => {
+            const cat = card.dataset.category || '';
+            if (filter === 'all' || cat.includes(filter)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // Headings visibility
+          if (filter === 'volunteer') {
+            if (officersHeading) officersHeading.style.display = 'none';
+          } else {
+            if (officersHeading) officersHeading.style.display = 'block';
+          }
+          if (filter === 'officer') {
+            if (membersHeading) membersHeading.style.display = 'none';
+          } else {
+            if (membersHeading) membersHeading.style.display = 'block';
+          }
+        });
+      });
+
+      // Member Detail Modal Interaction
+      const modal = document.getElementById('memberDetailModal');
+      const modalBackdrop = document.getElementById('modalBackdrop');
+      const btnModalClose = document.getElementById('btnModalClose');
+      const modalImg = document.getElementById('modalImg');
+      const modalRole = document.getElementById('modalRole');
+      const modalMemberName = document.getElementById('modalMemberName');
+      const modalAffil = document.getElementById('modalAffil');
+      const modalEmailRow = document.getElementById('modalEmailRow');
+      const modalEmailLink = document.getElementById('modalEmailLink');
+      const modalSendMailBtn = document.getElementById('modalSendMailBtn');
+
+      function openMemberModal(card) {
+        const name = card.dataset.name || '';
+        const role = card.dataset.role || '';
+        const affil = card.dataset.affil || '';
+        const email = card.dataset.email || '';
+        const img = card.dataset.img || '';
+
+        modalMemberName.innerText = name;
+        modalRole.innerText = role;
+        modalAffil.innerText = affil;
+        modalImg.src = img;
+        modalImg.alt = name;
+
+        if (email && email.trim() !== '') {
+          modalEmailRow.style.display = 'flex';
+          modalEmailLink.innerText = email;
+          modalEmailLink.href = 'mailto:' + email;
+          modalSendMailBtn.style.display = 'inline-flex';
+          modalSendMailBtn.href = 'mailto:' + email;
+        } else {
+          modalEmailRow.style.display = 'none';
+          modalSendMailBtn.style.display = 'none';
+        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      // Attach click listeners to cards and frames
+      document.querySelectorAll('.featured-leader-card, .member-profile-card').forEach(card => {
+        const frame = card.querySelector('.leader-photo-frame, .member-photo-frame');
+        const btn = card.querySelector('.btn-card-expand');
+
+        if (frame) frame.addEventListener('click', () => openMemberModal(card));
+        if (btn) btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          openMemberModal(card);
+        });
+      });
+
+      if (btnModalClose) btnModalClose.addEventListener('click', closeModal);
+      if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('active')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
