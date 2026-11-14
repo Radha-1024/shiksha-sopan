@@ -2157,7 +2157,12 @@
         display: flex;
       }
       .desktop-join-btn {
-        display: none !important;
+        display: inline-flex !important;
+        font-size: 0.75rem;
+        padding: 0.35rem 0.75rem;
+        white-space: nowrap;
+        font-weight: 700;
+        margin-left: auto;
       }
       .mobile-join-item {
         display: block;
@@ -2425,13 +2430,13 @@
         <li><a href="about-us.html" class="nav-link-btn " data-i18n="navAbout">About Us</a></li>
         <li><a href="contact-us.html" class="nav-link-btn " data-i18n="navContact">Contact Us</a></li>
         <li class="mobile-join-item">
-          <a href="join.html" class="btn-join-us mobile-btn-join" data-i18n="joinBtn">
+          <a href="join.html" onclick="window.location.href='join.html'; return false;" class="btn-join-us mobile-btn-join" data-i18n="joinBtn">
             Join Us →
           </a>
         </li>
       </ul>
 
-      <a href="join.html" class="btn-join-us desktop-join-btn" data-i18n="joinBtn">
+      <a href="join.html" onclick="window.location.href='join.html'; return false;" class="btn-join-us desktop-join-btn" data-i18n="joinBtn">
         Join Us →
       </a>
     </div>
@@ -2462,7 +2467,7 @@
         <a href="#naest-section" class="btn-hero-secondary" data-i18n="heroBtnNaest">
            NAEST 2025 →
         </a>
-        <a href="join.html" class="btn-hero-accent" data-i18n="heroBtnJoin">
+        <a href="join.html" onclick="window.location.href='join.html'; return false;" class="btn-hero-accent" data-i18n="heroBtnJoin">
            Join Us →
         </a>
       </div>
@@ -2507,7 +2512,7 @@
         <span data-i18n="joinText">Join the Community of Volunteers, Teachers, and Rural STEM Innovators</span>
       </div>
       <div>
-        <a href="join.html" class="btn-join-us" data-i18n="joinUsLink">
+        <a href="join.html" onclick="window.location.href='join.html'; return false;" class="btn-join-us" data-i18n="joinUsLink">
           Join Us
         </a>
       </div>
@@ -2607,11 +2612,11 @@
           </div>
           <div class="newsletter-previews-grid">
             <a href="https://www.shiksha-sopan.org/Newsletters/August_2026_1786428076.pdf" target="_blank" class="newsletter-thumb-card">
-              <img src="https://www.shiksha-sopan.org/Images/nwsl.webp" alt="August 2026 Newsletter" class="newsletter-thumb-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 120\' fill=\'%23F1F5F9\'><rect width=\'100\' height=\'120\'/><text x=\'50\' y=\'65\' text-anchor=\'middle\' fill=\'%230284C7\' font-weight=\'bold\' font-size=\'14\'>AUG 2026</text></svg>'">
+              <img src="https://www.shiksha-sopan.org/Images/nwsl.webp" alt="August 2026 Newsletter" class="newsletter-thumb-img" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' fill='%23F1F5F9'><rect width='100' height='120'/><text x='50' y='65' text-anchor='middle' fill='%230284C7' font-weight='bold' font-size='14'>AUG 2026</text></svg>'">
               <span class="newsletter-caption">August - 2026</span>
             </a>
             <a href="https://www.shiksha-sopan.org/Newsletters/July_2026_1784268806.pdf" target="_blank" class="newsletter-thumb-card">
-              <img src="https://www.shiksha-sopan.org/Images/nwsl.webp" alt="July 2026 Newsletter" class="newsletter-thumb-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 120\' fill=\'%23F1F5F9\'><rect width=\'100\' height=\'120\'/><text x=\'50\' y=\'65\' text-anchor=\'middle\' fill=\'%230284C7\' font-weight=\'bold\' font-size=\'14\'>JULY 2026</text></svg>'">
+              <img src="https://www.shiksha-sopan.org/Images/nwsl.webp" alt="July 2026 Newsletter" class="newsletter-thumb-img" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120' fill='%23F1F5F9'><rect width='100' height='120'/><text x='50' y='65' text-anchor='middle' fill='%230284C7' font-weight='bold' font-size='14'>JULY 2026</text></svg>'">
               <span class="newsletter-caption">July - 2026</span>
             </a>
           </div>
@@ -2932,7 +2937,7 @@
             “Regarding social work, people always say that ‘It is easier said than done’. Strongly negating this saying, is ‘Shiksha Sopan’ - social organization run by our IITK community. It is a pleasure to see the board spectrum of Sopan activities for the betterment of communities residing in the villages nearby to our campus. In the last few years I have been a witness to their contribution towards ‘Shiksha’, ‘Sanskar’ and ‘Swavalamban’ for the village community, children and youth.”
           </p>
           <div class="compact-author-row">
-            <img src="https://www.shiksha-sopan.org/Images/Feedback/profdhande.jpg" alt="Dr. Sanjay G. Dhande" class="compact-author-photo" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%23E2E8F0\'/><text x=\'50\' y=\'55\' text-anchor=\'middle\' fill=\'%230284C7\' font-weight=\'bold\' font-size=\'20\'>SD</text></svg>'">
+            <img src="https://www.shiksha-sopan.org/Images/Feedback/profdhande.jpg" alt="Dr. Sanjay G. Dhande" class="compact-author-photo" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23E2E8F0'/><text x='50' y='55' text-anchor='middle' fill='%230284C7' font-weight='bold' font-size='20'>SD</text></svg>'">
             <div>
               <h3 class="compact-author-name">Dr. Sanjay G. Dhande</h3>
               <span class="compact-author-title">Ex-Director – IIT Kanpur</span>
@@ -2946,7 +2951,7 @@
             “मैं अन्तर्मन से धन्यवाद देना चाहता हूँ आपको | मेरी बचपन से ये अभिलाषा थी कि मैं समाज के लिए कुछ हितकर कर पाऊं | इसी क्रम में शिक्षा सोपान से जुड़ा था २००२ में | और आज मुझे बताते हुए ये हर्ष हो रहा हैं कि मैंने २०१० कि सिविल सेवा की परीक्षा पास कर ली हैं | साक्षात्कार के दौरान मुझसे शिक्षा सोपान के बारे में कई प्रश्न भी किये गए| जब मैंने वहाँ शिक्षा सोपान के पिछले दस वर्षों की उपलब्धियाँ बताई तो साक्षात्कार लेने वाले सभी लोग काफी प्रसन्न हुए | मेरे इस परीक्षा में सफल होने का एक बहुत बड़ा कारण हैं शिक्षा सोपान |”
           </p>
           <div class="compact-author-row">
-            <img src="https://www.shiksha-sopan.org/Images/Feedback/chandramohan.png" alt="Chandra Mohan Thakur" class="compact-author-photo" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'50\' fill=\'%23E2E8F0\'/><text x=\'50\' y=\'55\' text-anchor=\'middle\' fill=\'%230284C7\' font-weight=\'bold\' font-size=\'20\'>CM</text></svg>'">
+            <img src="https://www.shiksha-sopan.org/Images/Feedback/chandramohan.png" alt="Chandra Mohan Thakur" class="compact-author-photo" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23E2E8F0'/><text x='50' y='55' text-anchor='middle' fill='%230284C7' font-weight='bold' font-size='20'>CM</text></svg>'">
             <div>
               <h3 class="compact-author-name">चंद्र मोहन ठाकुर</h3>
               <span class="compact-author-title">B.Tech (2002–2006) मैकेनिकल इंजीनियरिंग, IIT कानपुर • IRS</span>
@@ -2962,7 +2967,7 @@
     <div class="footer-pre-grid">
       <!-- BigTech Logo -->
       <div class="partner-logo-box">
-        <img src="https://www.shiksha-sopan.org/Images/bigTech.png" alt="BigTech Partners Shiksha Sopan" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 160 60\' fill=\'%23FFFFFF\'><rect width=\'160\' height=\'60\' rx=\'8\' fill=\'%23F1F5F9\' stroke=\'%23CBD5E1\'/><text x=\'80\' y=\'35\' text-anchor=\'middle\' fill=\'%230284C7\' font-weight=\'bold\' font-size=\'14\'>BigTech Support</text></svg>'">
+        <img src="https://www.shiksha-sopan.org/Images/bigTech.png" alt="BigTech Partners Shiksha Sopan" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 60' fill='%23FFFFFF'><rect width='160' height='60' rx='8' fill='%23F1F5F9' stroke='%23CBD5E1'/><text x='80' y='35' text-anchor='middle' fill='%230284C7' font-weight='bold' font-size='14'>BigTech Support</text></svg>'">
       </div>
 
       <!-- Important Links -->
@@ -3626,6 +3631,35 @@
       }
     });
 
+  </script>
+  <!-- Guaranteed navigation for Join Us button and anti-cache protection -->
+  <script>
+  (function() {
+    function routeJoinButtons() {
+      var isJoinPage = window.location.pathname.endsWith('join.html') || window.location.pathname.endsWith('/join');
+      document.querySelectorAll('a.btn-join-us, a.btn-hero-accent, a.mobile-btn-join').forEach(function(btn) {
+        if (isJoinPage) {
+          btn.setAttribute('href', '#joinForm');
+          btn.onclick = function(e) {
+            e.preventDefault();
+            var target = document.getElementById('joinForm');
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+          };
+        } else {
+          btn.setAttribute('href', 'join.html');
+          btn.onclick = function(e) {
+            e.preventDefault();
+            window.location.href = 'join.html';
+          };
+        }
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', routeJoinButtons);
+    } else {
+      routeJoinButtons();
+    }
+  })();
   </script>
 </body>
 </html>

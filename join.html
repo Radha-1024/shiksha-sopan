@@ -742,7 +742,12 @@
         display: flex;
       }
       .desktop-join-btn {
-        display: none !important;
+        display: inline-flex !important;
+        font-size: 0.75rem;
+        padding: 0.35rem 0.75rem;
+        white-space: nowrap;
+        font-weight: 700;
+        margin-left: auto;
       }
       .mobile-join-item {
         display: block;
@@ -928,13 +933,13 @@
         <li><a href="about-us.html" class="nav-link-btn" data-i18n="navAbout">About Us</a></li>
         <li><a href="contact-us.html" class="nav-link-btn" data-i18n="navContact">Contact Us</a></li>
         <li class="mobile-join-item">
-          <a href="#joinForm" class="btn-join-us mobile-btn-join active" data-i18n="joinBtn">
+          <a href="#joinForm" onclick="document.getElementById('joinForm').scrollIntoView({behavior:'smooth'}); return false;" class="btn-join-us mobile-btn-join active" data-i18n="joinBtn">
             Join Us →
           </a>
         </li>
       </ul>
 
-      <a href="#joinForm" class="btn-join-us desktop-join-btn active" data-i18n="joinBtn">
+      <a href="#joinForm" onclick="document.getElementById('joinForm').scrollIntoView({behavior:'smooth'}); return false;" class="btn-join-us desktop-join-btn active" data-i18n="joinBtn">
         Join Us →
       </a>
     </div>
@@ -949,7 +954,7 @@
         <span style="color: var(--text-primary); font-weight: 700;">Join the Community</span>
       </div>
 
-      <a href="index.html" class="btn-back-home">
+      <a href="index.html" onclick="window.location.href='index.html'; return false;" class="btn-back-home">
         ← Back to Home
       </a>
     </div>
@@ -1296,6 +1301,35 @@
         setLanguage(saved);
       }
     });
+  </script>
+  <!-- Guaranteed navigation for Join Us button and anti-cache protection -->
+  <script>
+  (function() {
+    function routeJoinButtons() {
+      var isJoinPage = window.location.pathname.endsWith('join.html') || window.location.pathname.endsWith('/join');
+      document.querySelectorAll('a.btn-join-us, a.btn-hero-accent, a.mobile-btn-join').forEach(function(btn) {
+        if (isJoinPage) {
+          btn.setAttribute('href', '#joinForm');
+          btn.onclick = function(e) {
+            e.preventDefault();
+            var target = document.getElementById('joinForm');
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+          };
+        } else {
+          btn.setAttribute('href', 'join.html');
+          btn.onclick = function(e) {
+            e.preventDefault();
+            window.location.href = 'join.html';
+          };
+        }
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', routeJoinButtons);
+    } else {
+      routeJoinButtons();
+    }
+  })();
   </script>
 </body>
 </html>

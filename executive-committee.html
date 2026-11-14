@@ -1513,7 +1513,12 @@
         display: flex;
       }
       .desktop-join-btn {
-        display: none !important;
+        display: inline-flex !important;
+        font-size: 0.75rem;
+        padding: 0.35rem 0.75rem;
+        white-space: nowrap;
+        font-weight: 700;
+        margin-left: auto;
       }
       .mobile-join-item {
         display: block;
@@ -1774,13 +1779,13 @@
         <li><a href="about-us.html" class="nav-link-btn " data-i18n="navAbout">About Us</a></li>
         <li><a href="contact-us.html" class="nav-link-btn " data-i18n="navContact">Contact Us</a></li>
         <li class="mobile-join-item">
-          <a href="join.html" class="btn-join-us mobile-btn-join" data-i18n="joinBtn">
+          <a href="join.html" onclick="window.location.href='join.html'; return false;" class="btn-join-us mobile-btn-join" data-i18n="joinBtn">
             Join Us →
           </a>
         </li>
       </ul>
 
-      <a href="join.html" class="btn-join-us desktop-join-btn" data-i18n="joinBtn">
+      <a href="join.html" onclick="window.location.href='join.html'; return false;" class="btn-join-us desktop-join-btn" data-i18n="joinBtn">
         Join Us →
       </a>
     </div>
@@ -1866,7 +1871,7 @@
           <article class="featured-leader-card" data-category="officer iitk" data-name="Dr. Anurag Tripathi" data-role="President" data-affil="Assistant Professor, IIT Kanpur" data-email="anuragt@iitk.ac.in" data-img="https://www.shiksha-sopan.org/Images/EC/Anurag%20Tripathi.png">
             <div class="leader-photo-frame" tabindex="0" role="button" aria-label="View Dr. Anurag Tripathi Profile">
               <span class="leader-role-badge badge-president" data-i18n="rolePresident">President</span>
-              <img src="https://www.shiksha-sopan.org/Images/EC/Anurag%20Tripathi.png" alt="Dr. Anurag Tripathi" class="leader-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230B192C\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>AT</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+              <img src="https://www.shiksha-sopan.org/Images/EC/Anurag%20Tripathi.png" alt="Dr. Anurag Tripathi" class="leader-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240' fill='%230B192C'><rect width='200' height='240' fill='%230B192C'/><circle cx='100' cy='95' r='45' fill='%230284C7'/><text x='100' y='105' text-anchor='middle' fill='%23FFFFFF' font-weight='bold' font-size='32' font-family='sans-serif'>AT</text><rect x='30' y='160' width='140' height='60' rx='30' fill='%231E3A8A'/></svg>'">
               <div class="card-zoom-indicator">+</div>
             </div>
             <div class="leader-info-block">
@@ -1891,7 +1896,7 @@
           <article class="featured-leader-card card-founder" data-category="officer iitk" data-name="Dr. H C Verma" data-role="Treasurer" data-affil="Ex Professor, IIT Kanpur" data-email="hcverma@iitk.ac.in" data-img="https://www.shiksha-sopan.org/Images/EC/H%20C%20Verma.jpg">
             <div class="leader-photo-frame" tabindex="0" role="button" aria-label="View Dr. H C Verma Profile">
               <span class="leader-role-badge badge-treasurer" data-i18n="roleTreasurer">Treasurer</span>
-              <img src="https://www.shiksha-sopan.org/Images/EC/H%20C%20Verma.jpg" alt="Dr. H C Verma" class="leader-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230B192C\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%23D97706\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>HV</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%23B45309\'/></svg>'">
+              <img src="https://www.shiksha-sopan.org/Images/EC/H%20C%20Verma.jpg" alt="Dr. H C Verma" class="leader-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240' fill='%230B192C'><rect width='200' height='240' fill='%230B192C'/><circle cx='100' cy='95' r='45' fill='%23D97706'/><text x='100' y='105' text-anchor='middle' fill='%23FFFFFF' font-weight='bold' font-size='32' font-family='sans-serif'>HV</text><rect x='30' y='160' width='140' height='60' rx='30' fill='%23B45309'/></svg>'">
               <div class="card-zoom-indicator">+</div>
             </div>
             <div class="leader-info-block">
@@ -1916,7 +1921,7 @@
           <article class="featured-leader-card" data-category="officer volunteer" data-name="Mr. Atul Kumar" data-role="Secretary" data-affil="Volunteer" data-email="atul@shiksha-sopan.org" data-img="https://www.shiksha-sopan.org/Images/EC/atul.png">
             <div class="leader-photo-frame" tabindex="0" role="button" aria-label="View Mr. Atul Kumar Profile">
               <span class="leader-role-badge badge-secretary" data-i18n="roleSecretary">Secretary</span>
-              <img src="https://www.shiksha-sopan.org/Images/EC/atul.png" alt="Mr. Atul Kumar" class="leader-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230B192C\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>AK</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+              <img src="https://www.shiksha-sopan.org/Images/EC/atul.png" alt="Mr. Atul Kumar" class="leader-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240' fill='%230B192C'><rect width='200' height='240' fill='%230B192C'/><circle cx='100' cy='95' r='45' fill='%230284C7'/><text x='100' y='105' text-anchor='middle' fill='%23FFFFFF' font-weight='bold' font-size='32' font-family='sans-serif'>AK</text><rect x='30' y='160' width='140' height='60' rx='30' fill='%231E3A8A'/></svg>'">
               <div class="card-zoom-indicator">+</div>
             </div>
             <div class="leader-info-block">
@@ -1949,7 +1954,7 @@
           <article class="member-profile-card" data-category="volunteer" data-name="Dr. M Dinachandra Singh" data-role="Member" data-affil="Volunteer" data-email="msingh@iitk.ac.in" data-img="https://www.shiksha-sopan.org/Images/EC/Deena.png">
             <div class="member-photo-frame" tabindex="0" role="button" aria-label="View Dr. M Dinachandra Singh Profile">
               <span class="member-role-badge" data-i18n="roleMember">Member</span>
-              <img src="https://www.shiksha-sopan.org/Images/EC/Deena.png" alt="Dr. M Dinachandra Singh" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230F274A\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>DS</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+              <img src="https://www.shiksha-sopan.org/Images/EC/Deena.png" alt="Dr. M Dinachandra Singh" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240' fill='%230B192C'><rect width='200' height='240' fill='%230F274A'/><circle cx='100' cy='95' r='45' fill='%230284C7'/><text x='100' y='105' text-anchor='middle' fill='%23FFFFFF' font-weight='bold' font-size='32' font-family='sans-serif'>DS</text><rect x='30' y='160' width='140' height='60' rx='30' fill='%231E3A8A'/></svg>'">
             </div>
             <div class="member-info-block">
               <div>
@@ -1973,7 +1978,7 @@
           <article class="member-profile-card" data-category="iitk" data-name="Mr. Bharat Somaiya" data-role="Member" data-affil="Senior Technician, IIT Kanpur" data-email="bsomaiya@iitk.ac.in" data-img="https://www.shiksha-sopan.org/Images/EC/bharat.png">
             <div class="member-photo-frame" tabindex="0" role="button" aria-label="View Mr. Bharat Somaiya Profile">
               <span class="member-role-badge" data-i18n="roleMember">Member</span>
-              <img src="https://www.shiksha-sopan.org/Images/EC/bharat.png" alt="Mr. Bharat Somaiya" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230F274A\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>BS</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+              <img src="https://www.shiksha-sopan.org/Images/EC/bharat.png" alt="Mr. Bharat Somaiya" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240' fill='%230B192C'><rect width='200' height='240' fill='%230F274A'/><circle cx='100' cy='95' r='45' fill='%230284C7'/><text x='100' y='105' text-anchor='middle' fill='%23FFFFFF' font-weight='bold' font-size='32' font-family='sans-serif'>BS</text><rect x='30' y='160' width='140' height='60' rx='30' fill='%231E3A8A'/></svg>'">
             </div>
             <div class="member-info-block">
               <div>
@@ -1997,7 +2002,7 @@
           <article class="member-profile-card" data-category="iitk" data-name="Dr. Niraj Mohan Chawake" data-role="Member" data-affil="Assistant Professor, IIT Kanpur" data-email="nchawake@iitk.ac.in" data-img="https://www.shiksha-sopan.org/Images/EC/neeraj.png">
             <div class="member-photo-frame" tabindex="0" role="button" aria-label="View Dr. Niraj Mohan Chawake Profile">
               <span class="member-role-badge" data-i18n="roleMember">Member</span>
-              <img src="https://www.shiksha-sopan.org/Images/EC/neeraj.png" alt="Dr. Niraj Mohan Chawake" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230F274A\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>NC</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+              <img src="https://www.shiksha-sopan.org/Images/EC/neeraj.png" alt="Dr. Niraj Mohan Chawake" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240' fill='%230B192C'><rect width='200' height='240' fill='%230F274A'/><circle cx='100' cy='95' r='45' fill='%230284C7'/><text x='100' y='105' text-anchor='middle' fill='%23FFFFFF' font-weight='bold' font-size='32' font-family='sans-serif'>NC</text><rect x='30' y='160' width='140' height='60' rx='30' fill='%231E3A8A'/></svg>'">
             </div>
             <div class="member-info-block">
               <div>
@@ -2021,7 +2026,7 @@
           <article class="member-profile-card" data-category="volunteer" data-name="Ms. Seema Verma" data-role="Member" data-affil="Volunteer" data-email="seema@shiksha-sopan.org" data-img="https://www.shiksha-sopan.org/Images/EC/seema.png">
             <div class="member-photo-frame" tabindex="0" role="button" aria-label="View Ms. Seema Verma Profile">
               <span class="member-role-badge" data-i18n="roleMember">Member</span>
-              <img src="https://www.shiksha-sopan.org/Images/EC/seema.png" alt="Ms. Seema Verma" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230F274A\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>SV</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+              <img src="https://www.shiksha-sopan.org/Images/EC/seema.png" alt="Ms. Seema Verma" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240' fill='%230B192C'><rect width='200' height='240' fill='%230F274A'/><circle cx='100' cy='95' r='45' fill='%230284C7'/><text x='100' y='105' text-anchor='middle' fill='%23FFFFFF' font-weight='bold' font-size='32' font-family='sans-serif'>SV</text><rect x='30' y='160' width='140' height='60' rx='30' fill='%231E3A8A'/></svg>'">
             </div>
             <div class="member-info-block">
               <div>
@@ -2045,7 +2050,7 @@
           <article class="member-profile-card" data-category="volunteer" data-name="Mr. Om Prakash" data-role="Member" data-affil="Student, IIT Kanpur" data-email="" data-img="https://www.shiksha-sopan.org/Images/EC/Om%20prakash.png">
             <div class="member-photo-frame" tabindex="0" role="button" aria-label="View Mr. Om Prakash Profile">
               <span class="member-role-badge" data-i18n="roleMember">Member</span>
-              <img src="https://www.shiksha-sopan.org/Images/EC/Om%20prakash.png" alt="Mr. Om Prakash" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230F274A\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>OP</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+              <img src="https://www.shiksha-sopan.org/Images/EC/Om%20prakash.png" alt="Mr. Om Prakash" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240' fill='%230B192C'><rect width='200' height='240' fill='%230F274A'/><circle cx='100' cy='95' r='45' fill='%230284C7'/><text x='100' y='105' text-anchor='middle' fill='%23FFFFFF' font-weight='bold' font-size='32' font-family='sans-serif'>OP</text><rect x='30' y='160' width='140' height='60' rx='30' fill='%231E3A8A'/></svg>'">
             </div>
             <div class="member-info-block">
               <div>
@@ -2066,7 +2071,7 @@
           <article class="member-profile-card" data-category="volunteer" data-name="Mr. Bapi Ghorui" data-role="Member" data-affil="Student, IIT Kanpur" data-email="" data-img="https://www.shiksha-sopan.org/Images/EC/Bapi.png">
             <div class="member-photo-frame" tabindex="0" role="button" aria-label="View Mr. Bapi Ghorui Profile">
               <span class="member-role-badge" data-i18n="roleMember">Member</span>
-              <img src="https://www.shiksha-sopan.org/Images/EC/Bapi.png" alt="Mr. Bapi Ghorui" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 240\' fill=\'%230B192C\'><rect width=\'200\' height=\'240\' fill=\'%230F274A\'/><circle cx=\'100\' cy=\'95\' r=\'45\' fill=\'%230284C7\'/><text x=\'100\' y=\'105\' text-anchor=\'middle\' fill=\'%23FFFFFF\' font-weight=\'bold\' font-size=\'32\' font-family=\'sans-serif\'>BG</text><rect x=\'30\' y=\'160\' width=\'140\' height=\'60\' rx=\'30\' fill=\'%231E3A8A\'/></svg>'">
+              <img src="https://www.shiksha-sopan.org/Images/EC/Bapi.png" alt="Mr. Bapi Ghorui" class="member-photo-img" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 240' fill='%230B192C'><rect width='200' height='240' fill='%230F274A'/><circle cx='100' cy='95' r='45' fill='%230284C7'/><text x='100' y='105' text-anchor='middle' fill='%23FFFFFF' font-weight='bold' font-size='32' font-family='sans-serif'>BG</text><rect x='30' y='160' width='140' height='60' rx='30' fill='%231E3A8A'/></svg>'">
             </div>
             <div class="member-info-block">
               <div>
@@ -2110,7 +2115,7 @@
       <div class="footer-pre-grid">
         <!-- BigTech Logo -->
         <div class="partner-logo-box">
-          <img src="https://www.shiksha-sopan.org/Images/bigTech.png" alt="BigTech Partners Shiksha Sopan" onerror="this.src='data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 160 60\' fill=\'%23FFFFFF\'><rect width=\'160\' height=\'60\' rx=\'8\' fill=\'%23F1F5F9\' stroke=\'%23CBD5E1\'/><text x=\'80\' y=\'35\' text-anchor=\'middle\' fill=\'%230284C7\' font-weight=\'bold\' font-size=\'14\'>BigTech Support</text></svg>'">
+          <img src="https://www.shiksha-sopan.org/Images/bigTech.png" alt="BigTech Partners Shiksha Sopan" onerror="this.src='data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 60' fill='%23FFFFFF'><rect width='160' height='60' rx='8' fill='%23F1F5F9' stroke='%23CBD5E1'/><text x='80' y='35' text-anchor='middle' fill='%230284C7' font-weight='bold' font-size='14'>BigTech Support</text></svg>'">
         </div>
 
         <!-- Important Links -->
@@ -2443,6 +2448,35 @@
       }
     });
 
+  </script>
+  <!-- Guaranteed navigation for Join Us button and anti-cache protection -->
+  <script>
+  (function() {
+    function routeJoinButtons() {
+      var isJoinPage = window.location.pathname.endsWith('join.html') || window.location.pathname.endsWith('/join');
+      document.querySelectorAll('a.btn-join-us, a.btn-hero-accent, a.mobile-btn-join').forEach(function(btn) {
+        if (isJoinPage) {
+          btn.setAttribute('href', '#joinForm');
+          btn.onclick = function(e) {
+            e.preventDefault();
+            var target = document.getElementById('joinForm');
+            if (target) target.scrollIntoView({ behavior: 'smooth' });
+          };
+        } else {
+          btn.setAttribute('href', 'join.html');
+          btn.onclick = function(e) {
+            e.preventDefault();
+            window.location.href = 'join.html';
+          };
+        }
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', routeJoinButtons);
+    } else {
+      routeJoinButtons();
+    }
+  })();
   </script>
 </body>
 </html>
