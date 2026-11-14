@@ -1,0 +1,1350 @@
+import os
+import re
+
+BASE_DIR = "/Users/radha/.gemini/antigravity/scratch/shiksha-sopan-redesign"
+
+JOIN_HTML = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Join Us — Shiksha Sopan | शिक्षा सोपान</title>
+  <meta name="description" content="Join the Shiksha Sopan community of volunteers, educators, and rural STEM innovators dedicated to value-based education and social upliftment." />
+  <link rel="icon" type="image/jpeg" href="images/shiksha-sopan-logo.jpg" />
+
+  <!-- Typography: Plus Jakarta Sans, Playfair Display, and Mukta -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. ROOT DESIGN SYSTEM & CSS VARIABLES
+       ========================================================================== */
+    :root {
+      --sopan-iitk-navy: #0B192C;
+      --sopan-navy-card: #0F274A;
+      --sopan-navy-light: #1E3A8A;
+      --sopan-blue: #0284C7;
+      --sopan-blue-light: #E0F2FE;
+      --sopan-cyan: #06B6D4;
+      --sopan-sky: #0369A1;
+      --sopan-orange: #EA580C;
+      --sopan-orange-light: #FFEDD5;
+      --sopan-orange-hover: #C2410C;
+      --sopan-gold: #D97706;
+
+      --bg-light: #F8FAFC;
+      --bg-white: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --bg-blueprint: #F0F8FF;
+
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #64748B;
+      --text-inverse: #FFFFFF;
+
+      --border-subtle: #E2E8F0;
+      --border-accent: rgba(2, 132, 199, 0.25);
+      --border-blueprint: rgba(2, 132, 199, 0.12);
+
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 4px 16px -2px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 10px 25px -3px rgba(15, 23, 42, 0.1);
+      --shadow-blueprint: 0 4px 20px rgba(2, 132, 199, 0.08);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+
+      --transition-fast: 0.15s ease;
+      --transition-normal: 0.25s ease;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      overflow-x: hidden !important;
+      max-width: 100vw !important;
+      width: 100% !important;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      width: 100%;
+    }
+
+    /* Top Motto Bar */
+    .top-motto-bar {
+      background: #0B192C;
+      color: #F8FAFC;
+      padding: 0.45rem 1rem;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-family: 'Mukta', 'Plus Jakarta Sans', sans-serif;
+    }
+    .motto-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    /* Header Banner */
+    .header-banner-wrapper {
+      position: relative;
+      background: #F0F8FF;
+      background-image: 
+        radial-gradient(circle at 1px 1px, rgba(2, 132, 199, 0.1) 1px, transparent 0),
+        linear-gradient(to right, rgba(2, 132, 199, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(2, 132, 199, 0.05) 1px, transparent 1px);
+      background-size: 32px 32px, 16px 16px, 16px 16px;
+      border-bottom: 1px solid #BAE6FD;
+      padding: 1.25rem 0;
+      overflow: hidden;
+    }
+    .header-watermark-formula {
+      position: absolute;
+      right: 4%;
+      bottom: -10px;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 800;
+      font-style: italic;
+      color: rgba(2, 132, 199, 0.08);
+      user-select: none;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .header-branding-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .brand-logo-combo {
+      display: flex;
+      align-items: center;
+      gap: 1.125rem;
+      text-decoration: none;
+    }
+    .brand-emblem-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(11, 25, 44, 0.12);
+      border: 1.5px solid rgba(234, 88, 12, 0.35);
+      transition: transform var(--transition-fast);
+      flex-shrink: 0;
+    }
+    .brand-emblem-img:hover {
+      transform: scale(1.05);
+    }
+    .brand-title-box {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-main-title {
+      font-size: 1.375rem;
+      font-weight: 850;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    .brand-main-title .hindi {
+      font-family: 'Mukta', sans-serif;
+      font-weight: 700;
+      color: var(--sopan-orange);
+      margin-left: 0.35rem;
+      font-size: 1.25rem;
+    }
+    .brand-tagline-sub {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: #0284C7;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.15rem;
+    }
+
+    /* Language Switcher */
+    .header-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .lang-toggle-box {
+      display: inline-flex;
+      background: #FFFFFF;
+      padding: 0.25rem;
+      border-radius: var(--radius-full);
+      border: 1px solid #BAE6FD;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.08);
+    }
+    .lang-btn {
+      padding: 0.35rem 0.85rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-secondary);
+      transition: all var(--transition-fast);
+    }
+    .lang-btn.active {
+      background: #0284C7;
+      color: #FFFFFF;
+      box-shadow: 0 2px 4px rgba(2, 132, 199, 0.3);
+    }
+
+    /* Sticky Navbar */
+    .navbar-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    }
+    .nav-inner-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+    .nav-links-menu {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      list-style: none;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links-menu::-webkit-scrollbar {
+      display: none;
+    }
+    .nav-link-btn {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: #334155;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }
+    .nav-link-btn:hover {
+      color: #0284C7;
+      background-color: rgba(2, 132, 199, 0.08);
+    }
+    .nav-link-btn.active {
+      color: #0369A1;
+      background-color: #E0F2FE;
+      font-weight: 700;
+    }
+    .btn-join-us {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 1.1rem;
+      background: linear-gradient(135deg, var(--sopan-orange), var(--sopan-orange-hover));
+      color: #FFFFFF;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 8px rgba(234, 88, 12, 0.3);
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }
+    .btn-join-us:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.4);
+    }
+    .btn-join-us.active {
+      box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.4);
+    }
+
+    /* Subpage Breadcrumb */
+    .subpage-breadcrumb-bar {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0.75rem 0;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+    .breadcrumb-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .breadcrumb-path {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 500;
+    }
+    .breadcrumb-path a {
+      color: var(--sopan-sky);
+      font-weight: 600;
+    }
+    .breadcrumb-path a:hover {
+      text-decoration: underline;
+    }
+    .btn-back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.25rem 0.75rem;
+      background: #F1F5F9;
+      color: #334155;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      transition: all var(--transition-fast);
+    }
+    .btn-back-home:hover {
+      background: #E2E8F0;
+      color: #0F172A;
+    }
+
+    /* Join Page Hero */
+    .join-hero-section {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 3.5rem 0 3rem;
+      text-align: center;
+      position: relative;
+    }
+    .hero-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 1rem;
+      background: var(--sopan-orange-light);
+      color: var(--sopan-orange-hover);
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+    .join-hero-title {
+      font-size: clamp(2.25rem, 5vw, 3.25rem);
+      font-weight: 850;
+      color: var(--text-primary);
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .join-hero-title .hindi-title {
+      display: block;
+      font-family: 'Mukta', sans-serif;
+      font-weight: 700;
+      color: var(--sopan-orange);
+      font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+      margin-top: 0.35rem;
+    }
+    .join-hero-lead {
+      font-size: 1.15rem;
+      color: var(--text-secondary);
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Pathways Bento Grid */
+    .pathways-section {
+      padding: 3.5rem 0 2rem;
+    }
+    .section-eyebrow-center {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .section-eyebrow-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--sopan-sky);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+    .section-main-heading {
+      font-size: 2rem;
+      font-weight: 850;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+    .pathways-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.5rem;
+    }
+    .pathway-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      transition: all var(--transition-normal);
+      display: flex;
+      flex-direction: column;
+    }
+    .pathway-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #BAE6FD;
+    }
+    .pathway-icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: var(--sopan-blue-light);
+      color: var(--sopan-sky);
+      font-size: 1.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+    .pathway-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+    .pathway-desc {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+    .pathway-tag {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 0.25rem 0.65rem;
+      background: #F1F5F9;
+      color: var(--sopan-sky);
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+    }
+
+    /* Registration Form Card */
+    .form-section {
+      padding: 2rem 0 4rem;
+    }
+    .form-container-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      max-width: 860px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .form-header-bar {
+      background: linear-gradient(135deg, #0B192C, #0F274A);
+      color: #FFFFFF;
+      padding: 2.25rem;
+      text-align: center;
+    }
+    .form-header-bar h2 {
+      font-size: 1.75rem;
+      font-weight: 850;
+      margin-bottom: 0.5rem;
+    }
+    .form-header-bar p {
+      color: #94A3B8;
+      font-size: 0.95rem;
+    }
+    .form-body-pad {
+      padding: 2.5rem;
+    }
+    .form-grid-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .form-group-full {
+      margin-bottom: 1.25rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+    }
+    .form-label span.req {
+      color: var(--sopan-orange);
+    }
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      font-size: 0.9375rem;
+      font-family: inherit;
+      color: var(--text-primary);
+      background: #F8FAFC;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      outline: none;
+      background: #FFFFFF;
+      border-color: var(--sopan-blue);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+    .btn-submit-enroll {
+      width: 100%;
+      padding: 1rem 1.5rem;
+      background: linear-gradient(135deg, var(--sopan-orange), var(--sopan-orange-hover));
+      color: #FFFFFF;
+      font-size: 1.05rem;
+      font-weight: 800;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
+      transition: all var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .btn-submit-enroll:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(234, 88, 12, 0.45);
+    }
+
+    /* Success Alert */
+    .success-alert-box {
+      display: none;
+      background: #ECFDF5;
+      border: 1.5px solid #10B981;
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #065F46;
+      text-align: center;
+    }
+    .success-alert-box.is-visible {
+      display: block;
+      animation: fadeIn 0.3s ease-out forwards;
+    }
+    .success-alert-box h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.35rem;
+      color: #047857;
+    }
+
+    /* Direct Contact & Support Box */
+    .support-info-card {
+      background: #F1F5F9;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+    .support-text-col h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+    .support-text-col p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+    .support-contact-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .support-pill-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.4rem 0.85rem;
+      background: #FFFFFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--sopan-sky);
+      transition: all var(--transition-fast);
+    }
+    .support-pill-link:hover {
+      border-color: var(--sopan-blue);
+      color: var(--sopan-blue);
+      transform: translateY(-1px);
+    }
+
+    /* Site Footer */
+    .site-footer {
+      background: #0B192C;
+      color: #F8FAFC;
+      padding: 3.5rem 0 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .footer-pre-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1.2fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand-title {
+      font-size: 1.125rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 0.75rem;
+    }
+    .footer-brand-desc {
+      color: #94A3B8;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+    .footer-bigtech-img {
+      max-width: 140px;
+      height: auto;
+      border-radius: var(--radius-sm);
+    }
+    .footer-col-title {
+      font-size: 0.875rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #38BDF8;
+      margin-bottom: 1rem;
+    }
+    .important-links-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+    .imp-link-anchor {
+      color: #94A3B8;
+      font-size: 0.8125rem;
+      transition: color var(--transition-fast);
+    }
+    .imp-link-anchor:hover {
+      color: #FFFFFF;
+    }
+    .map-frame-box {
+      width: 100%;
+      height: 180px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .map-frame-box iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .footer-bottom-line {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1.5rem;
+      text-align: center;
+      font-size: 0.8125rem;
+      color: #64748B;
+    }
+
+    /* RESPONSIVE MEDIA QUERIES */
+    .mobile-menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid var(--border-subtle, #CBD5E1);
+      cursor: pointer;
+      padding: 0.5rem;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-sm, 6px);
+      transition: all var(--transition-fast, 0.15s ease);
+      z-index: 101;
+    }
+    .mobile-menu-toggle:hover {
+      background: rgba(2, 132, 199, 0.08);
+      border-color: #0284C7;
+    }
+    .hamburger-bar {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: #0F172A;
+      border-radius: 2px;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .mobile-menu-toggle.is-open .hamburger-bar:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-toggle.is-open .hamburger-bar:nth-child(2) {
+      opacity: 0;
+      transform: translateX(-8px);
+    }
+    .mobile-menu-toggle.is-open .hamburger-bar:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+    .mobile-join-item {
+      display: none;
+    }
+    .desktop-join-btn {
+      display: inline-flex;
+    }
+
+    @media (max-width: 992px) {
+      .mobile-menu-toggle {
+        display: flex;
+      }
+      .desktop-join-btn {
+        display: none !important;
+      }
+      .mobile-join-item {
+        display: block;
+        margin-top: 0.5rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border-subtle, #E2E8F0);
+      }
+      .mobile-btn-join {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 0.75rem 1rem !important;
+        font-size: 0.9375rem !important;
+      }
+      .nav-inner-row {
+        position: relative;
+        justify-content: space-between;
+        height: 54px;
+      }
+      .nav-links-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: #FFFFFF;
+        border-bottom: 2px solid #BAE6FD;
+        box-shadow: 0 14px 28px -4px rgba(15, 23, 42, 0.16);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.35rem;
+        padding: 0.85rem 1.25rem 1.25rem;
+        max-height: 80vh;
+        overflow-y: auto;
+        z-index: 1000;
+      }
+      .nav-links-menu.is-active {
+        display: flex;
+        animation: navSlideDown 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .nav-link-btn {
+        padding: 0.75rem 1rem !important;
+        font-size: 0.9375rem !important;
+        width: 100% !important;
+        border-radius: var(--radius-sm, 6px);
+      }
+      @keyframes navSlideDown {
+        from { opacity: 0; transform: translateY(-8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .footer-pre-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      .form-grid-row {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-motto-bar {
+        font-size: 0.75rem !important;
+        padding: 0.35rem 0.75rem !important;
+        line-height: 1.4 !important;
+      }
+      .header-banner-wrapper {
+        padding: 0.85rem 0 !important;
+      }
+      .header-branding-flex {
+        flex-direction: column !important;
+        gap: 0.75rem !important;
+        text-align: center !important;
+      }
+      .brand-logo-combo {
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0.75rem !important;
+      }
+      .brand-emblem-img {
+        width: 48px !important;
+        height: 48px !important;
+      }
+      .brand-main-title {
+        font-size: 1.15rem !important;
+      }
+      .brand-main-title .hindi {
+        font-size: 1.05rem !important;
+      }
+      .brand-tagline-sub {
+        font-size: 0.625rem !important;
+        letter-spacing: 0.04em !important;
+      }
+      .header-watermark-formula {
+        display: none !important;
+      }
+      .header-actions-group {
+        justify-content: center !important;
+      }
+      .form-body-pad {
+        padding: 1.5rem !important;
+      }
+      .form-header-bar {
+        padding: 1.75rem 1.25rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 0 0.875rem !important;
+      }
+      .brand-emblem-img {
+        width: 40px !important;
+        height: 40px !important;
+      }
+      .brand-main-title {
+        font-size: 1rem !important;
+      }
+      .brand-tagline-sub {
+        font-size: 0.56rem !important;
+      }
+      .pathways-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Motto Bar -->
+  <aside class="top-motto-bar" aria-label="Motto Bar">
+    <div class="container motto-content" data-i18n="mottoText">
+      <span>अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें</span>
+    </div>
+  </aside>
+
+  <!-- Header Banner -->
+  <header class="header-banner-wrapper">
+    <div class="header-watermark-formula" aria-hidden="true">∇ × E = -∂B/∂t</div>
+    <div class="container header-branding-flex">
+      <a href="index.html" class="brand-logo-combo" aria-label="Shiksha Sopan Home">
+        <img src="images/shiksha-sopan-logo.jpg" alt="Shiksha Sopan Emblem" class="brand-emblem-img" />
+
+        <div class="brand-title-box">
+          <div class="brand-main-title">
+            SHIKSHA SOPAN <span class="hindi">शिक्षा सोपान</span>
+          </div>
+          <div class="brand-tagline-sub" data-i18n="headerSub">
+            AN EDUCATIONAL & SOCIAL INITIATIVE BY IIT KANPUR COMMUNITY
+          </div>
+        </div>
+      </a>
+
+      <div class="header-actions-group">
+        <div class="lang-toggle-box" role="radiogroup" aria-label="Language Selector">
+          <button type="button" class="lang-btn active" id="btnLangEn" data-lang="en" onclick="setLanguage('en')">English</button>
+          <button type="button" class="lang-btn" id="btnLangHi" data-lang="hi" onclick="setLanguage('hi')">हिन्दी</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar-sticky" aria-label="Main Navigation">
+    <div class="container nav-inner-row">
+      <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu" aria-expanded="false" onclick="toggleMobileNav()">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="nav-links-menu" id="navLinksMenu">
+        <li><a href="index.html" class="nav-link-btn" data-i18n="navHome">Home</a></li>
+        <li><a href="executive-committee.html" class="nav-link-btn" data-i18n="navEC">Executive Committee</a></li>
+        <li><a href="activity.html" class="nav-link-btn" data-i18n="navActivity">Activity</a></li>
+        <li><a href="contribution.html" class="nav-link-btn" data-i18n="navContribution">Contribution</a></li>
+        <li><a href="achievements.html" class="nav-link-btn" data-i18n="navAchievements">Achivements</a></li>
+        <li><a href="experiments.html" class="nav-link-btn" data-i18n="navExperiments">Experiments</a></li>
+        <li><a href="about-us.html" class="nav-link-btn" data-i18n="navAbout">About Us</a></li>
+        <li><a href="contact-us.html" class="nav-link-btn" data-i18n="navContact">Contact Us</a></li>
+        <li class="mobile-join-item">
+          <a href="join.html" class="btn-join-us mobile-btn-join active" data-i18n="joinBtn">
+            Join Us →
+          </a>
+        </li>
+      </ul>
+
+      <a href="join.html" class="btn-join-us desktop-join-btn active" data-i18n="joinBtn">
+        Join Us →
+      </a>
+    </div>
+  </nav>
+
+  <!-- Breadcrumbs -->
+  <div class="subpage-breadcrumb-bar">
+    <div class="container breadcrumb-inner">
+      <div class="breadcrumb-path">
+        <a href="index.html">Home</a>
+        <span>▸</span>
+        <span style="color: var(--text-primary); font-weight: 700;">Join the Community</span>
+      </div>
+
+      <a href="index.html" class="btn-back-home">
+        ← Back to Home
+      </a>
+    </div>
+  </div>
+
+  <main id="mainContent">
+    <!-- Hero Section -->
+    <section class="join-hero-section" aria-labelledby="joinHeroHeading">
+      <div class="container">
+        <span class="hero-badge-pill" data-i18n="joinPill">COMMUNITY ENROLLMENT & VOLUNTEERING</span>
+        <h1 class="join-hero-title" id="joinHeroHeading">
+          <span data-i18n="joinTitle">Join the Shiksha Sopan Community</span>
+          <span class="hindi-title" data-i18n="joinTitleHi">शिक्षा सोपान परिवार से जुड़ें</span>
+        </h1>
+        <p class="join-hero-lead" data-i18n="joinLead">
+          Become part of an inspiring community of IIT Kanpur faculty, student volunteers, rural teachers, and STEM innovators dedicated to value-based education (Shiksha, Sanskar, Swavalamban) and transformative grassroots social change.
+        </p>
+      </div>
+    </section>
+
+    <!-- Engagement Pathways Bento -->
+    <section class="pathways-section" aria-labelledby="pathwaysHeading">
+      <div class="container">
+        <div class="section-eyebrow-center">
+          <span class="section-eyebrow-tag" data-i18n="pathwayTag">CHOOSE YOUR PATHWAY</span>
+          <h2 class="section-main-heading" id="pathwaysHeading" data-i18n="pathwayHeading">How You Can Contribute & Grow</h2>
+        </div>
+
+        <div class="pathways-grid">
+          <div class="pathway-card">
+            <div class="pathway-icon-badge">🎓</div>
+            <h3 class="pathway-title" data-i18n="p1Title">Student / Academic Mentor</h3>
+            <p class="pathway-desc" data-i18n="p1Desc">Teach children in our Evening Learning Centers or morning SASK school, clear subject doubts in math and science, and mentor first-generation learners.</p>
+            <span class="pathway-tag">IITK Campus & Barasirohi</span>
+          </div>
+
+          <div class="pathway-card">
+            <div class="pathway-icon-badge">🔬</div>
+            <h3 class="pathway-title" data-i18n="p2Title">Science & Experiment Lead</h3>
+            <p class="pathway-desc" data-i18n="p2Desc">Collaborate with the Sopan Science Cell guided by Prof. H.C. Verma to design low-cost experiments, build apparatus, and lead stage shows in rural schools.</p>
+            <span class="pathway-tag">STEM & Hands-on Physics</span>
+          </div>
+
+          <div class="pathway-card">
+            <div class="pathway-icon-badge">🧑‍🏫</div>
+            <h3 class="pathway-title" data-i18n="p3Title">Teacher & Educator Partner</h3>
+            <p class="pathway-desc" data-i18n="p3Desc">Participate in residential pedagogy workshops at Sopan Ashram, coordinate NAEST competitions in your district, and adopt creative classroom techniques.</p>
+            <span class="pathway-tag">Schools & Colleges</span>
+          </div>
+
+          <div class="pathway-card">
+            <div class="pathway-icon-badge">🤝</div>
+            <h3 class="pathway-title" data-i18n="p4Title">Community & Outreach Volunteer</h3>
+            <p class="pathway-desc" data-i18n="p4Desc">Help organize our Annual Function rally, health checkups, library reading clubs, digital literacy campaigns, or provide technical and creative support.</p>
+            <span class="pathway-tag">Social Upliftment</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="form-section" aria-labelledby="formHeading">
+      <div class="container">
+        <div class="form-container-card">
+          <div class="form-header-bar">
+            <h2 id="formHeading" data-i18n="formTitle">Community Membership & Connection Form</h2>
+            <p data-i18n="formSub">Fill out this short form to register your interest. Our coordinators will connect with you via email or WhatsApp.</p>
+          </div>
+
+          <div class="form-body-pad">
+            <!-- Success Message -->
+            <div class="success-alert-box" id="successBox" role="alert">
+              <h3>🎉 Registration Submitted Successfully!</h3>
+              <p>Thank you for expressing your interest to join Shiksha Sopan. A member of our volunteer coordination team will reach out to you shortly.</p>
+            </div>
+
+            <form id="joinForm" onsubmit="handleFormSubmit(event)">
+              <div class="form-grid-row">
+                <div>
+                  <label for="fullName" class="form-label">Full Name <span class="req">*</span></label>
+                  <input type="text" id="fullName" name="fullName" class="form-input" placeholder="e.g. Ramesh Sharma" required />
+                </div>
+                <div>
+                  <label for="emailAddr" class="form-label">Email Address <span class="req">*</span></label>
+                  <input type="email" id="emailAddr" name="emailAddr" class="form-input" placeholder="e.g. ramesh@example.com" required />
+                </div>
+              </div>
+
+              <div class="form-grid-row">
+                <div>
+                  <label for="phoneNum" class="form-label">WhatsApp / Phone Number <span class="req">*</span></label>
+                  <input type="tel" id="phoneNum" name="phoneNum" class="form-input" placeholder="e.g. +91 98765 43210" required />
+                </div>
+                <div>
+                  <label for="cityState" class="form-label">City & State <span class="req">*</span></label>
+                  <input type="text" id="cityState" name="cityState" class="form-input" placeholder="e.g. Kanpur, Uttar Pradesh" required />
+                </div>
+              </div>
+
+              <div class="form-grid-row">
+                <div>
+                  <label for="profession" class="form-label">Profession / Role <span class="req">*</span></label>
+                  <select id="profession" name="profession" class="form-select" required>
+                    <option value="" disabled selected>Select your current role...</option>
+                    <option value="IITK Student">IIT Kanpur Student (UG / PG / PhD)</option>
+                    <option value="College Student">College / University Student</option>
+                    <option value="School Teacher">School / College Teacher</option>
+                    <option value="Working Professional">Working Professional / Engineer</option>
+                    <option value="IITK Faculty/Staff">IIT Kanpur Faculty / Staff / Resident</option>
+                    <option value="Other">Other Community Well-Wisher</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="institute" class="form-label">College / Institute / Organization</label>
+                  <input type="text" id="institute" name="institute" class="form-input" placeholder="e.g. IIT Kanpur / Kendriya Vidyalaya" />
+                </div>
+              </div>
+
+              <div class="form-group-full">
+                <label for="interestTrack" class="form-label">Area Where You Would Like to Contribute <span class="req">*</span></label>
+                <select id="interestTrack" name="interestTrack" class="form-select" required>
+                  <option value="" disabled selected>Choose your primary area of interest...</option>
+                  <option value="Evening Center Teaching">Evening Learning Centers (Academic Teaching)</option>
+                  <option value="SASK Informal School">SASK Primary Informal School (Morning)</option>
+                  <option value="Sopan Science Cell">Sopan Science Cell (Low-Cost Physics Demonstrations)</option>
+                  <option value="NAEST / Competitions">NAEST & Student Competitions Organization</option>
+                  <option value="Library & Creative Workshops">Sopan Library & Storytelling / Art Sessions</option>
+                  <option value="Tech / Web Development">Technical, Web Application & Media Support</option>
+                  <option value="General Volunteering">General Volunteer / Community Outreach</option>
+                </select>
+              </div>
+
+              <div class="form-group-full">
+                <label for="messageText" class="form-label">Why do you wish to join Shiksha Sopan? (Your Journey or Message)</label>
+                <textarea id="messageText" name="messageText" class="form-textarea" placeholder="Tell us a little bit about yourself, your background, and what inspires you to contribute..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-submit-enroll" id="submitBtn">
+                <span>Submit Registration</span> →
+              </button>
+            </form>
+
+            <!-- Support Box -->
+            <div class="support-info-card">
+              <div class="support-text-col">
+                <h4 data-i18n="supportHead">Need Assistance or Have Questions?</h4>
+                <p data-i18n="supportDesc">For technical issues or custom collaboration proposals, contact our volunteer helpdesk:</p>
+              </div>
+              <div class="support-contact-links">
+                <a href="mailto:info@shiksha-sopan.org" class="support-pill-link">
+                  ✉️ info@shiksha-sopan.org
+                </a>
+                <a href="mailto:techhelp@shiksha-sopan.org" class="support-pill-link">
+                  🛠️ techhelp@shiksha-sopan.org
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-pre-grid">
+        <!-- Col 1: Brand & Info -->
+        <div>
+          <div class="footer-brand-title">शिक्षा सोपान | SHIKSHA SOPAN</div>
+          <p class="footer-brand-desc">
+            An Educational & Social Initiative by IIT Kanpur Community imparting value-based education since 2001.
+          </p>
+          <div style="margin-top: 1rem;">
+            <img src="https://www.shiksha-sopan.org/Images/bigTech.png" alt="BigTech Partner Support" class="footer-bigtech-img" onerror="this.style.display='none'" />
+          </div>
+        </div>
+
+        <!-- Col 2: Important Links -->
+        <div>
+          <h4 class="footer-col-title" data-i18n="impLinksHead">Important Links</h4>
+          <ul class="important-links-list">
+            <li><a href="index.html" class="imp-link-anchor">▸ Home</a></li>
+            <li><a href="executive-committee.html" class="imp-link-anchor">▸ Executive Committee</a></li>
+            <li><a href="activity.html" class="imp-link-anchor">▸ Activity</a></li>
+            <li><a href="contribution.html" class="imp-link-anchor">▸ Contribution</a></li>
+            <li><a href="achievements.html" class="imp-link-anchor">▸ Achivements</a></li>
+            <li><a href="experiments.html" class="imp-link-anchor">▸ Experiments</a></li>
+            <li><a href="about-us.html" class="imp-link-anchor">▸ About Us</a></li>
+            <li><a href="contact-us.html" class="imp-link-anchor">▸ Contact Us</a></li>
+            <li><a href="join.html" class="imp-link-anchor" style="font-weight:700; color:var(--sopan-sky);">▸ Join Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Google Maps Embed -->
+        <div class="map-frame-box">
+          <iframe 
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJH3A1ceM2nDkRS9JBtXLgq6A" 
+            title="Sopan Ashram Location"
+            allowfullscreen="" 
+            loading="lazy"
+            aria-label="Interactive map showing Sopan Ashram location">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="footer-bottom-line">
+        <p>Copyright© 2024 shiksha-sopan.org • All Rights Reserved</p>
+        <p style="font-size: 0.75rem; color: #94A3B8; margin-top: 0.25rem;">
+          An Initiative of the IIT Kanpur Community for Education, Values, and Self-Reliance
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bilingual & Navigation Script -->
+  <script>
+    const translations = {
+      en: {
+        mottoText: "अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें",
+        headerSub: "AN EDUCATIONAL & SOCIAL INITIATIVE BY IIT KANPUR COMMUNITY",
+        navHome: "Home",
+        navEC: "Executive Committee",
+        navActivity: "Activity",
+        navContribution: "Contribution",
+        navAchievements: "Achivements",
+        navExperiments: "Experiments",
+        navAbout: "About Us",
+        navContact: "Contact Us",
+        joinBtn: "Join Us →",
+        impLinksHead: "Important Links",
+        joinPill: "COMMUNITY ENROLLMENT & VOLUNTEERING",
+        joinTitle: "Join the Shiksha Sopan Community",
+        joinTitleHi: "शिक्षा सोपान परिवार से जुड़ें",
+        joinLead: "Become part of an inspiring community of IIT Kanpur faculty, student volunteers, rural teachers, and STEM innovators dedicated to value-based education (Shiksha, Sanskar, Swavalamban) and transformative grassroots social change.",
+        pathwayTag: "CHOOSE YOUR PATHWAY",
+        pathwayHeading: "How You Can Contribute & Grow",
+        p1Title: "Student / Academic Mentor",
+        p1Desc: "Teach children in our Evening Learning Centers or morning SASK school, clear subject doubts in math and science, and mentor first-generation learners.",
+        p2Title: "Science & Experiment Lead",
+        p2Desc: "Collaborate with the Sopan Science Cell guided by Prof. H.C. Verma to design low-cost experiments, build apparatus, and lead stage shows in rural schools.",
+        p3Title: "Teacher & Educator Partner",
+        p3Desc: "Participate in residential pedagogy workshops at Sopan Ashram, coordinate NAEST competitions in your district, and adopt creative classroom techniques.",
+        p4Title: "Community & Outreach Volunteer",
+        p4Desc: "Help organize our Annual Function rally, health checkups, library reading clubs, digital literacy campaigns, or provide technical and creative support.",
+        formTitle: "Community Membership & Connection Form",
+        formSub: "Fill out this short form to register your interest. Our coordinators will connect with you via email or WhatsApp.",
+        supportHead: "Need Assistance or Have Questions?",
+        supportDesc: "For technical issues or custom collaboration proposals, contact our volunteer helpdesk:"
+      },
+      hi: {
+        mottoText: "अंधकार को क्यों धिक्कारें, अच्छा हैं एक दीप जलायें",
+        headerSub: "आईआईटी कानपुर समुदाय द्वारा एक शैक्षिक एवं सामाजिक पहल",
+        navHome: "होम",
+        navEC: "कार्यकारिणी समिति",
+        navActivity: "गतिविधियां",
+        navContribution: "सहयोग",
+        navAchievements: "उपलब्धियां",
+        navExperiments: "प्रयोग",
+        navAbout: "हमारे बारे में",
+        navContact: "संपर्क करें",
+        joinBtn: "जुड़ें →",
+        impLinksHead: "महत्वपूर्ण लिंक्स",
+        joinPill: "सामुदायिक पंजीकरण एवं स्वयंसेवा",
+        joinTitle: "शिक्षा सोपान परिवार से जुड़ें",
+        joinTitleHi: "Join the Shiksha Sopan Community",
+        joinLead: "आईआईटी कानपुर के प्राध्यापकों, छात्र स्वयंसेवकों, ग्रामीण शिक्षकों एवं नवप्रवर्तकों के प्रेरक समुदाय का हिस्सा बनें जो मूल्य-आधारित शिक्षा (शिक्षा, संस्कार, स्वावलंबन) और सामाजिक उत्थान के लिए समर्पित हैं।",
+        pathwayTag: "अपनी सहभागिता चुनें",
+        pathwayHeading: "आप किस प्रकार योगदान दे सकते हैं",
+        p1Title: "अकादमिक परामर्शदाता / शिक्षक",
+        p1Desc: "सांध्य शिक्षण केंद्रों अथवा सास्क विद्यालय में बच्चों को गणित, विज्ञान व भाषा सिखाएं और उनके संशय दूर करें।",
+        p2Title: "विज्ञान एवं प्रयोग दल",
+        p2Desc: "प्रो. एच. सी. वर्मा के मार्गदर्शन में सोपान विज्ञान प्रकोष्ठ से जुड़कर कम लागत के प्रयोग बनाएं और ग्रामीण विद्यालयों में प्रदर्शन करें।",
+        p3Title: "शिक्षक एवं विद्यालय सहभागिता",
+        p3Desc: "सोपान आश्रम में आवासीय शिक्षक कार्यशालाओं में भाग लें और अपने जिले में राष्ट्रीय अन्वेषिका प्रतियोगिता का समन्वय करें।",
+        p4Title: "सामुदायिक स्वयंसेवक",
+        p4Desc: "वार्षिक समारोह रैली, स्वास्थ्य शिविर, पुस्तकालय सत्र और तकनीकी विकास में अपना योगदान दें।",
+        formTitle: "सामुदायिक पंजीकरण एवं संपर्क प्रपत्र",
+        formSub: "कृपया इस संक्षिप्त फॉर्म को भरें। हमारी समन्वय टीम ईमेल या व्हाट्सएप के माध्यम से आपसे संपर्क करेगी।",
+        supportHead: "सहायता अथवा प्रश्न?",
+        supportDesc: "तकनीकी समस्या अथवा विशेष सहयोग प्रस्ताव के लिए हमारे स्वयंसेवक हेल्पडेस्क से संपर्क करें:"
+      }
+    };
+
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+      currentLang = lang;
+      
+      const btnEn = document.getElementById('btnLangEn');
+      const btnHi = document.getElementById('btnLangHi');
+      if (btnEn && btnHi) {
+        btnEn.classList.toggle('active', lang === 'en');
+        btnHi.classList.toggle('active', lang === 'hi');
+      }
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      localStorage.setItem('sopan_lang', lang);
+    }
+
+    function toggleMobileNav() {
+      const toggle = document.getElementById('mobileMenuToggle');
+      const menu = document.getElementById('navLinksMenu');
+      if (!toggle || !menu) return;
+      const isOpen = toggle.classList.toggle('is-open');
+      menu.classList.toggle('is-active', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+    }
+
+    document.addEventListener('click', (e) => {
+      const nav = document.querySelector('.navbar-sticky');
+      const toggle = document.getElementById('mobileMenuToggle');
+      const menu = document.getElementById('navLinksMenu');
+      if (nav && toggle && menu && !nav.contains(e.target) && menu.classList.contains('is-active')) {
+        toggle.classList.remove('is-open');
+        menu.classList.remove('is-active');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const successBox = document.getElementById('successBox');
+      const form = document.getElementById('joinForm');
+
+      if (successBox) {
+        successBox.classList.add('is-visible');
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+      form.reset();
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const saved = localStorage.getItem('sopan_lang');
+      if (saved && (saved === 'en' || saved === 'hi')) {
+        setLanguage(saved);
+      }
+    });
+  </script>
+</body>
+</html>
+"""
+
+# Write join.html
+join_path = os.path.join(BASE_DIR, "join.html")
+with open(join_path, "w", encoding="utf-8") as f:
+    f.write(JOIN_HTML)
+print(f"Created {join_path}")
+
+# Create symlinks
+os.system(f"cd {BASE_DIR} && ln -sf join.html join && ln -sf join.html join-us.html && ln -sf join.html Join-Us && ln -sf join.html Join")
+print("Created symlinks: join, join-us.html, Join-Us, Join")
+
+# Update all existing HTML files: replace https://www.shiksha-sopan.org/join with join.html
+files = [f for f in os.listdir(BASE_DIR) if f.endswith('.html') and f != 'join.html']
+updated_count = 0
+for f in files:
+    filepath = os.path.join(BASE_DIR, f)
+    if os.path.islink(filepath):
+        continue
+    with open(filepath, 'r', encoding='utf-8') as fp:
+        content = fp.read()
+    
+    if 'https://www.shiksha-sopan.org/join' in content:
+        # replace href and target="_blank"
+        # 1. replace with join.html without target="_blank"
+        new_content = re.sub(
+            r'href=[\"\']https://www\.shiksha-sopan\.org/join[\"\']\s+class=[\"\']([^\"\']+)[\"\']\s+target=[\"\']_blank[\"\']\s+rel=[\"\']noopener noreferrer[\"\']',
+            r'href="join.html" class="\1"',
+            content
+        )
+        new_content = re.sub(
+            r'href=[\"\']https://www\.shiksha-sopan\.org/join[\"\']\s+target=[\"\']_blank[\"\']\s+rel=[\"\']noopener noreferrer[\"\']\s+class=[\"\']([^\"\']+)[\"\']',
+            r'href="join.html" class="\1"',
+            new_content
+        )
+        new_content = re.sub(
+            r'href=[\"\']https://www\.shiksha-sopan\.org/join[\"\']',
+            r'href="join.html"',
+            new_content
+        )
+        
+        with open(filepath, 'w', encoding='utf-8') as fp:
+            fp.write(new_content)
+        updated_count += 1
+        print(f"Updated Join Us links in {f}")
+
+print(f"Total updated files: {updated_count}")
